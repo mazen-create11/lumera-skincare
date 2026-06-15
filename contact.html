@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | LUMÃRA<b>.</b></title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{margin:0;background:var(--c-bg);color:var(--c-text-main);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;}
+  .info-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2.5rem;border-bottom:1px solid var(--c-border);position:sticky;top:0;background:rgba(253,248,246,0.92);backdrop-filter:blur(10px);z-index:10;}
+  .info-nav .logo{font-family:var(--font-serif);font-size:1.5rem;letter-spacing:0.25em;color:var(--c-text-main);text-decoration:none;}
+  .info-nav .back{font-size:0.8rem;color:var(--c-text-muted);text-decoration:none;letter-spacing:0.05em;}
+  .info-nav .back:hover{color:var(--c-accent-dark);}
+  .info-wrap{max-width:760px;margin:0 auto;padding:4.5rem 1.6rem 5rem;}
+  .info-eyebrow{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--c-accent);font-weight:700;margin-bottom:1rem;}
+  .info-wrap h1{font-family:var(--font-serif);font-weight:300;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.1;margin:0 0 1.2rem;}
+  .info-wrap h1 em{font-style:italic;color:var(--c-accent-dark);}
+  .info-lead{font-size:1.05rem;line-height:1.8;color:var(--c-text-muted);margin-bottom:2.4rem;}
+  .contact-methods{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem;}
+  .cmethod{flex:1;min-width:210px;border:1px solid var(--c-border);background:var(--c-white);padding:1.5rem;}
+  .cmethod .ic{font-size:1.1rem;margin-bottom:0.6rem;}
+  .cmethod h3{font-family:var(--font-serif);font-weight:400;font-size:1.2rem;margin:0 0 0.3rem;}
+  .cmethod p{font-size:0.88rem;line-height:1.6;color:var(--c-text-muted);margin:0;}
+  .cmethod a{color:var(--c-accent-dark);text-decoration:none;font-weight:500;}
+  .cmethod a:hover{text-decoration:underline;}
+  .cform{display:flex;flex-direction:column;gap:1.1rem;max-width:560px;}
+  .cform .row{display:flex;gap:1rem;}
+  .cform .row>div{flex:1;}
+  .cform label{display:block;font-size:0.74rem;font-weight:600;color:var(--c-text-main);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.4rem;}
+  .cform input,.cform textarea{width:100%;padding:0.85rem 1rem;border:1px solid var(--c-border);background:var(--c-white);font-family:var(--font-sans);font-size:0.92rem;color:var(--c-text-main);box-sizing:border-box;transition:border-color 0.2s;}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--c-accent);}
+  .cform textarea{resize:vertical;min-height:130px;}
+  .cform button{align-self:flex-start;background:var(--c-surface-dark);color:#fff;border:none;padding:0.95rem 2.4rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);font-weight:600;transition:background 0.25s;}
+  .cform button:hover{background:var(--c-accent-dark);}
+  .info-h2{font-family:var(--font-serif);font-weight:400;font-size:1.55rem;margin:0 0 1.2rem;}
+  .info-foot{border-top:1px solid var(--c-border);padding:2rem 2.5rem;text-align:center;font-size:0.76rem;color:var(--c-text-light);}
+  .info-foot a{color:var(--c-text-muted);text-decoration:none;margin:0 0.5rem;}
+  .info-foot a:hover{color:var(--c-accent-dark);}
+</style>
+</head>
+<body>
+  <nav class="info-nav">
+    <a href="index.html" class="logo">LUMÃRA<b>.</b></a>
+    <a href="index.html" class="back">← Retour à la boutique</a>
+  </nav>
+
+  <div class="info-wrap">
+    <div class="info-eyebrow">Nous écrire</div>
+    <h1>Une question ?<br><em>Parlons-en.</em></h1>
+    <p class="info-lead">Conseil sur le rituel, suivi de commande, retour — notre équipe vous répond sous 24 à 48 heures ouvrées. Aucune question n'est de trop.</p>
+
+    <div class="contact-methods">
+      <div class="cmethod">
+        <div class="ic">✉</div>
+        <h3>E-mail</h3>
+        <p><a href="mailto:contact@lumera-skincare.com">contact@lumera-skincare.com</a><br>Réponse sous 24–48 h ouvrées</p>
+      </div>
+      <div class="cmethod">
+        <div class="ic">✦</div>
+        <h3>Conseil rituel</h3>
+        <p>Un doute sur l'ordre des étapes ou votre type de peau ? Décrivez-nous votre besoin, on vous oriente.</p>
+      </div>
+      <div class="cmethod">
+        <div class="ic">◈</div>
+        <h3>Instagram</h3>
+        <p><a href="#">@lumera.skincare</a><br>Coulisses & conseils</p>
+      </div>
+    </div>
+
+    <h2 class="info-h2">Envoyez-nous un message</h2>
+    <form class="cform" id="contactForm">
+      <div class="row">
+        <div><label for="cf-name">Prénom</label><input type="text" id="cf-name" required></div>
+        <div><label for="cf-email">E-mail</label><input type="email" id="cf-email" required></div>
+      </div>
+      <div><label for="cf-subject">Objet</label><input type="text" id="cf-subject"></div>
+      <div><label for="cf-msg">Votre message</label><textarea id="cf-msg" required></textarea></div>
+      <button type="submit">Envoyer le message</button>
+    </form>
+  </div>
+
+  <footer class="info-foot">
+    <div>© 2026 Luméra Skincare · Marque française · Conçu en France</div>
+    <div style="margin-top:0.6rem;">
+      <a href="legal.html#mentions">Mentions légales</a>·
+      <a href="legal.html#cgv">CGV</a>·
+      <a href="legal.html#confidentialite">Confidentialité</a>·
+      <a href="livraison.html">Livraison & Retours</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('cf-name').value;
+      var email = document.getElementById('cf-email').value;
+      var subject = document.getElementById('cf-subject').value || 'Demande via le site';
+      var msg = document.getElementById('cf-msg').value;
+      var body = encodeURIComponent('De : ' + name + ' (' + email + ')\n\n' + msg);
+      window.location.href = 'mailto:contact@lumera-skincare.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+    });
+  </script>
+</body>
+</html>

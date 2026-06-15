@@ -1,0 +1,90 @@
+/* Panier partagé Luméra — localStorage, accumulation, total réel, persistant entre pages */
+(function () {
+  var KEY = 'lumera_cart';
+  function get() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
+  function save(c) { localStorage.setItem(KEY, JSON.stringify(c)); }
+  function count(c) { return c.reduce(function (n, i) { return n + i.qty; }, 0); }
+  function total(c) { return c.reduce(function (t, i) { return t + i.price * i.qty; }, 0); }
+
+  function fmt(n) { return (Math.round(n * 100) / 100).toFixed(2).replace('.', ',').replace(',00', '') + ' €'; }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function attr(s) { return String(s).replace(/'/g, "\\'"); }
+
+  function render() {
+    var c = get();
+    document.querySelectorAll('.cart-btn').forEach(function (b) { b.textContent = 'Panier (' + count(c) + ')'; });
+    var items = document.getElementById('cartItems') || document.querySelector('.cart-items');
+    if (items) {
+      if (c.length) {
+        items.classList.remove('is-empty');
+        items.innerHTML = c.map(function (i) {
+          var a = attr(i.name), n = esc(i.name);
+          return '<div class="ci-row">'
+            + (i.img ? '<img class="ci-thumb" src="' + esc(i.img) + '" alt="' + n + '">' : '<div class="ci-thumb"></div>')
+            + '<div class="ci-info">'
+            + '<div class="ci-head"><span class="ci-name">' + n + '</span>'
+            + '<button class="ci-remove" onclick="lumeraRemove(\'' + a + '\')">Retirer</button></div>'
+            + '<span class="ci-unit">' + fmt(i.price) + ' l’unité</span>'
+            + '<div class="ci-controls">'
+            + '<span class="ci-stepper"><button aria-label="Diminuer" onclick="lumeraQty(\'' + a + '\',-1)">−</button>'
+            + '<span>' + i.qty + '</span>'
+            + '<button aria-label="Augmenter" onclick="lumeraQty(\'' + a + '\',1)">+</button></span>'
+            + '<span class="ci-line">' + fmt(i.price * i.qty) + '</span>'
+            + '</div></div></div>';
+        }).join('');
+      } else {
+        items.classList.add('is-empty');
+        items.innerHTML = '<div><p style="font-family:var(--font-serif);font-size:1.15rem;color:var(--c-text-muted);margin-bottom:0.4rem;">Votre panier est vide</p><p style="font-size:0.82rem;color:var(--c-text-light);">Découvrez nos rituels signature.</p></div>';
+      }
+    }
+    var tot = document.getElementById('cartTotal') || document.querySelector('.cart-total span:last-child');
+    if (tot) tot.textContent = fmt(total(c));
+    var co = document.getElementById('checkoutBtn') || document.querySelector('.cart-footer .btn-solid, .cart-footer button');
+    if (co) { var on = c.length > 0; co.style.opacity = on ? '1' : '0.5'; co.style.pointerEvents = on ? 'auto' : 'none'; }
+    var FREE_SHIP = 149, t2 = total(c);
+    var prog = document.querySelector('.cart-progress p');
+    if (prog) prog.innerHTML = t2 >= FREE_SHIP ? 'Livraison offerte débloquée ✦' : 'Plus que <strong>' + fmt(FREE_SHIP - t2) + '</strong> pour la livraison offerte';
+    var fill = document.querySelector('.progress-bar-fill');
+    if (fill) fill.style.width = Math.min(100, Math.round(t2 / FREE_SHIP * 100)) + '%';
+    if (co && c.length) co.textContent = 'Commander en toute sécurité';
+    // Réassurance panier (3× sans frais + trust) — injectée une seule fois par footer
+    document.querySelectorAll('.cart-footer').forEach(function (f) {
+      if (f.querySelector('.cart-reassure')) return;
+      var d = document.createElement('div');
+      d.className = 'cart-reassure';
+      d.style.cssText = 'margin:0.5rem 0 0.2rem;';
+      d.innerHTML = '<p style="font-size:0.76rem;color:#A85968;font-weight:600;text-align:center;margin:0 0 0.55rem;">ou 3× sans frais dès 100 € — sans intérêts</p>'
+        + '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.35rem 0.9rem;font-size:0.68rem;color:#8A6A72;">'
+        + '<span>🔒 Paiement sécurisé</span><span>✓ 30 j satisfaite ou remboursée</span><span>🚚 Livraison offerte</span></div>';
+      var btn = f.querySelector('button, .btn');
+      if (btn) f.insertBefore(d, btn); else f.appendChild(d);
+    });
+  }
+
+  window.openCart = function () {
+    var o = document.querySelector('.cart-overlay'), d = document.getElementById('cartDrawer');
+    if (o) o.classList.add('active'); if (d) d.classList.add('active');
+  };
+  window.closeCart = function () {
+    var o = document.querySelector('.cart-overlay'), d = document.getElementById('cartDrawer');
+    if (o) o.classList.remove('active'); if (d) d.classList.remove('active');
+  };
+  window.addToCart = function (name, price, img) {
+    var c = get(), ex = c.find(function (i) { return i.name === name; });
+    if (ex) ex.qty++; else c.push({ name: name, price: Number(price) || 0, img: img || '', qty: 1 });
+    save(c); render(); window.openCart();
+  };
+  window.lumeraRemove = function (name) {
+    save(get().filter(function (i) { return i.name !== name; })); render();
+  };
+  window.lumeraQty = function (name, delta) {
+    var c = get(), it = c.find(function (i) { return i.name === name; });
+    if (!it) return;
+    it.qty += delta;
+    if (it.qty < 1) c = c.filter(function (i) { return i.name !== name; });
+    save(c); render();
+  };
+
+  if (document.readyState !== 'loading') render();
+  else document.addEventListener('DOMContentLoaded', render);
+})();

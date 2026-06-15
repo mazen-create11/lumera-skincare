@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylo Micro-needling | LUMÉRA</title>
+    <meta name="description" content="Stylo micro-needling aiguilles titane 0,25 mm. Collagen Induction Therapy à domicile. Absorption PDRN amplifiée. Indolore, sécurisé — 29 €">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Stylo Micro-needling — LUMÉRA",
+      "image": ["assets/card-pen.webp", "assets/pen-hero.webp"],
+      "description": "Stylo micro-needling à aiguilles titane 0,25 mm. Collagen Induction Therapy à domicile, absorption du PDRN amplifiée. Indolore et sécurisé.",
+      "brand": { "@type": "Brand", "name": "LUMÉRA" },
+      "category": "Appareil de soin du visage",
+      "offers": { "@type": "Offer", "url": "product-pen.html", "priceCurrency": "EUR", "price": "29", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Est-ce que ça fait mal ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Les aiguilles de 0,25 mm créent des micro-canaux superficiels et indolores ; on ressent une légère vibration. Une rougeur très légère peut apparaître quelques minutes." } },
+        { "@type": "Question", "name": "À quelle fréquence l'utiliser ?", "acceptedAnswer": { "@type": "Answer", "text": "2 à 3 fois par semaine. Pour les peaux sensibles, commencez à 1 fois par semaine, toujours le soir sur peau propre." } },
+        { "@type": "Question", "name": "Comment nettoyer et remplacer les cartouches ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque cartouche est stérile et à usage personnel : remplacez-la toutes les 8 à 10 utilisations environ. Désinfectez l'embout à l'alcool avant et après chaque séance." } },
+        { "@type": "Question", "name": "Pourquoi l'utiliser avec le Sérum PDRN ?", "acceptedAnswer": { "@type": "Answer", "text": "Les micro-canaux ouverts par le stylo restent actifs 15 à 60 minutes et démultiplient l'absorption des actifs. Appliqué juste après, le Sérum PDRN pénètre bien plus profondément." } }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .science-callout {
+            background: var(--c-surface);
+            border-left: 3px solid var(--c-accent);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+        }
+        .science-callout p { font-size: 0.88rem; color: var(--c-text-muted); line-height: 1.7; margin: 0; }
+        .science-callout strong { color: var(--c-text-main); }
+        .science-callout.warning { border-left-color: var(--c-sale); }
+
+        .depth-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--c-border);
+        }
+        .depth-row:last-child { border-bottom: none; }
+        .depth-mm {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--c-accent-dark);
+            line-height: 1;
+            flex-shrink: 0;
+            min-width: 65px;
+            text-align: center;
+        }
+        .depth-name { font-size: 0.85rem; font-weight: 700; color: var(--c-text-main); margin-bottom: 0.3rem; }
+        .depth-desc { font-size: 0.82rem; color: var(--c-text-muted); line-height: 1.6; }
+        .depth-tag {
+            display: inline-block;
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 0.4rem;
+        }
+        .tag-home { background: rgba(74,124,89,0.1); color: var(--c-success); }
+        .tag-pro { background: rgba(181,74,90,0.1); color: var(--c-sale); }
+
+        .sticky-bar {
+            position: fixed;
+            bottom: -80px;
+            left: 0; right: 0;
+            background: rgba(253,248,246,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--c-border);
+            padding: 1rem 2rem;
+            z-index: 190;
+            transition: bottom 0.4s var(--ease-out);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+        .sticky-bar.visible { bottom: 0; }
+        .sticky-bar .btn { width: auto; padding: 0.9rem 2rem; }
+        /* sticky-bar visible mobile (conversion TikTok), masquee desktop via styles.css */
+    </style>
+</head>
+<body>
+
+    <header id="header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">LUMÉRA<b>.</b></a>
+            <nav class="nav-links">
+                <a href="bundle.html">Le Rituel</a>
+                <a href="product-mask.html">Le Masque</a>
+                <a href="product-serum.html">Le Sérum</a>
+                <a href="product-pen.html" class="active">Le Stylo</a>
+                <a href="about.html">Notre Science</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="openCart()">Panier (0)</button>
+                <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-layout">
+
+        <!-- GALLERY -->
+        <div class="product-gallery">
+            <div class="gallery-stage">
+                <div class="gallery-carousel" id="galleryMain">
+                    <img loading="eager" fetchpriority="high" src="assets/pen-hero.webp" alt="Stylo micro-needling Luméra tenu — rituel beauté" style="object-position:center 18%">
+                    <img loading="lazy" src="assets/pen-pack.webp" alt="Stylo micro-needling Luméra — vue produit">
+                    <img loading="lazy" src="assets/pen-apply.webp" alt="Application du stylo micro-needling sur le visage au miroir">
+                </div>
+                <button class="gallery-arrow prev" type="button" aria-label="Image précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                <button class="gallery-arrow next" type="button" aria-label="Image suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            </div>
+            <div class="gallery-thumbs" id="galleryThumbs">
+                <img loading="lazy" src="assets/pen-hero.webp" alt="" class="active">
+                <img loading="lazy" src="assets/pen-pack.webp" alt="">
+                <img loading="lazy" src="assets/pen-apply.webp" alt="">
+            </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="product-info">
+            <div class="breadcrumbs">
+                <a href="index.html">LUMÉRA<b>.</b></a> / <a href="#">Technologie</a> / Stylo Micro-needling
+            </div>
+
+            <span class="feature-eyebrow">CIT — Collagen Induction Therapy</span>
+            <h1 class="product-title serif reveal">Stylo<br>Micro-needling</h1>
+
+            <div class="product-reviews reveal">
+                <span class="stars" style="color:var(--c-gold);">✦</span>
+                <span>Édition Fondatrice · Série limitée 2026</span>
+                <span style="margin-left:auto; font-size:0.78rem; color:var(--c-accent); font-weight:600;">Satisfait·e ou remboursé·e 30 j</span>
+            </div>
+
+            <div class="product-price-block reveal">
+                <span class="current-price">29 €</span>
+                <span style="font-size:0.85rem; color:var(--c-text-light);">Aiguilles titane · Cartouches remplaçables</span>
+            </div>
+
+            <p class="product-description reveal">
+                La fermeté et le rebond d'une peau jeune ne s'appliquent pas — ils se réveillent. Le Stylo Luméra crée des micro-perforations de 0,25 mm dans la couche cornée — invisibles, indolores. Ces micro-canaux restent ouverts 15 à 60 minutes et transforment cette fenêtre en moment d'absorption maximale pour le Sérum PDRN. Simultanément, le signal mécanique déclenche la cascade de réparation naturelle de la peau : libération de facteurs de croissance (PDGF, TGF-β, VEGF), migration des fibroblastes, production de novo de collagène et d'élastine. La Collagen Induction Therapy à domicile — sans rendez-vous, sans rougeur durable.
+            </p>
+
+            <div class="atc-wrapper reveal" id="atcWrapper">
+                <button class="btn btn-solid" onclick="addToCart('Stylo Micro-needling', 29, 'assets/pen-pack.webp')">Ajouter au panier — 29 €</button>
+                <div class="reassurance-list">
+                    <span>✓ Aiguilles stériles incluses</span>
+                    <span>✓ Livraison express 24H</span>
+                    <span>✓ 30j retour gratuit</span>
+                </div>
+            </div>
+
+            <!-- CIT Mechanism visual -->
+            <div style="background:var(--c-surface); padding:2rem; margin:2rem 0;" class="reveal">
+                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:var(--c-accent); margin-bottom:1.5rem;">Le mécanisme CIT expliqué</p>
+                <div style="display:flex; flex-direction:column; gap:1rem;">
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">1</div>
+                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Micro-perforations</strong> — 0,25 mm traverse la couche cornée sans atteindre les terminaisons nerveuses. Indolore.</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">2</div>
+                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Signal de blessure contrôlée</strong> — les plaquettes libèrent PDGF, TGF-β, VEGF et EGF. La cascade de cicatrisation s'active.</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">3</div>
+                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Migration fibroblastes</strong> → production de procollagène → collagène I et III. Remodeling de la matrice dermique.</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">4</div>
+                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Fenêtre PDRN</strong> — micro-canaux ouverts 15–60 min → absorption du Sérum PDRN significativement augmentée dans cette fenêtre.</p>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">5</div>
+                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Résultats progressifs</strong> sur 4–12 semaines : texture, pores, fermeté. La CIT est cumulative — la régularité prime.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordions -->
+            <div class="accordion reveal">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Guide profondeur des aiguilles <span class="icon">+</span></button>
+                    <div class="accordion-content">
+                        <p style="margin-top:1rem; margin-bottom:1.5rem; font-size:0.88rem; color:var(--c-text-muted); line-height:1.75;">La profondeur détermine l'intensité de la réponse cutanée. Le Stylo Luméra est calibré à 0,25 mm — la profondeur optimale pour une utilisation à domicile sécurisée et efficace.</p>
+                        <div>
+                            <div class="depth-row">
+                                <div class="depth-mm">0,25</div>
+                                <div>
+                                    <div class="depth-name">Luméra — Absorption & stimulation légère</div>
+                                    <div class="depth-desc">Traverse la couche cornée sans atteindre les terminaisons nerveuses. Absorption topique significativement augmentée. Pas de saignement, pas de rougeur durable. Peut être utilisé 2–3 fois par semaine.</div>
+                                    <span class="depth-tag tag-home">✓ Usage domicile — recommandé</span>
+                                </div>
+                            </div>
+                            <div class="depth-row">
+                                <div class="depth-mm">0,5</div>
+                                <div>
+                                    <div class="depth-name">Limite domicile — Réponse collagénique débutante</div>
+                                    <div class="depth-desc">Début de réponse collagénique réelle. Utilisation toutes les 2–4 semaines maximum. Rougeur légère de 2–4h possible. Risque accru d'irritation si technique incorrecte.</div>
+                                    <span class="depth-tag tag-home">△ Usage domicile — avec précaution</span>
+                                </div>
+                            </div>
+                            <div class="depth-row">
+                                <div class="depth-mm">1+</div>
+                                <div>
+                                    <div class="depth-name">Professionnel uniquement</div>
+                                    <div class="depth-desc">CIT complète avec réponse collagénique cliniquement validée sur rides profondes et cicatrices acné. Nécessite environnement stérile, technique professionnelle et anesthésie locale optionnelle.</div>
+                                    <span class="depth-tag tag-pro">⚠ Médical/esthéticien uniquement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Guide d'utilisation étape par étape <span class="icon">+</span></button>
+                    <div class="accordion-content">
+                        <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:var(--c-surface); border:1px solid var(--c-border);">
+                                <span style="font-weight:700; color:var(--c-accent-dark); flex-shrink:0;">1.</span>
+                                <div>
+                                    <p style="font-size:0.88rem; font-weight:600; color:var(--c-text-main); margin-bottom:0.3rem;">Préparez votre peau</p>
+                                    <p style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0;">Démaquillez, nettoyez et séchez soigneusement. Pas de maquillage, pas d'actifs irritants (rétinol, AHA) depuis 48h. Désinfecter légèrement la tête du stylo.</p>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:var(--c-surface); border:1px solid var(--c-border);">
+                                <span style="font-weight:700; color:var(--c-accent-dark); flex-shrink:0;">2.</span>
+                                <div>
+                                    <p style="font-size:0.88rem; font-weight:600; color:var(--c-text-main); margin-bottom:0.3rem;">Appliquez le Sérum PDRN</p>
+                                    <p style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0;">Couche généreuse sur la zone à traiter. Le sérum sert de lubrifiant pour le stylo et sera absorbé via les micro-canaux dès leur création.</p>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:var(--c-surface); border:1px solid var(--c-border);">
+                                <span style="font-weight:700; color:var(--c-accent-dark); flex-shrink:0;">3.</span>
+                                <div>
+                                    <p style="font-size:0.88rem; font-weight:600; color:var(--c-text-main); margin-bottom:0.3rem;">Passez le stylo — technique circulaire légère</p>
+                                    <p style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0;">Mouvements circulaires doux, pression légère et homogène. Évitez le contour des yeux (0,5 cm minimum) et les zones avec acné active ou irritation. Zone par zone : front → joues → menton → cou.</p>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:var(--c-surface); border:1px solid var(--c-border);">
+                                <span style="font-weight:700; color:var(--c-accent-dark); flex-shrink:0;">4.</span>
+                                <div>
+                                    <p style="font-size:0.88rem; font-weight:600; color:var(--c-text-main); margin-bottom:0.3rem;">Fenêtre d'absorption — 15 à 60 min</p>
+                                    <p style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0;">Appliquez une seconde couche de Sérum PDRN. Placez le Masque LED (rouge 630 nm) pour amplifier la synthèse de collagène pendant que les micro-canaux sont ouverts.</p>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:var(--c-surface); border:1px solid var(--c-border);">
+                                <span style="font-weight:700; color:var(--c-accent-dark); flex-shrink:0;">5.</span>
+                                <div>
+                                    <p style="font-size:0.88rem; font-weight:600; color:var(--c-text-main); margin-bottom:0.3rem;">Soin post-needling</p>
+                                    <p style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0;">Hydratant apaisant (panthenol, allantoïne). SPF 30 minimum le lendemain matin. Rougeur légère normale pendant 1–2h.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="science-callout">
+                            <p><strong>Fréquence recommandée :</strong> 1 à 2 fois par semaine avec le Stylo Luméra 0,25 mm. Le sérum PDRN peut être utilisé quotidiennement (sans le stylo les autres jours).</p>
+                        </div>
+                        <div class="science-callout warning">
+                            <p><strong>À éviter dans les 48h suivant l'utilisation :</strong> Rétinol · Acide glycolique · AHA/BHA · Vitamine C acide · Alcool dans les cosmétiques.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Durée de vie des aiguilles & entretien <span class="icon">+</span></button>
+                    <div class="accordion-content">
+                        <div style="margin-top:1rem;">
+                            <p style="font-size:0.88rem; color:var(--c-text-muted); line-height:1.75; margin-bottom:1.5rem;">
+                                Les aiguilles Luméra sont en titane médical — plus résistantes à la corrosion que l'acier inoxydable. Cependant, elles s'émoussent progressivement : une aiguille émoussée déchire au lieu de perforer proprement, aggravant les dommages tissulaires.
+                            </p>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+                                <div style="padding:1.5rem; background:var(--c-surface); border:1px solid var(--c-border);">
+                                    <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:700; color:var(--c-accent); margin-bottom:1rem;">Titane Luméra</p>
+                                    <ul style="font-size:0.85rem; color:var(--c-text-muted); line-height:2.2; list-style:none;">
+                                        <li>✓ 10–15 utilisations</li>
+                                        <li>✓ Anti-corrosion</li>
+                                        <li>✓ Remplacement ~4–6 semaines</li>
+                                        <li>✓ Cartouches vendues séparément</li>
+                                    </ul>
+                                </div>
+                                <div style="padding:1.5rem; background:var(--c-bg); border:1px solid var(--c-border);">
+                                    <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:700; color:var(--c-text-light); margin-bottom:1rem;">Acier inoxydable (standard)</p>
+                                    <ul style="font-size:0.85rem; color:var(--c-text-light); line-height:2.2; list-style:none;">
+                                        <li>△ 3–5 utilisations</li>
+                                        <li>△ Oxydation possible</li>
+                                        <li>△ Remplacement hebdomadaire</li>
+                                        <li>△ Coût récurrent plus élevé</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="science-callout">
+                                <p><strong>Règle d'hygiène absolue :</strong> ne partagez jamais votre stylo. Stérilisez la tête avec de l'alcool isopropylique 70° avant et après chaque utilisation. Rangez dans son étui de protection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Contre-indications <span class="icon">+</span></button>
+                    <div class="accordion-content">
+                        <p style="margin-top:1rem; margin-bottom:1rem; color:var(--c-text-muted); font-size:0.88rem; line-height:1.75;">N'utilisez pas le Stylo Micro-needling si :</p>
+                        <ul style="font-size:0.88rem; color:var(--c-text-muted); line-height:2.2; list-style:none;">
+                            <li style="display:flex; gap:0.8rem;">⚠ Acné active ou inflammatoire sur les zones à traiter</li>
+                            <li style="display:flex; gap:0.8rem;">⚠ Plaies ouvertes, eczéma, psoriasis actif</li>
+                            <li style="display:flex; gap:0.8rem;">⚠ Grossesse ou allaitement</li>
+                            <li style="display:flex; gap:0.8rem;">⚠ Terrain kéloïdal (cicatrices chéloïdes)</li>
+                            <li style="display:flex; gap:0.8rem;">⚠ Troubles de coagulation ou prise d'anticoagulants</li>
+                            <li style="display:flex; gap:0.8rem;">⚠ Phototype très foncé (Fitzpatrick V–VI) : risque d'hyperpigmentation post-inflammatoire — consulter un dermatologue</li>
+                            <li style="display:flex; gap:0.8rem;">⚠ Rosacea active — utiliser la lumière jaune 590 nm seule</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Contenu de la boîte <span class="icon">+</span></button>
+                    <div class="accordion-content">
+                        <div style="margin-top:1rem;">
+                            <ul style="font-size:0.88rem; color:var(--c-text-muted); line-height:2.5; list-style:none;">
+                                <li>✓ Stylo Micro-needling Luméra</li>
+                                <li>✓ 2 cartouches aiguilles titane 0,25 mm (stériles, emballées individuellement)</li>
+                                <li>✓ Câble USB-C de charge</li>
+                                <li>✓ Étui de protection et stockage</li>
+                                <li>✓ Guide d'utilisation FR avec protocole illustré</li>
+                                <li>✓ Carte de garantie 1 an</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upsell coffret -->
+            <div style="margin-top:2rem; padding:2rem; background:var(--c-surface); border:1px solid var(--c-border);" class="reveal">
+                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:var(--c-accent); margin-bottom:1rem;">La synergie complète</p>
+                <p style="font-size:0.88rem; color:var(--c-text-muted); margin-bottom:1.5rem;">Le Stylo est conçu pour être utilisé avec le Sérum PDRN (absorption amplifiée) et complété par le Masque LED (CIT + photobiomodulation en simultané). Le Rituel Complet réunit les trois pour un résultat optimisé.</p>
+                <a href="bundle.html" class="btn btn-rose">Voir le Coffret — 289 €</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Avant/après ciblé stylo -->
+    <style>
+        .ba-hero { max-width: 720px; margin: 0 auto; background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 55px -42px rgba(92,45,58,.4); }
+        .ba-hero-media { position: relative; aspect-ratio: 3/2; overflow: hidden; }
+        .ba-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .ba-hero-media::after { content: ''; position: absolute; top: 8%; bottom: 8%; left: 50%; width: 1px; background: rgba(255,255,255,.45); transform: translateX(-50%); }
+        .ba-hero-tag { position: absolute; bottom: .8rem; font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(61,26,36,.58); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: .34rem .8rem; border-radius: 100px; }
+        .ba-hero-tag.before { left: .8rem; }
+        .ba-hero-tag.after { right: .8rem; background: rgba(168,89,104,.85); }
+    </style>
+    <section class="section-pad" style="background:var(--c-bg); border-top:1px solid var(--c-border);">
+        <div class="container">
+            <div style="text-align:center; max-width:560px; margin:0 auto 2.6rem;">
+                <span class="feature-eyebrow reveal" style="display:block;">Grain de peau</span>
+                <h2 class="serif reveal">Pores resserrés,<br><em>texture lissée.</em></h2>
+                <p class="reveal" style="color:var(--c-text-muted); font-size:1rem; line-height:1.7; margin-top:1rem;">Le micro-needling relance le renouvellement cellulaire : la peau s'affine, les pores se resserrent, le grain devient plus lisse semaine après semaine.</p>
+            </div>
+            <div class="ba-hero reveal">
+                <div class="ba-hero-media">
+                    <img loading="lazy" src="assets/ba-pen.webp" alt="Avant / après — grain de peau affiné par le Stylo Micro-needling Luméra">
+                    <span class="ba-hero-tag before">Avant</span>
+                    <span class="ba-hero-tag after">Après · 6 sem.</span>
+                </div>
+            </div>
+            <p class="reveal" style="text-align:center; font-size:0.7rem; font-style:italic; color:var(--c-text-light); margin-top:1.4rem;">Photographie illustrative — simulation visuelle. Les résultats varient selon le phototype et la régularité.</p>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews-section" style="padding-top:6rem;">
+        <div class="container">
+            <div class="reviews-header" style="text-align:center;">
+                <div class="reveal" style="color:var(--c-accent); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; margin-bottom:1rem;">Cercle Fondateur</div>
+                <h2 class="serif reveal">Soyez parmi <em>les premières.</em></h2>
+                <p class="reveal" style="max-width:620px; margin:1.2rem auto 0; color:var(--c-text-muted); font-size:1rem; line-height:1.7;">Pas encore des milliers d'avis — et c'est assumé. Luméra est une maison qui commence, et vous offre la place rare d'en être à l'origine.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Série fondatrice</h3>
+                    <p class="review-text">Les toutes premières unités d'une maison française de soin. Vous ne suivez pas une tendance — vous l'ouvrez.</p>
+                </div>
+                <div class="review-card reveal" style="transition-delay:0.1s;">
+                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Garantie résultats</h3>
+                    <p class="review-text">30 jours pour juger sur votre peau. Si le rituel ne tient pas ses promesses, nous vous remboursons — sans condition.</p>
+                </div>
+                <div class="review-card reveal" style="transition-delay:0.2s;">
+                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Avis sans filtre</h3>
+                    <p class="review-text">Chaque avis publié viendra d'un achat réel et vérifié. Aucun avis acheté, aucun copié. La confiance se mérite — elle ne s'invente pas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- FAQ -->
+    <section class="section-pad" style="background:var(--c-surface); border-top:1px solid var(--c-border);">
+        <div class="container" style="max-width:760px;">
+            <h2 class="serif reveal" style="text-align:center; margin-bottom:0.8rem;">Questions fréquentes</h2>
+            <p class="reveal" style="text-align:center; color:var(--c-text-muted); margin-bottom:3rem; font-size:1rem;">Tout ce qu'il faut savoir sur le Stylo Micro-needling.</p>
+            <div class="accordion reveal">
+                <div class="accordion-item">
+                    <button class="accordion-header">Est-ce que ça fait mal ? <span class="icon">+</span></button>
+                    <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Non. Les aiguilles de 0,25 mm créent des micro-canaux superficiels, indolores : on ressent une légère vibration, pas une douleur. Une rougeur très légère peut apparaître quelques minutes, signe que la peau réagit et active sa réparation.</p></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">À quelle fréquence l'utiliser ? <span class="icon">+</span></button>
+                    <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">2 à 3 fois par semaine suffisent. Pour les peaux sensibles, commencez à 1 fois par semaine. Toujours le soir, sur peau propre, pour laisser la peau récupérer pendant la nuit.</p></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Comment nettoyer et remplacer les cartouches ? <span class="icon">+</span></button>
+                    <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Chaque cartouche est stérile et à usage personnel : remplacez-la dès qu'elle s'émousse (toutes les 8 à 10 utilisations environ). Désinfectez l'embout à l'alcool avant et après chaque séance. Le coffret est livré avec 2 cartouches, des recharges sont disponibles.</p></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Pourquoi l'utiliser avec le Sérum PDRN ? <span class="icon">+</span></button>
+                    <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Les micro-canaux ouverts par le stylo restent actifs 15 à 60 minutes et démultiplient l'absorption des actifs. Appliqué juste après, le Sérum PDRN pénètre bien plus profondément qu'en application classique — d'où la synergie du Rituel Complet.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-logo">LUMÉRA<b>.</b></span>
+                    <em class="footer-tagline">La lumière juste.</em>
+                    <p class="footer-bio">La photobiomodulation clinique dans votre rituel du soir. Marque française · Conçu en France.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Boutique</h4>
+                    <ul>
+                        <li><a href="bundle.html">Le Rituel Complet</a></li>
+                        <li><a href="product-mask.html">Masque LED Face + Cou</a></li>
+                        <li><a href="product-serum.html">Sérum PDRN "Glass Skin"</a></li>
+                        <li><a href="product-pen.html">Stylo Micro-needling</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="about.html">Notre Science</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="livraison.html">Livraison & Retours</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">CGV</a></li>
+                        <li><a href="#">Politique RGPD</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
+                <div class="payment-icons">
+                    <div class="payment-icon">VISA</div>
+                    <div class="payment-icon">MC</div>
+                    <div class="payment-icon">AMEX</div>
+                    <div class="payment-icon">PAYPAL</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart -->
+    <div class="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3 class="serif">Votre Panier</h3>
+            <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div class="cart-progress">
+            <p>Plus que <strong>250,00 €</strong> pour la livraison offerte ✈</p>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
+        </div>
+        <div class="cart-items" style="display:flex; align-items:center; justify-content:center; color:var(--c-text-light);">
+            <p style="font-size:0.9rem;">Votre panier est vide.</p>
+        </div>
+        <div class="cart-upsell">
+            <img loading="lazy" src="assets/coffret-packshot.webp" alt="Rituel Complet Luméra" style="width:80px; height:80px; object-fit:cover;">
+            <div class="cart-upsell-info">
+                <h4>Maximisez l'effet</h4>
+                <p>Le Rituel Complet complet</p>
+                <span style="font-weight:700; font-size:0.9rem; color:var(--c-accent-dark);">289 €</span>
+            </div>
+            <a href="bundle.html" class="add-upsell">Voir</a>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span>0,00 €</span></div>
+            <button class="btn btn-solid" style="opacity:0.5; pointer-events:none;">Commander en toute sécurité</button>
+        </div>
+    </div>
+
+    <!-- Sticky bar -->
+    <div class="sticky-bar" id="stickyBar">
+        <div>
+            <div style="font-family:var(--font-serif); font-size:1.2rem;">Stylo Micro-needling</div>
+            <div style="font-size:0.72rem; color:var(--c-text-muted);">Édition Fondatrice · 30 j satisfait ou remboursé</div>
+        </div>
+        <div style="font-size:1.1rem; font-weight:700;">29 €</div>
+        <button class="btn btn-solid" onclick="addToCart('Stylo Micro-needling', 29, 'assets/pen-pack.webp')">Ajouter au panier</button>
+    </div>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+        const atcWrapper = document.getElementById('atcWrapper');
+        const stickyBar = document.getElementById('stickyBar');
+        const obs = new IntersectionObserver(([e]) => stickyBar.classList.toggle('visible', !e.isIntersecting), { threshold: 0 });
+        obs.observe(atcWrapper);
+
+        // Panier géré par cart.js (window.openCart / closeCart / addToCart)
+
+        document.querySelectorAll('.accordion-header').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                const isOpen = content.classList.contains('active');
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); }
+            });
+        });
+
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); revealObs.unobserve(e.target); } });
+        }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObs.observe(el));
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                const r = el.getBoundingClientRect();
+                if (r.top < window.innerHeight + 100) el.classList.add('active');
+            });
+        });
+    </script>
+    <script>
+      (function(){
+        document.querySelectorAll('.gallery-stage').forEach(function(stage){
+          var main=stage.querySelector('.gallery-carousel');
+          if(!main)return;
+          var gallery=stage.closest('.product-gallery')||stage.parentNode;
+          var thumbsWrap=gallery.querySelector('.gallery-thumbs');
+          var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
+          var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
+          var count=main.querySelectorAll('img').length;
+          main.scrollLeft=0;
+          window.addEventListener('load',function(){main.scrollLeft=0;sync();});
+          function current(){return Math.round(main.scrollLeft/main.clientWidth);}
+          function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
+          ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
+          if(prev)prev.addEventListener('click',function(){go(current()-1);});
+          if(next)next.addEventListener('click',function(){go(current()+1);});
+          function sync(){
+            var i=current();
+            ts.forEach(function(t,j){t.classList.toggle('active',j===i);});
+            if(prev)prev.disabled=i<=0;
+            if(next)next.disabled=i>=count-1;
+            var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});
+          }
+          var raf;
+          main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
+          sync();
+        });
+      })();
+    </script>
+    <script src="cart.js"></script>
+<script>(function(){var b=document.getElementById("navBurger");if(b)b.addEventListener("click",function(){document.body.classList.toggle("menu-open")});document.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open")})})})();</script>
+<div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
+
+</body>
+</html>

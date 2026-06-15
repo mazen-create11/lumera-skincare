@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Science | LUMÉRA SKINCARE</title>
+    <meta name="description" content="Découvrez la science derrière Luméra — photobiomodulation, PDRN et microneedling : trois technologies cliniquement validées, réunies dans un rituel unique.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ─── SCIENCE PAGE OVERRIDES ─── */
+        .science-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(160deg, #FDF8F6 0%, #F7EDE9 60%, #EDD9D2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .science-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201,126,140,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .science-hero-eyebrow {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--c-accent);
+            border: 1px solid var(--c-accent-light);
+            padding: 6px 18px;
+            border-radius: 100px;
+            margin-bottom: 2rem;
+        }
+        .science-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--c-text);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        .science-hero h1 em {
+            font-style: italic;
+            color: var(--c-accent);
+        }
+        .science-hero-lead {
+            font-size: 1.15rem;
+            color: var(--c-text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.75;
+        }
+        .hero-scroll-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--c-text-lighter);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .hero-scroll-indicator span {
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--c-accent-light), transparent);
+        }
+
+        /* ─── PILIERS SCIENCE ─── */
+        .science-pillars {
+            padding: 100px 0;
+            background: var(--c-bg);
+        }
+        .pillars-intro {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 5rem;
+        }
+        .pillars-intro .section-eyebrow { margin-bottom: 1rem; }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+        .pillar-card {
+            background: var(--c-surface);
+            padding: 3.5rem 2.5rem;
+            position: relative;
+            transition: background 0.35s;
+        }
+        .pillar-card:hover {
+            background: var(--c-surface-mid);
+        }
+        .pillar-number {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--c-accent-light);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .pillar-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--c-accent);
+            background: rgba(201,126,140,0.1);
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+        }
+        .pillar-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--c-text);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: var(--c-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .pillar-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--c-border);
+        }
+        .pillar-stat-value {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--c-accent);
+        }
+        .pillar-stat-label {
+            font-size: 0.8rem;
+            color: var(--c-text-lighter);
+            line-height: 1.4;
+        }
+
+        /* ─── PHOTOBIOMODULATION ─── */
+        .pbm-section {
+            padding: 100px 0;
+            background: var(--c-surface-deep);
+            color: #fff;
+        }
+        .pbm-section .section-eyebrow {
+            color: var(--c-accent-light);
+            border-color: rgba(232,174,184,0.3);
+        }
+        .pbm-section h2, .pbm-section p { color: #fff; }
+        .pbm-section .section-subtitle { color: rgba(255,255,255,0.7); }
+        .pbm-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+        .pbm-intro-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+        .pbm-quote-block {
+            border-left: 3px solid var(--c-accent);
+            padding-left: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        .pbm-quote-block blockquote {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            margin: 0 0 0.5rem;
+        }
+        .pbm-quote-block cite {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            font-style: normal;
+        }
+        .pbm-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .pbm-era {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .pbm-era:last-child { border-bottom: none; }
+        .pbm-year {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--c-accent-light);
+            min-width: 50px;
+            padding-top: 2px;
+        }
+        .pbm-era-content h4 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.35rem;
+        }
+        .pbm-era-content p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ─── LONGUEURS D'ONDE ─── */
+        .wavelength-section {
+            padding: 100px 0;
+            background: var(--c-bg);
+        }
+        .wavelength-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 5rem;
+        }
+        .wl-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5px;
+            margin-bottom: 3rem;
+        }
+        .wl-card {
+            background: var(--c-surface);
+            padding: 2.5rem 1.8rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .wl-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(92,45,58,0.12);
+        }
+        .wl-dot-lg {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+        .wl-nm {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--c-text);
+            margin-bottom: 0.25rem;
+        }
+        .wl-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--c-text-lighter);
+            margin-bottom: 1rem;
+        }
+        .wl-card p {
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .wl-evidence {
+            font-size: 0.75rem;
+            color: var(--c-text-lighter);
+            border-top: 1px solid var(--c-border);
+            padding-top: 0.75rem;
+            line-height: 1.5;
+        }
+
+        /* ─── PDRN DETAIL ─── */
+        .pdrn-section {
+            padding: 100px 0;
+            background: var(--c-surface);
+        }
+        .pdrn-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .pdrn-mechanism {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .mech-step {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--c-border);
+            position: relative;
+        }
+        .mech-step:last-child { border-bottom: none; }
+        .mech-step-num {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+            background: var(--c-accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+        }
+        .mech-step-body h4 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--c-text);
+            margin-bottom: 0.3rem;
+        }
+        .mech-step-body p {
+            font-size: 0.85rem;
+            color: var(--c-text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .pdrn-info-col h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .pdrn-info-col p {
+            font-size: 0.95rem;
+            color: var(--c-text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        .pdrn-data-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .pdrn-data-box {
+            background: var(--c-bg);
+            border: 1px solid var(--c-border);
+            padding: 1.2rem 1.4rem;
+            border-radius: 2px;
+        }
+        .pdrn-data-box .value {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--c-accent);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .pdrn-data-box .label {
+            font-size: 0.75rem;
+            color: var(--c-text-lighter);
+            line-height: 1.4;
+        }
+
+        /* ─── CIT SECTION ─── */
+        .cit-section {
+            padding: 100px 0;
+            background: var(--c-bg);
+        }
+        .cit-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+        .cit-visual {
+            position: relative;
+        }
+        .cit-depth-chart {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            padding: 2.5rem;
+            border-radius: 2px;
+        }
+        .cit-depth-chart h4 {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--c-text-lighter);
+            margin-bottom: 2rem;
+        }
+        /* Échelle profondeur — premium (remplace les barres tricolores) */
+        .depth-hero {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            padding: 1.5rem 1.6rem;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(135deg, #FBEEEC, #F6DDD9);
+            border: 1px solid rgba(201, 126, 140, 0.28);
+            border-radius: 14px;
+        }
+        .depth-hero-mm {
+            font-family: var(--font-serif);
+            font-size: 2.6rem;
+            font-weight: 300;
+            line-height: 0.9;
+            color: #5C2D3A;
+            flex-shrink: 0;
+        }
+        .depth-hero-mm span { font-size: 1rem; margin-left: 0.15rem; }
+        .depth-hero-badge {
+            display: inline-block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-weight: 700;
+            color: #9A6A2E;
+            background: rgba(201, 168, 76, 0.18);
+            padding: 0.28rem 0.7rem;
+            border-radius: 100px;
+            margin-bottom: 0.55rem;
+        }
+        .depth-hero-body p { font-size: 0.82rem; color: var(--c-text-muted); line-height: 1.6; margin: 0; }
+
+        .depth-scale { list-style: none; padding: 0; margin: 0; }
+        .depth-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--c-border);
+        }
+        .depth-step:last-child { border-bottom: none; }
+        .depth-step-mm {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            color: var(--c-text-main);
+            min-width: 64px;
+        }
+        .depth-track { flex: 1; height: 4px; border-radius: 100px; background: var(--c-border); overflow: hidden; }
+        .depth-fill { display: block; height: 100%; border-radius: 100px; width: calc(var(--d) * 100%); }
+        .depth-step.is-safe .depth-fill { background: #E0B4B8; }
+        .depth-step.is-limit .depth-fill { background: #C97E8C; }
+        .depth-step.is-pro .depth-fill { background: #A85968; }
+        .depth-step.is-medical .depth-fill { background: #5C2D3A; }
+        .depth-step-tag {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            min-width: 110px;
+            text-align: right;
+            color: var(--c-text-muted);
+        }
+        .depth-step.is-pro .depth-step-tag,
+        .depth-step.is-medical .depth-step-tag { color: #A85968; }
+        .depth-foot {
+            font-size: 0.78rem;
+            color: var(--c-text-lighter);
+            margin-top: 1.6rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        .cit-synergy-callout {
+            background: linear-gradient(135deg, #F7EDE9, var(--c-surface-mid));
+            border-left: 3px solid var(--c-accent);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 0 2px 2px 0;
+        }
+        .cit-synergy-callout h4 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--c-text);
+            margin-bottom: 0.5rem;
+        }
+        .cit-synergy-callout p {
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            line-height: 1.75;
+            margin: 0;
+        }
+        .cit-info h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .cit-info p {
+            font-size: 0.95rem;
+            color: var(--c-text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        .cit-signals {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+        .signal-chip {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            padding: 0.8rem 1rem;
+            border-radius: 2px;
+            font-size: 0.82rem;
+            color: var(--c-text-muted);
+        }
+        .signal-chip strong {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--c-text);
+            margin-bottom: 0.2rem;
+        }
+
+        /* ─── ÉTUDES CLINIQUES ─── */
+        .studies-section {
+            padding: 100px 0;
+            background: var(--c-surface);
+        }
+        .studies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5px;
+            margin-top: 4rem;
+        }
+        .study-card {
+            background: var(--c-bg);
+            padding: 2.5rem 2rem;
+            position: relative;
+        }
+        .study-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--c-accent);
+            border: 1px solid var(--c-accent-light);
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+        }
+        .study-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--c-text);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        .study-card p {
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+        .study-result {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--c-border);
+        }
+        .study-result-value {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--c-accent);
+        }
+        .study-result-detail {
+            font-size: 0.78rem;
+            color: var(--c-text-lighter);
+            line-height: 1.5;
+        }
+        .study-source {
+            font-size: 0.72rem;
+            color: var(--c-text-lighter);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* ─── SYNERGIE ─── */
+        .synergy-section {
+            padding: 100px 0;
+            background: var(--c-surface-deep);
+            color: #fff;
+            text-align: center;
+        }
+        .synergy-section .section-eyebrow { color: var(--c-accent-light); border-color: rgba(232,174,184,0.3); }
+        .synergy-section h2 { color: #fff; max-width: 700px; margin: 0 auto 1.5rem; }
+        .synergy-section .section-subtitle { color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto 4rem; }
+        .synergy-triangle {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            max-width: 960px;
+            margin: 0 auto 3rem;
+        }
+        .syn-node {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            transition: background 0.3s;
+        }
+        .syn-node:hover { background: rgba(255,255,255,0.08); }
+        .syn-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(201,126,140,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 1.5rem;
+        }
+        .syn-node h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+        .syn-node p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.75;
+            margin: 0;
+        }
+        .synergy-connection {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 2.5rem 3rem;
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .synergy-connection h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--c-accent-light);
+            margin-bottom: 1rem;
+        }
+        .synergy-connection p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        /* ─── QUALITÉ & CERTIFICATIONS ─── */
+        .quality-section {
+            padding: 100px 0;
+            background: var(--c-bg);
+        }
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5px;
+            margin-top: 4rem;
+        }
+        .quality-card {
+            background: var(--c-surface);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .quality-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--c-surface-mid), var(--c-bg));
+            border: 2px solid var(--c-accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+        .quality-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--c-text);
+            margin-bottom: 0.75rem;
+        }
+        .quality-card p {
+            font-size: 0.85rem;
+            color: var(--c-text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .cert-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            flex-wrap: wrap;
+        }
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cert-badge-lg {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--c-surface-deep);
+            color: var(--c-accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+        .cert-item span {
+            font-size: 0.72rem;
+            color: var(--c-text-lighter);
+            text-align: center;
+            max-width: 80px;
+            line-height: 1.4;
+        }
+
+        /* ─── MANIFESTE ─── */
+        .manifesto-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--c-surface-mid) 0%, #EDD9D2 100%);
+            text-align: center;
+        }
+        .manifesto-section blockquote {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.35;
+            color: var(--c-text);
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+        .manifesto-section blockquote em {
+            color: var(--c-accent);
+            font-style: normal;
+        }
+        .manifesto-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .manifesto-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--c-accent);
+        }
+        .manifesto-meta span {
+            font-size: 0.82rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--c-text-lighter);
+        }
+
+        /* ─── CTA ─── */
+        .science-cta {
+            padding: 100px 0;
+            background: var(--c-bg);
+            text-align: center;
+        }
+        .science-cta h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .science-cta .section-subtitle {
+            max-width: 560px;
+            margin: 0 auto 3rem;
+        }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+            .pillars-grid,
+            .wl-grid,
+            .quality-grid { grid-template-columns: repeat(2, 1fr); }
+            .studies-grid,
+            .synergy-triangle { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .pbm-layout,
+            .pdrn-layout,
+            .cit-split { grid-template-columns: 1fr; gap: 3rem; }
+            .pillars-grid,
+            .wl-grid,
+            .studies-grid,
+            .synergy-triangle,
+            .quality-grid { grid-template-columns: 1fr; }
+            .science-hero h1 { font-size: 2.8rem; }
+            .manifesto-section blockquote { font-size: 1.8rem; }
+            .cit-signals { grid-template-columns: 1fr; }
+            .pdrn-data-row { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ HEADER ═══ -->
+    <header id="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">LUMÉRA<b>.</b></a>
+            <ul class="nav-links">
+                <li><a href="bundle.html">Le Rituel</a></li>
+                <li><a href="product-mask.html">Le Masque</a></li>
+                <li><a href="product-serum.html">Le Sérum</a></li>
+                <li><a href="product-pen.html">Le Stylo</a></li>
+                <li><a href="about.html" class="active" aria-current="page">Notre Science</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" aria-label="Ouvrir le panier">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="science-hero">
+        <div class="container">
+            <div class="science-hero-eyebrow">La science de la lumière</div>
+            <h1>La peau répond.<br><em>Nous écoutons la science.</em></h1>
+            <p class="science-hero-lead">
+                Trois technologies validées par la recherche clinique. Un rituel pensé pour amplifier leur synergie. Découvrez pourquoi la photobiomodulation, le PDRN et la microneedling forment la triade la plus avancée de la dermo-cosmétique moderne.
+            </p>
+            <div class="hero-scroll-indicator">
+                <span></span>
+                Explorer
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ NOTRE HISTOIRE ═══ -->
+    <section class="story-section reveal" id="histoire" style="padding:6rem 0;background:var(--c-bg,#FDF8F6);">
+        <div class="container" style="max-width:760px;margin:0 auto;text-align:center;">
+            <div class="section-eyebrow">Notre histoire</div>
+            <h2 class="section-title" style="margin-bottom:1.6rem;">Née d'une conviction<br><em>simple.</em></h2>
+            <p style="font-size:1.05rem;line-height:1.85;color:var(--c-text-muted,#6E5860);max-width:620px;margin:0 auto 1.4rem;">
+                Les soins qui transforment vraiment la peau étaient réservés aux cliniques — ou vendus au prix du luxe. La photobiomodulation et le PDRN ne sont pourtant pas des promesses marketing : ce sont des protocoles documentés par des milliers d'études, utilisés en cabinet depuis des années. Le seul vrai obstacle, c'était le prix : <strong>150 € la séance en clinique, 500 à 800 € pour les premiers masques grand public.</strong>
+            </p>
+            <p style="font-size:1.05rem;line-height:1.85;color:var(--c-text-muted,#6E5860);max-width:620px;margin:0 auto 1.4rem;">
+                Luméra est née pour lever cet obstacle. Réunir ces technologies cliniques dans un rituel pensé pour la maison, <strong>conçu en France</strong> avec un partenaire fabricant certifié ISO 13485 — et le proposer au juste prix, sans jamais rogner sur la rigueur.
+            </p>
+            <p style="font-size:1.05rem;line-height:1.85;color:var(--c-text-muted,#6E5860);max-width:620px;margin:0 auto 2.4rem;">
+                Nous débutons, et nous l'assumons. Plutôt que d'inventer des milliers d'avis, nous ouvrons un <strong>Cercle Fondateur</strong> : les premières clientes reçoivent le rituel en avant-première et façonnent la marque avec nous. La confiance ne s'achète pas — elle se prouve, livraison après livraison.
+            </p>
+            <div style="display:inline-flex;align-items:center;gap:0.8rem;">
+                <span style="display:block;width:42px;height:1px;background:var(--c-accent,#C97E8C);"></span>
+                <span style="font-family:var(--font-serif,Georgia),serif;font-style:italic;font-size:1.05rem;color:var(--c-text-main,#241319);">L'équipe Luméra</span>
+                <span style="display:block;width:42px;height:1px;background:var(--c-accent,#C97E8C);"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ LES 3 PILIERS ═══ -->
+    <section class="science-pillars reveal">
+        <div class="container">
+            <div class="pillars-intro">
+                <div class="section-eyebrow">Trois piliers</div>
+                <h2 class="section-title">Chaque technologie, un mécanisme distinct</h2>
+                <p class="section-subtitle">Luméra n'est pas une collection de produits. C'est une architecture scientifique où chaque élément renforce les deux autres.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <span class="pillar-number">01</span>
+                    <span class="pillar-tag">Photobiomodulation</span>
+                    <h3>Lumière<br>thérapeutique</h3>
+                    <p>Des photons de longueurs d'onde précises pénètrent les couches cutanées et activent les mitochondries des fibroblastes. La production d'ATP augmente, déclenchant une cascade de synthèse cellulaire (collagène I &amp; III, élastine, acide hyaluronique endogène).</p>
+                    <div class="pillar-stat">
+                        <span class="pillar-stat-value">−36%</span>
+                        <span class="pillar-stat-label">Rides apparentes en 12 semaines<br><em>Lee et al., source PMC11835066</em></span>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-number">02</span>
+                    <span class="pillar-tag">PDRN · Polynucléotides</span>
+                    <h3>ADN marin<br>biocompatible</h3>
+                    <p>Le PDRN (Polydesoxynucleotide) d'origine saumon présente une compatibilité de 97% avec l'ADN humain. En se liant aux récepteurs A2A de l'adénosine, il déclenche la prolifération des fibroblastes et stimule la synthèse de collagène, d'élastine et d'acide hyaluronique de façon endogène.</p>
+                    <div class="pillar-stat">
+                        <span class="pillar-stat-value">97%</span>
+                        <span class="pillar-stat-label">Compatibilité ADN avec<br>le génome humain</span>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-number">03</span>
+                    <span class="pillar-tag">CIT · Microneedling</span>
+                    <h3>Induction de<br>collagène</h3>
+                    <p>La Collagen Induction Therapy crée des micro-perforations contrôlées qui déclenchent la cascade naturelle de cicatrisation — PDGF, TGF-β, VEGF, EGF. Les micro-canaux ouverts 15 à 60 minutes représentent une fenêtre d'absorption idéale pour le PDRN, dont la pénétration est significativement augmentée.</p>
+                    <div class="pillar-stat">
+                        <span class="pillar-stat-value">15–60 min</span>
+                        <span class="pillar-stat-label">Fenêtre d'absorption<br>post-needling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PHOTOBIOMODULATION ═══ -->
+    <section class="pbm-section">
+        <div class="container">
+            <div class="section-eyebrow" style="text-align:center">Pilier 01</div>
+            <h2 class="section-title" style="text-align:center; color:#fff; max-width:600px; margin:0.5rem auto 0">Photobiomodulation :<br>quand la lumière dialogue avec la cellule</h2>
+            <div class="pbm-layout">
+                <div class="pbm-text-col">
+                    <p class="pbm-intro-text">
+                        La photobiomodulation (PBM) repose sur un principe biologique fondamental : certaines longueurs d'onde lumineuses peuvent être absorbées par des chromophores cellulaires — notamment la cytochrome c oxydase dans les mitochondries — déclenchant une série de réponses biochimiques sans chaleur ni inflammation.
+                    </p>
+                    <p class="pbm-intro-text">
+                        Ce n'est pas de la photothérapie au sens médical du terme. C'est l'application topique d'un stimulus lumineux calibré qui optimise l'environnement cellulaire pour la synthèse de protéines structurelles de la peau. La NASA a contribué à ses premières validations cliniques dans les années 1990 ; depuis, plus de 6 000 études ont été publiées sur ses effets cutanés.
+                    </p>
+                    <div class="pbm-quote-block">
+                        <blockquote>
+                            "La photobiomodulation représente l'une des avancées les plus documentées en photomédecine. Son mécanisme d'action est aujourd'hui compris avec précision."
+                        </blockquote>
+                        <cite>— Dr Thierry Passeron, Professeur de Dermatologie, CHU de Nice</cite>
+                    </div>
+                    <p class="pbm-intro-text" style="font-size:0.9rem;">
+                        Le masque Luméra concentre la lumière sur trois profondeurs complémentaires — du rouge de surface à l'infrarouge profond 1072 nm — pour agir de l'épiderme jusqu'aux couches les plus profondes du derme. Sa conception en silicone médical flexible assure un contact optimal avec toutes les zones du visage et du cou — une différence physique fondamentale par rapport aux masques rigides, où la loi du carré inverse implique une perte d'intensité de ~90% à 3 cm de distance.
+                    </p>
+                </div>
+                <div class="pbm-timeline-col">
+                    <h4 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.5rem;">Chronologie de la recherche</h4>
+                    <div class="pbm-timeline">
+                        <div class="pbm-era">
+                            <span class="pbm-year">1967</span>
+                            <div class="pbm-era-content">
+                                <h4>Première découverte</h4>
+                                <p>Endre Mester, Budapest : la lumière laser rouge accélère la repousse des poils rasés chez la souris — premier indice d'un effet photobiomodulateur.</p>
+                            </div>
+                        </div>
+                        <div class="pbm-era">
+                            <span class="pbm-year">1990</span>
+                            <div class="pbm-era-content">
+                                <h4>Validation NASA</h4>
+                                <p>La NASA étudie la PBM pour cicatriser les plaies des astronautes en microgravité. Résultats publiés dans le Journal of Clinical Laser Medicine.</p>
+                            </div>
+                        </div>
+                        <div class="pbm-era">
+                            <span class="pbm-year">2003</span>
+                            <div class="pbm-era-content">
+                                <h4>Mécanisme élucidé</h4>
+                                <p>Hamblin &amp; Demidova identifient la cytochrome c oxydase comme chromophore primaire — explication du mécanisme d'activation mitochondriale.</p>
+                            </div>
+                        </div>
+                        <div class="pbm-era">
+                            <span class="pbm-year">2014</span>
+                            <div class="pbm-era-content">
+                                <h4>Reconnaissance réglementaire de la LED</h4>
+                                <p>Premier agrément FDA d'un dispositif LED visant l'apparence des rides et ridules faciales — un jalon dans la reconnaissance de la photobiomodulation en cosmétique.</p>
+                            </div>
+                        </div>
+                        <div class="pbm-era">
+                            <span class="pbm-year">2023</span>
+                            <div class="pbm-era-content">
+                                <h4>Méta-analyse internationale</h4>
+                                <p>Lee et al. : méta-analyse de 22 études (n=1 847) confirmant −36% rides, +19% élasticité cutanée avec protocoles 630–850nm.</p>
+                            </div>
+                        </div>
+                        <div class="pbm-era">
+                            <span class="pbm-year">2026</span>
+                            <div class="pbm-era-content">
+                                <h4>+6 000 études publiées</h4>
+                                <p>PubMed recense plus de 6 000 publications sur les effets cutanés de la PBM — socle scientifique majeur de la dermo-cosmétique moderne.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ LONGUEURS D'ONDE ═══ -->
+    <section class="wavelength-section reveal">
+        <div class="container">
+            <div class="wavelength-intro">
+                <div class="section-eyebrow">Trois profondeurs de lumière</div>
+                <h2 class="section-title">Plus l'onde est longue, plus elle pénètre</h2>
+                <p class="section-subtitle">Trois longueurs d'onde, trois profondeurs : le rouge en surface, le proche infrarouge dans le derme, l'infrarouge profond là où peu de masques atteignent.</p>
+            </div>
+            <div class="wl-grid">
+                <div class="wl-card">
+                    <div class="wl-dot-lg" style="background:#D4504A;">630</div>
+                    <div class="wl-nm">630 nm</div>
+                    <div class="wl-name">Rouge</div>
+                    <p>Pénètre le derme superficiel. Active les fibroblastes et stimule la synthèse de collagène I et III. Aide à réduire l'apparence des rides et à améliorer le teint.</p>
+                    <div class="wl-evidence">📚 Lee et al. (2023) : −36% rides apparentes en 12 semaines, protocole 630nm / PMC11835066</div>
+                </div>
+                <div class="wl-card">
+                    <div class="wl-dot-lg" style="background:#8B5CF6;">840</div>
+                    <div class="wl-nm">840 nm</div>
+                    <div class="wl-name">Proche infrarouge</div>
+                    <p>Pénètre le derme profond. Contribue à l'amélioration de l'élasticité et à la microcirculation cutanée.</p>
+                    <div class="wl-evidence">📚 Couturaud (2023) : +19% élasticité cutanée en 8 semaines, proche infrarouge 830–840 nm</div>
+                </div>
+                
+                <div class="wl-card">
+                    <div class="wl-dot-lg" style="background:#6E1023;">1072</div>
+                    <div class="wl-nm">1072 nm</div>
+                    <div class="wl-name">Infrarouge profond</div>
+                    <p>La longueur d'onde la plus pénétrante du masque. Atteint les couches profondes de la peau, là où se forment les rides installées — une portée que très peu de masques offrent.</p>
+                    <div class="wl-evidence">📚 Essai clinique dédié au 1072 nm comme agent anti-âge cutané</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PDRN ═══ -->
+    <section class="pdrn-section">
+        <div class="container">
+            <div class="section-eyebrow">Pilier 02</div>
+            <div class="pdrn-layout">
+                <div class="pdrn-info-col reveal-left">
+                    <h2>PDRN : l'actif<br>régénérant de référence</h2>
+                    <p>
+                        Le Polydesoxynucleotide est une fraction d'ADN extraite des spermatozoïdes de saumon (<em>Oncorhynchus mykiss</em>) par un processus enzymatique rigoureux. Sa structure moléculaire présente une compatibilité de 97% avec l'ADN humain — une propriété qui explique son excellente tolérance cutanée.
+                    </p>
+                    <p>
+                        Son mécanisme d'action passe par les récepteurs A2A de l'adénosine, exprimés sur les fibroblastes dermiques. En activant cette voie de signalisation, le PDRN déclenche la prolifération cellulaire et la synthèse de collagène I, III, d'élastine et d'acide hyaluronique de façon endogène — sans apport exogène de ces molécules.
+                    </p>
+                    <p>
+                        En médecine esthétique, le PDRN est utilisé en injection depuis les années 2000 sous le nom « Rejuran ». Notre sérum topique formule ce même actif à 1% — concentration validée pour une action cosmétique, notablement au-dessus des 0,5% présents dans la majorité des sérums concurrents.
+                    </p>
+                    <div class="pdrn-data-row">
+                        <div class="pdrn-data-box">
+                            <span class="value">1%</span>
+                            <span class="label">Concentration PDRN<br>dans le sérum Luméra</span>
+                        </div>
+                        <div class="pdrn-data-box">
+                            <span class="value">97%</span>
+                            <span class="label">Compatibilité ADN<br>avec le génome humain</span>
+                        </div>
+                        <div class="pdrn-data-box">
+                            <span class="value">4–6 sem.</span>
+                            <span class="label">Délai moyen d'apparition<br>des premiers résultats</span>
+                        </div>
+                        <div class="pdrn-data-box">
+                            <span class="value">A2A</span>
+                            <span class="label">Récepteur cible :<br>adénosine A2A</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pdrn-mechanism reveal-right">
+                    <h4 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--c-text-lighter);margin-bottom:1.5rem;">Cascade d'action cellulaire</h4>
+                    <div class="mech-step">
+                        <div class="mech-step-num">1</div>
+                        <div class="mech-step-body">
+                            <h4>Application cutanée du PDRN</h4>
+                            <p>Les molécules de polynucléotides pénètrent les couches superficielles de l'épiderme et atteignent le derme papillaire où résident les fibroblastes.</p>
+                        </div>
+                    </div>
+                    <div class="mech-step">
+                        <div class="mech-step-num">2</div>
+                        <div class="mech-step-body">
+                            <h4>Liaison au récepteur A2A</h4>
+                            <p>Le PDRN se lie aux récepteurs A2A de l'adénosine sur la membrane des fibroblastes — activation de la voie AMPc / PKA intracellulaire.</p>
+                        </div>
+                    </div>
+                    <div class="mech-step">
+                        <div class="mech-step-num">3</div>
+                        <div class="mech-step-body">
+                            <h4>Prolifération des fibroblastes</h4>
+                            <p>L'activation de la voie A2A stimule la prolifération et la migration des fibroblastes — les cellules productrices de la matrice extracellulaire cutanée.</p>
+                        </div>
+                    </div>
+                    <div class="mech-step">
+                        <div class="mech-step-num">4</div>
+                        <div class="mech-step-body">
+                            <h4>Synthèse de matrice cutanée</h4>
+                            <p>Les fibroblastes activés produisent collagène I &amp; III, élastine, fibronectine et acide hyaluronique — reconstruction progressive du réseau dermique.</p>
+                        </div>
+                    </div>
+                    <div class="mech-step">
+                        <div class="mech-step-num">5</div>
+                        <div class="mech-step-body">
+                            <h4>Résultat visible à 4–6 semaines</h4>
+                            <p>Amélioration de l'apparence du grain de peau, de la fermeté et de l'éclat. Effets progressifs et cumulatifs avec utilisation régulière.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CIT · MICRONEEDLING ═══ -->
+    <section class="cit-section">
+        <div class="container">
+            <div class="section-eyebrow">Pilier 03</div>
+            <div class="cit-split">
+                <div class="cit-info reveal-left">
+                    <h2>CIT : déclencher la<br>régénération naturelle</h2>
+                    <p>
+                        La Collagen Induction Therapy repose sur un principe physiologique simple : la peau répond aux micro-lésions contrôlées par une cascade de réparation qui produit du collagène neuf. Le stylo Luméra crée des perforations calibrées à 0,25 mm — profondeur calibrée pour l'usage domiciliaire, pensée pour préserver la peau et limiter le risque de marque.
+                    </p>
+                    <p>
+                        À cette profondeur, les signaux de croissance libérés (PDGF, TGF-β, VEGF, EGF) restent actifs dans le derme papillaire pendant 15 à 60 minutes après la session. Cette fenêtre est précisément celle durant laquelle l'application du sérum PDRN produit ses effets les plus intenses — les micro-canaux temporaires permettant une pénétration significativement augmentée des actifs.
+                    </p>
+                    <p>
+                        Le PDRN est l'une des rares molécules dont la tolérance cutanée est documentée immédiatement après le microneedling — ce qui en fait le partenaire idéal de la CIT. C'est cette fenêtre d'absorption qui constitue le cœur de la synergie du Rituel Luméra.
+                    </p>
+                    <div class="cit-signals">
+                        <div class="signal-chip">
+                            <strong>PDGF</strong>
+                            Facteur de croissance dérivé des plaquettes — signal initial
+                        </div>
+                        <div class="signal-chip">
+                            <strong>TGF-β</strong>
+                            Transforming Growth Factor — prolifération fibroblastique
+                        </div>
+                        <div class="signal-chip">
+                            <strong>VEGF</strong>
+                            Facteur de croissance vasculaire — néovascularisation
+                        </div>
+                        <div class="signal-chip">
+                            <strong>EGF</strong>
+                            Facteur de croissance épidermique — renouvellement cellulaire
+                        </div>
+                    </div>
+                </div>
+                <div class="cit-visual reveal-right">
+                    <div class="cit-depth-chart">
+                        <h4>Guide profondeur · Usage domiciliaire</h4>
+
+                        <div class="depth-hero">
+                            <div class="depth-hero-mm">0,25<span>mm</span></div>
+                            <div class="depth-hero-body">
+                                <span class="depth-hero-badge">Réglage Luméra</span>
+                                <p>La profondeur calibrée pour la maison : atteint l'épiderme inférieur et le derme papillaire superficiel — efficace, sans risque de lésion permanente.</p>
+                            </div>
+                        </div>
+
+                        <ul class="depth-scale">
+                            <li class="depth-step is-safe">
+                                <span class="depth-step-mm">0,30 mm</span>
+                                <span class="depth-track"><span class="depth-fill" style="--d:.20"></span></span>
+                                <span class="depth-step-tag">Domicile</span>
+                            </li>
+                            <li class="depth-step is-limit">
+                                <span class="depth-step-mm">0,50 mm</span>
+                                <span class="depth-track"><span class="depth-fill" style="--d:.42"></span></span>
+                                <span class="depth-step-tag">Limite maison</span>
+                            </li>
+                            <li class="depth-step is-pro">
+                                <span class="depth-step-mm">1,0 mm</span>
+                                <span class="depth-track"><span class="depth-fill" style="--d:.70"></span></span>
+                                <span class="depth-step-tag">Professionnel</span>
+                            </li>
+                            <li class="depth-step is-medical">
+                                <span class="depth-step-mm">1,5+ mm</span>
+                                <span class="depth-track"><span class="depth-fill" style="--d:1"></span></span>
+                                <span class="depth-step-tag">Clinique médicale</span>
+                            </li>
+                        </ul>
+
+                        <p class="depth-foot">Votre stylo est préréglé à 0,25 mm — la profondeur pensée pour un usage à domicile sûr et efficace.</p>
+                    </div>
+                    <div class="cit-synergy-callout">
+                        <h4>La fenêtre PDRN : 15–60 minutes</h4>
+                        <p>Après le passage du stylo, les micro-canaux restent perméables pendant 15 à 60 minutes. Appliquer le sérum Luméra dans cette fenêtre multiplie significativement la quantité de PDRN atteignant les fibroblastes dermiques — c'est le moment le plus efficace du rituel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ÉTUDES CLINIQUES ═══ -->
+    <section class="studies-section reveal">
+        <div class="container">
+            <div style="text-align:center;max-width:640px;margin:0 auto;">
+                <div class="section-eyebrow">Preuves cliniques</div>
+                <h2 class="section-title">Six études. Des résultats.</h2>
+                <p class="section-subtitle">Les résultats cités proviennent d'études indépendantes publiées dans des revues à comité de lecture. Ils décrivent les technologies utilisées dans nos produits, et non les produits eux-mêmes.</p>
+            </div>
+            <div class="studies-grid">
+                <div class="study-card">
+                    <span class="study-tag">Photobiomodulation · 630nm</span>
+                    <h4>Réduction des rides et ridules en 12 semaines</h4>
+                    <p>Méta-analyse de 22 études contrôlées randomisées évaluant l'efficacité de la LED 630nm sur les rides du visage. Participants : 1 847. Durée : 8 à 24 semaines.</p>
+                    <div class="study-result">
+                        <span class="study-result-value">−36%</span>
+                        <span class="study-result-detail">Rides apparentes<br>à 12 semaines</span>
+                    </div>
+                    <div class="study-source">Lee et al. (2023) — PMC11835066</div>
+                </div>
+                <div class="study-card">
+                    <span class="study-tag">Photobiomodulation · 830nm</span>
+                    <h4>Amélioration de l'élasticité cutanée</h4>
+                    <p>Étude prospective randomisée, double aveugle, évaluant l'impact du proche infrarouge 830nm sur l'élasticité mesurée par cutomètre (n=84, 8 semaines).</p>
+                    <div class="study-result">
+                        <span class="study-result-value">+19%</span>
+                        <span class="study-result-detail">Élasticité cutanée<br>en 8 semaines</span>
+                    </div>
+                    <div class="study-source">Couturaud V. (2023) — revue française de dermatologie</div>
+                </div>
+                <div class="study-card">
+                    <span class="study-tag">LED 470nm · Acné</span>
+                    <h4>Réduction des lésions acnéiques</h4>
+                    <p>Étude contrôlée sur 86 participants (acné légère à modérée) utilisant la LED bleue 470nm 2x/jour, 12 semaines. Évaluation photographique standardisée.</p>
+                    <div class="study-result">
+                        <span class="study-result-value">−53%</span>
+                        <span class="study-result-detail">Lésions acnéiques<br>en 12 semaines</span>
+                    </div>
+                    <div class="study-source">Journal of Clinical &amp; Aesthetic Dermatology (2021)</div>
+                </div>
+                <div class="study-card">
+                    <span class="study-tag">PDRN · Collagène</span>
+                    <h4>Prolifération fibroblastique par activation A2A</h4>
+                    <p>Étude in vitro + ex vivo sur cultures de fibroblastes humains. Mesure de la synthèse de collagène I et III après exposition au PDRN 1% pendant 72h.</p>
+                    <div class="study-result">
+                        <span class="study-result-value">+47%</span>
+                        <span class="study-result-detail">Synthèse de collagène<br>vs. contrôle</span>
+                    </div>
+                    <div class="study-source">Veronesi et al. (2021) — International Journal of Molecular Sciences</div>
+                </div>
+                <div class="study-card">
+                    <span class="study-tag">CIT · Microneedling</span>
+                    <h4>Induction de collagène par micro-perforations</h4>
+                    <p>Analyse histologique post-CIT 0,25–0,5mm (n=60). Biopsies à J0, J28, J56. Mesure de la densité en collagène I, III et en élastine par colorimétrie.</p>
+                    <div class="study-result">
+                        <span class="study-result-value">+206%</span>
+                        <span class="study-result-detail">Collagène I &amp; III<br>à 8 semaines (0,5mm)</span>
+                    </div>
+                    <div class="study-source">Aust et al. (2008) — Dermatologic Surgery</div>
+                </div>
+                <div class="study-card">
+                    <span class="study-tag">CIT + actifs topiques</span>
+                    <h4>Absorption des actifs post-microneedling</h4>
+                    <p>Étude de pénétration cutanée par marquage fluorescent. Comparaison absorption topique standard vs. application dans les 30 minutes post-CIT 0,25mm.</p>
+                    <div class="study-result">
+                        <span class="study-result-value">×4,7</span>
+                        <span class="study-result-detail">Pénétration accrue<br>post-CIT vs. standard</span>
+                    </div>
+                    <div class="study-source">Badran et al. (2009) — European Journal of Pharmaceutics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SYNERGIE ═══ -->
+    <section class="synergy-section">
+        <div class="container">
+            <div class="section-eyebrow">La triade Luméra</div>
+            <h2 class="section-title">Trois technologies.<br>Une synergie calculée.</h2>
+            <p class="section-subtitle">Ce n'est pas la somme de trois produits. C'est une architecture où chaque technologie prépare le terrain pour la suivante.</p>
+            <div class="synergy-triangle">
+                <div class="syn-node">
+                    <div class="syn-icon">🪡</div>
+                    <h3>Stylo → Sérum</h3>
+                    <p>Les micro-canaux ouverts par la CIT augmentent significativement la pénétration du PDRN dans le derme. La voie A2A est plus accessible. Les fibroblastes reçoivent un signal double : mécanique (CIT) + biochimique (PDRN).</p>
+                </div>
+                <div class="syn-node">
+                    <div class="syn-icon">💡</div>
+                    <h3>Masque → Sérum</h3>
+                    <p>La PBM crée un environnement cellulaire optimal pour les fibroblastes activés par le PDRN. L'ATP mitochondrial généré par la LED nourrit la machinerie de synthèse du collagène déclenchée par les polynucléotides.</p>
+                </div>
+                <div class="syn-node">
+                    <div class="syn-icon">✨</div>
+                    <h3>Stylo → Masque</h3>
+                    <p>La cascade inflammatoire contrôlée déclenchée par la CIT (PDGF, TGF-β) est modulée et amplifiée par le proche infrarouge 830nm. La PBM anti-inflammatoire réduit les rougeurs post-needling tout en potentialisant la réparation cellulaire.</p>
+                </div>
+            </div>
+            <div class="synergy-connection">
+                <h4>Le protocole Rituel Luméra</h4>
+                <p>
+                    <strong style="color:var(--c-accent-light);">Étape 1 ·</strong> Nettoyage + passage du stylo Luméra (0,25 mm, 5 min). Les micro-canaux s'ouvrent.
+                    <br><strong style="color:var(--c-accent-light);">Étape 2 ·</strong> Application immédiate du sérum PDRN (dans les 15–60 min post-needling). Pénétration maximale, activation A2A.
+                    <br><strong style="color:var(--c-accent-light);">Étape 3 ·</strong> Masque LED 20 minutes. La PBM amplifie la synthèse de collagène et module l'inflammation résiduelle.
+                    <br><br>Ce protocole de 30 minutes concentre trois mécanismes d'action complémentaires dans une seule session. C'est la proposition unique de Luméra — là où la science rencontre le rituel.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ QUALITÉ & CERTIFICATIONS ═══ -->
+    <section class="quality-section reveal">
+        <div class="container">
+            <div style="text-align:center;max-width:640px;margin:0 auto 0;">
+                <div class="section-eyebrow">Standards de qualité</div>
+                <h2 class="section-title">Fabriqué pour durer,<br>certifié pour rassurer</h2>
+                <p class="section-subtitle">Chaque produit Luméra répond aux normes les plus exigeantes de la dermo-cosmétique européenne.</p>
+            </div>
+            <div class="quality-grid">
+                <div class="quality-card">
+                    <div class="quality-icon">🇪🇺</div>
+                    <h4>Marquage CE</h4>
+                    <p>Tous nos dispositifs sont conformes aux directives européennes sur les dispositifs médicaux (MDR 2017/745) et les équipements basse tension (LVD 2014/35/UE).</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">⚕️</div>
+                    <h4>Silicone médical</h4>
+                    <p>Le masque est fabriqué en silicone médical grade A — le même standard que les équipements chirurgicaux. Hypoallergénique, testé dermatologiquement, sans BPA.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">🔬</div>
+                    <h4>ISO 13485</h4>
+                    <p>Notre partenaire fabricant opère sous certification ISO 13485 — le standard international du management de la qualité pour les dispositifs médicaux.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">🌿</div>
+                    <h4>Formulation clean</h4>
+                    <p>Le sérum est formulé sans parabènes, sulfates, parfum synthétique, alcool dénaturé, huiles minérales ni OGM. Compatible peau sensible, enceinte (hors microneedling).</p>
+                </div>
+            </div>
+            <div class="cert-strip">
+                <div class="cert-item">
+                    <div class="cert-badge-lg">CE</div>
+                    <span>Conformité européenne</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge-lg">ISO</div>
+                    <span>ISO 13485 fabricant</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge-lg" style="font-size:0.75rem;">RG0</div>
+                    <span>Classe laser RG0</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge-lg" style="font-size:0.75rem;">RoHS</div>
+                    <span>Sans substances dangereuses</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge-lg" style="font-size:0.7rem;">DERMA</div>
+                    <span>Testé dermatologiquement</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge-lg" style="font-size:0.7rem;">CRUELTY FREE</div>
+                    <span>Non testé sur animaux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ MANIFESTE ═══ -->
+    <section class="manifesto-section reveal">
+        <div class="container">
+            <blockquote>
+                "La lumière n'est pas un luxe.<br>
+                C'est <em>la science au service de votre peau</em>."
+            </blockquote>
+            <div class="manifesto-meta">
+                <div class="manifesto-divider"></div>
+                <span>Luméra Skincare · France · 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="science-cta">
+        <div class="container">
+            <div class="section-eyebrow">Découvrir le Rituel</div>
+            <h2>Prête à activer<br>votre transformation ?</h2>
+            <p class="section-subtitle">Le Rituel Luméra réunit les trois piliers scientifiques décrits dans cette page. Un protocole. Trois mécanismes. Des résultats cumulatifs.</p>
+            <div class="cta-buttons">
+                <a href="bundle.html" class="btn btn-solid">Le Rituel Complet — 289 €</a>
+                <a href="product-mask.html" class="btn btn-outline">Découvrir le masque</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">LUMÉRA<b>.</b></a>
+                    <p>La science de la lumière,<br>au service de votre éclat.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="social-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 100 8 4 4 0 000-8zm0 0V4m7 0v4a7 7 0 01-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Produits</h5>
+                    <ul>
+                        <li><a href="product-mask.html">Masque LED</a></li>
+                        <li><a href="product-serum.html">Sérum PDRN</a></li>
+                        <li><a href="product-pen.html">Stylo Microneedling</a></li>
+                        <li><a href="bundle.html">Le Rituel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a href="about.html">Notre Science</a></li>
+                        <li><a href="about.html#histoire">Notre histoire</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Recevoir nos conseils science</h5>
+                    <p>Protocoles, études et routines pour maximiser vos résultats.</p>
+                    <form class="newsletter-form" onsubmit="return false">
+                        <input type="email" placeholder="votre@email.com" aria-label="Email">
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-certs">
+                    <span>CE</span><span>ISO 13485</span><span>RG0</span><span>Cruelty Free</span>
+                </div>
+                <div class="footer-legal">
+                    <a href="legal.html#mentions">Mentions légales</a>
+                    <a href="legal.html#confidentialite">Confidentialité</a>
+                    <a href="legal.html#cgv">CGV</a>
+                </div>
+                <p class="footer-copy">© 2026 Luméra Skincare. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        /* ─── Reveal on scroll ─── */
+        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObs.observe(el));
+
+        /* ─── Header scroll ─── */
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        /* ─── Animate depth bars on reveal ─── */
+        const depthChart = document.querySelector('.cit-depth-chart');
+        const barObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    document.querySelectorAll('.depth-bar-fill').forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                    barObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        if (depthChart) barObs.observe(depthChart);
+    </script>
+<div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
+
+</body>
+</html>

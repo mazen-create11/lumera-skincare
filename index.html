@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMÉRA — Le rituel lumière. Masque LED · Sérum PDRN · Microneedling</title>
+<meta name="description" content="Le rituel anti-âge des cliniques esthétiques, repensé pour la maison. Masque LED face + cou, sérum PDRN, microneedling. Documenté en clinique, conçu en France.">
+<meta name="theme-color" content="#FDF8F6">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233D1A24'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23E8AEB8' text-anchor='middle'>L</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LUMÉRA — Le Rituel Lumière">
+<meta property="og:description" content="Le rituel anti-âge des cliniques esthétiques, repensé pour la maison. Masque LED, sérum PDRN, microneedling. Conçu en France.">
+<meta property="og:image" content="assets/coffret-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#C97E8C;--rose-dark:#A85968;--rose-light:#E8AEB8;
+  --bordeaux:#5C2D3A;--bordeaux-deep:#3D1A24;--ink:#2A1418;
+  --cream:#FDF8F6;--cream2:#FAF3EF;--blush:#F7EDE9;--blush-mid:#EDD9D2;--beige:#EBDFD2;
+  --text:#33161D;--text-mid:#785863;--text-light:#A98C94;
+  --gold:#B98E5E;--gold-soft:#DCC1A0;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-serif:'Cormorant Garamond',Georgia,serif;--c-text-muted:#8A6A72;--c-text-light:#B79AA1;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+.lnum{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
+.container{max-width:1340px;margin:0 auto;padding:0 2.5rem}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:1.05rem 2.2rem;border-radius:100px;cursor:pointer;transition:.28s cubic-bezier(.22,1,.36,1);border:1px solid transparent;white-space:nowrap}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--bordeaux);transform:translateY(-2px);box-shadow:0 16px 34px -14px rgba(42,20,24,.6)}
+.btn-ghost{background:transparent;border-color:rgba(61,26,36,.28);color:var(--text)}
+.btn-ghost:hover{border-color:var(--text);transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--ink);box-shadow:0 10px 30px -12px rgba(42,20,24,.35)}
+.btn-light:hover{background:var(--cream);transform:translateY(-2px)}
+
+/* ANNOUNCE */
+.announce{background:var(--rose-dark);color:rgba(255,255,255,.94);text-align:center;padding:11px 1rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.announce span{opacity:.4;margin:0 1.3rem}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;padding-top:38px}
+#header.scrolled{padding-top:0;background:rgba(253,248,246,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--blush-mid)}
+.nav{max-width:1340px;margin:0 auto;padding:1.3rem 2.5rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.65rem;font-weight:500;letter-spacing:.18em;color:var(--text)}
+.nav-logo b{color:var(--rose);font-weight:500}
+.nav-links{display:flex;gap:2.4rem}
+.nav-links a{font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mid);transition:.2s}
+.nav-links a:hover{color:var(--rose-dark)}
+.nav-cart{display:flex;align-items:center;gap:.5rem;font-size:.74rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text);background:none;border:none;cursor:pointer;font-family:var(--sans)}
+.nav-cart svg{width:20px;height:20px;stroke:var(--text);stroke-width:1.5;fill:none}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px;z-index:101}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+body.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .nav-burger span:nth-child(2){opacity:0}
+body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,#FFFCFA 0%,#FBEFEB 50%,#F4DCD6 100%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-orb{position:absolute;right:8%;top:42%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(232,174,184,.4) 0%,transparent 70%);transform:translateY(-50%);pointer-events:none;animation:pulse 9s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:translateY(-50%) scale(1);opacity:.8}50%{transform:translateY(-52%) scale(1.07);opacity:1}}
+.hero-inner{max-width:1340px;margin:0 auto;padding:150px 2.5rem 90px;width:100%;display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center;position:relative;z-index:2}
+.hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:1.8rem}
+.hero h1{font-family:var(--serif);font-size:clamp(3.6rem,6.5vw,7rem);font-weight:300;line-height:.98;color:var(--text);margin-bottom:1.8rem}
+.hero h1 em{font-style:italic;color:var(--rose-dark);display:block}
+.hero-lead{font-size:1.08rem;color:var(--text-mid);line-height:1.8;max-width:430px;margin-bottom:2.4rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.hero-proof{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.5rem;max-width:480px}
+.hero-proof li{font-size:.8rem;color:var(--text-mid);display:flex;align-items:center;gap:.55rem}
+.hero-proof li::before{content:'✦';color:var(--rose);font-size:.7rem}
+.hero-entry{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.4rem;font-size:.82rem;color:var(--rose-dark);font-weight:500;transition:.2s}
+.hero-entry:hover{gap:.7rem}
+.hero-visual{position:relative}
+.hero-card{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 50px 90px -50px rgba(120,60,70,.55);aspect-ratio:4/5}
+.hero-card>img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.hero-badge{position:absolute;left:1.6rem;bottom:1.6rem;background:#fff;border-radius:100px;padding:.6rem .6rem .6rem 1.3rem;display:flex;align-items:center;gap:1.1rem;box-shadow:0 18px 40px -16px rgba(120,60,70,.45)}
+.hero-badge .bv{font-family:var(--serif);font-size:1.5rem;color:var(--text);display:block;line-height:1}
+.hero-badge .bl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mid)}
+.hero-badge-arrow{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:.25s}
+.hero-badge:hover .hero-badge-arrow{background:var(--rose-dark)}
+
+/* TICKER */
+.ticker{background:var(--blush-mid);padding:13px 0;overflow:hidden;border-top:1px solid var(--blush);border-bottom:1px solid var(--blush)}
+.ticker-track{display:flex;width:max-content;animation:tk 34s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{white-space:nowrap;padding:0 2.4rem;font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-mid);display:flex;align-items:center;gap:.6rem}
+.ticker-item::before{content:'✦';color:var(--rose);font-size:.5rem}
+
+/* SECTION SHARED */
+.sec{padding:110px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 4rem}
+.eyebrow{display:block;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);margin-bottom:1.1rem}
+.h2{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.6rem);font-weight:300;line-height:1.12;color:var(--text)}
+.h2 em{font-style:italic;color:var(--rose-dark)}
+.sub{font-size:.98rem;color:var(--text-mid);line-height:1.8;margin-top:1.1rem}
+
+/* COLLECTION */
+.collection{background:var(--cream)}
+.coffret{display:grid;grid-template-columns:1fr 1.1fr;background:var(--blush);border-radius:24px;overflow:hidden;margin-bottom:2px;box-shadow:0 30px 60px -40px rgba(120,60,70,.35)}
+.coffret-body{padding:4rem 3.6rem;display:flex;flex-direction:column;justify-content:center}
+.coffret-body .eyebrow{color:var(--rose-dark)}
+.coffret-body h3{font-family:var(--serif);font-size:2.8rem;font-weight:400;color:var(--text);margin:.3rem 0 1rem;line-height:1.05}
+.coffret-body p{font-size:.95rem;color:var(--text-mid);line-height:1.7;max-width:400px;margin-bottom:1.6rem}
+.coffret-price{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+.coffret-price .now{font-family:var(--serif);font-size:2.4rem;color:var(--text)}
+.coffret-price .was{font-size:1.15rem;color:var(--text-light);text-decoration:line-through}
+.coffret-price .save{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--rose-dark);padding:.4rem 1rem;border-radius:100px}
+.coffret-anchor{font-size:.84rem;font-style:italic;color:var(--rose-dark);margin-bottom:1.8rem}
+.coffret-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.coffret-img{position:relative;min-height:440px;background:linear-gradient(150deg,#F0DAD7,#E7C4C2)}
+.coffret-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.unit-label{text-align:center;font-size:.68rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--rose);margin:3.2rem 0 1.8rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.pcard{background:#fff;border:1px solid var(--blush-mid);border-radius:20px;overflow:hidden;transition:.3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 30px 50px -34px rgba(120,60,70,.4)}
+.pcard-img{aspect-ratio:1/1;width:100%;object-fit:cover;background:var(--blush);transition:transform .6s var(--ease-out,cubic-bezier(.22,1,.36,1))}
+.pcard:hover .pcard-img{transform:scale(1.045)}
+.pcard-body{padding:1.8rem}
+.pcard h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.4rem}
+.pcard p{font-size:.83rem;color:var(--text-mid);line-height:1.6;margin-bottom:1.3rem;min-height:2.6em}
+.pcard-foot{display:flex;align-items:center;justify-content:space-between}
+.pcard-price{font-family:var(--serif);font-size:1.4rem;color:var(--text)}
+.pcard-link{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rose-dark);display:inline-flex;gap:.4rem;align-items:center}
+
+/* RESULTS */
+.results{background:var(--blush)}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.results-img{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(120,60,70,.4)}
+.results-img img{width:100%;height:100%;object-fit:cover;max-height:560px}
+.results-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+.stat{background:var(--cream);border:1px solid var(--blush-mid);border-radius:16px;padding:1.6rem 1.3rem}
+.stat .v{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--rose-dark);line-height:1;display:block;margin-bottom:.5rem}
+.stat .l{font-size:.8rem;color:var(--text);line-height:1.4}
+.stat .s{font-size:.66rem;font-style:italic;color:var(--text-light);margin-top:.6rem;display:block}
+.results-head{text-align:center;max-width:600px;margin:0 auto 3.2rem}
+.ba-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:2.8rem}
+.ba-card{background:var(--cream);border:1px solid var(--blush-mid);border-radius:18px;overflow:hidden;box-shadow:0 30px 55px -42px rgba(120,60,70,.45);transition:transform .35s var(--ease-out,cubic-bezier(.22,1,.36,1)),box-shadow .35s}
+.ba-card:hover{transform:translateY(-5px);box-shadow:0 38px 64px -38px rgba(120,60,70,.5)}
+.ba-media{position:relative;aspect-ratio:3/2;overflow:hidden}
+.ba-media img{width:100%;height:100%;object-fit:cover;display:block}
+.ba-media::after{content:'';position:absolute;top:8%;bottom:8%;left:50%;width:1px;background:rgba(255,255,255,.45);transform:translateX(-50%)}
+.ba-tag{position:absolute;bottom:.7rem;font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(61,26,36,.58);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:.3rem .7rem;border-radius:100px}
+.ba-tag.before{left:.7rem}
+.ba-tag.after{right:.7rem;background:rgba(168,89,104,.85)}
+.ba-cap{padding:1.1rem 1.3rem 1.3rem}
+.ba-cap strong{display:block;font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--text);margin-bottom:.25rem}
+.ba-cap span{font-size:.78rem;color:var(--text-mid);line-height:1.5}
+.results-disclaimer{text-align:center;font-size:.7rem;font-style:italic;color:var(--text-light);margin-top:1.8rem}
+@media(max-width:880px){.ba-cards{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}}
+
+/* RITUAL */
+.ritual{background:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.step{background:#fff;border:1px solid var(--blush-mid);border-radius:20px;padding:2.4rem 2rem;transition:.3s}
+.step:hover{transform:translateY(-4px);box-shadow:0 30px 50px -34px rgba(120,60,70,.35)}
+.step-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.6rem}
+.step-num{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--rose-light)}
+.step-top svg{width:24px;height:24px;stroke:var(--rose);stroke-width:1.4;fill:none}
+.step h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.6rem}
+.step p{font-size:.86rem;color:var(--text-mid);line-height:1.65}
+.step-time{display:inline-block;margin-top:1.1rem;font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-dark);background:var(--blush);padding:.35rem .9rem;border-radius:100px}
+
+/* WHY */
+.why{background:var(--blush)}
+.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:center}
+.why h2{margin-bottom:1.2rem}
+.why-rows{display:flex;flex-direction:column;gap:1rem}
+.why-row{display:flex;align-items:center;gap:1.2rem;background:var(--cream);border:1px solid var(--blush-mid);border-radius:14px;padding:1.3rem 1.6rem}
+.why-icon{width:40px;height:40px;min-width:40px;border-radius:50%;background:#fff;border:1px solid var(--rose-light);display:flex;align-items:center;justify-content:center}
+.why-icon svg{width:20px;height:20px;stroke:var(--rose);stroke-width:1.4;fill:none}
+.why-row span{font-size:.92rem;color:var(--text);font-weight:500}
+.statband{border-top:1px solid var(--blush-mid);margin-top:4rem}
+.statband-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.statband .c{text-align:center;padding:2.6rem 1rem;border-right:1px solid var(--blush-mid)}
+.statband .c:last-child{border-right:none}
+.statband .v{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--text);display:block;line-height:1}
+.statband .l{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid);margin-top:.7rem}
+
+/* FOUNDER */
+.founder{background:var(--blush)}
+.fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.fcard{background:var(--cream);border:1px solid var(--blush-mid);border-radius:20px;padding:2.4rem 2rem}
+.fcard .eyebrow{color:var(--rose-dark)}
+.fcard h4{font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--text);margin:.4rem 0 1rem}
+.fcard p{font-size:.88rem;color:var(--text-mid);line-height:1.7}
+
+/* COFFRET DARK CTA */
+.darkcta{background:var(--cream);padding:0 0 110px}
+.darkcta-inner{max-width:1340px;margin:0 auto;padding:0 2.5rem}
+.darkcta-box{background:var(--ink);border-radius:24px;padding:4rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap;position:relative;overflow:hidden}
+.darkcta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(201,126,140,.18),transparent 60%);pointer-events:none}
+.darkcta-text{position:relative;z-index:1;max-width:620px}
+.darkcta .eyebrow{color:var(--rose-light)}
+.darkcta h2{font-family:var(--serif);font-size:clamp(2rem,3.2vw,2.9rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.1rem}
+.darkcta p{font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.7}
+.darkcta .btn{position:relative;z-index:1}
+
+/* FAQ */
+.faq{background:var(--cream)}
+.faq-grid{display:grid;grid-template-columns:.85fr 1.4fr;gap:4rem;align-items:start}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--blush-mid)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;cursor:pointer;font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--text)}
+.faq-q .ic{transition:.3s;color:var(--rose);font-size:1.2rem}
+.faq-item.open .faq-q .ic{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:320px}
+.faq-a p{padding:0 0 1.5rem;font-size:.9rem;color:var(--text-mid);line-height:1.8}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.6)}
+.foot-top{max-width:1340px;margin:0 auto;padding:5rem 2.5rem 3.5rem;display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:3.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-logo{font-family:var(--serif);font-size:1.7rem;letter-spacing:.18em;color:#fff;display:block;margin-bottom:.6rem}
+.foot-logo b{color:var(--rose-light);font-weight:500}
+.foot-brand p{font-size:.84rem;line-height:1.8;max-width:280px}
+.foot-col h5{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.3rem}
+.foot-col ul{display:flex;flex-direction:column;gap:.8rem}
+.foot-col a{font-size:.86rem;color:rgba(255,255,255,.55);transition:.2s}
+.foot-col a:hover{color:#fff}
+.foot-news p{font-size:.84rem;line-height:1.6;margin-bottom:1rem}
+.foot-form{display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;overflow:hidden}
+.foot-form input{flex:1;background:none;border:none;padding:.8rem 1.3rem;color:#fff;font-size:.84rem;outline:none;font-family:var(--sans)}
+.foot-form input::placeholder{color:rgba(255,255,255,.35)}
+.foot-form button{background:#fff;color:var(--ink);border:none;padding:.8rem 1.4rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;cursor:pointer;font-family:var(--sans)}
+.foot-bottom{max-width:1340px;margin:0 auto;padding:1.6rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-bottom p{font-size:.7rem;color:rgba(255,255,255,.35)}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-size:.72rem;color:rgba(255,255,255,.35)}
+.foot-legal a:hover{color:rgba(255,255,255,.7)}
+
+/* CART */
+.cart-overlay{position:fixed;inset:0;background:rgba(42,20,24,.5);z-index:200;opacity:0;visibility:hidden;transition:.3s}
+.cart-overlay.active{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:0;width:420px;max-width:100vw;height:100vh;background:var(--cream);z-index:201;transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column}
+.cart-drawer.active{transform:translateX(0)}
+.cart-header{padding:1.5rem 1.8rem;border-bottom:1px solid var(--blush-mid);display:flex;justify-content:space-between;align-items:center}
+.cart-header h3{font-family:var(--serif);font-size:1.4rem;font-weight:400}
+.cart-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-mid)}
+.cart-progress{padding:1rem 1.8rem;background:var(--blush)}
+.cart-progress p{font-size:.74rem;color:var(--text-mid);margin-bottom:.5rem}
+.progress-bar-bg{height:3px;background:var(--blush-mid);border-radius:100px;overflow:hidden}
+.progress-bar-fill{height:100%;background:var(--rose);width:0%;transition:width .4s ease}
+.cart-items{flex:1;overflow-y:auto;padding:1.6rem 1.8rem}
+.cart-items.is-empty{display:flex;align-items:center;justify-content:center;text-align:center}
+.ci-row{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--blush-mid)}
+.ci-thumb{width:64px;height:74px;object-fit:cover;border-radius:8px;background:var(--blush);flex-shrink:0}
+.ci-info{flex:1}
+.ci-head{display:flex;justify-content:space-between;gap:.5rem}
+.ci-name{font-family:var(--serif);font-size:1.05rem;color:var(--text)}
+.ci-remove{background:none;border:none;font-size:.7rem;color:var(--text-light);cursor:pointer;text-decoration:underline}
+.ci-unit{font-size:.72rem;color:var(--text-mid)}
+.ci-controls{display:flex;align-items:center;justify-content:space-between;margin-top:.6rem}
+.ci-stepper{display:flex;align-items:center;gap:.8rem}
+.ci-stepper button{width:24px;height:24px;border-radius:50%;border:1px solid var(--blush-mid);background:#fff;cursor:pointer;color:var(--text)}
+.ci-line{font-weight:600;font-size:.9rem}
+.cart-footer{padding:1.4rem 1.8rem;border-top:1px solid var(--blush-mid)}
+.cart-total{display:flex;justify-content:space-between;margin-bottom:1rem;font-size:.92rem;font-weight:600}
+.cart-checkout{width:100%;padding:1.05rem;background:var(--ink);color:#fff;border:none;border-radius:100px;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:var(--sans)}
+
+/* POPUP CERCLE FONDATEUR */
+.foot-ok{display:none;margin-top:.9rem;font-size:.82rem;color:var(--rose-light)}
+.lm-pop-ov{position:fixed;inset:0;background:rgba(42,20,24,.55);backdrop-filter:blur(4px);z-index:300;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:.35s}
+.lm-pop-ov.active{opacity:1;visibility:visible}
+.lm-pop{position:relative;background:linear-gradient(165deg,#FFFCFA,#FBEFEB 70%,#F4DCD6);border-radius:22px;max-width:440px;width:100%;padding:3rem 2.6rem 2.4rem;text-align:center;box-shadow:0 40px 90px -40px rgba(120,60,70,.6);transform:translateY(18px) scale(.97);transition:.4s cubic-bezier(.22,1,.36,1)}
+.lm-pop-ov.active .lm-pop{transform:translateY(0) scale(1)}
+.lm-pop-x{position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.2rem;color:var(--text-mid);cursor:pointer;line-height:1}
+.lm-pop h3{font-family:var(--serif);font-size:2.2rem;font-weight:400;color:var(--text);margin:.6rem 0 .8rem;line-height:1.05}
+.lm-pop p{font-size:.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.6rem}
+.lm-pop-form{display:flex;flex-direction:column;gap:.7rem}
+.lm-pop-form input{width:100%;padding:.95rem 1.2rem;border:1px solid var(--blush-mid);border-radius:100px;background:#fff;font-family:var(--sans);font-size:.92rem;color:var(--text);outline:none;text-align:center}
+.lm-pop-form input:focus{border-color:var(--rose)}
+.lm-pop-form button{width:100%;padding:1rem;background:var(--ink);color:#fff;border:none;border-radius:100px;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.lm-pop-form button:hover{background:var(--rose-dark)}
+.lm-pop-ok{display:none;font-size:.95rem;color:var(--rose-dark);font-weight:500;margin:1rem 0 0}
+.lm-pop-fine{font-size:.7rem;color:var(--text-light);margin-top:1rem}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-r{opacity:0;transform:translateX(34px);transition:opacity .9s,transform .9s}
+.reveal-r.visible{opacity:1;transform:translateX(0)}
+
+/* BANNER COFFRET */
+.lbanner{position:relative;background:var(--blush)}
+.lbanner>img{width:100%;display:block}
+.lbanner-txt{position:absolute;top:0;right:0;height:100%;width:44%;display:flex;flex-direction:column;justify-content:center;padding-right:5%}
+.lbanner-txt h2{font-family:var(--serif);font-size:clamp(1.5rem,2.7vw,3rem);font-weight:300;line-height:1.1;color:var(--text);margin:.5rem 0 1rem}
+.lbanner-txt h2 em{font-style:italic;color:var(--rose-dark)}
+.lbanner-txt p{font-size:.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.4rem;max-width:330px}
+@media(max-width:760px){.lbanner-txt{position:static;width:100%;background:var(--cream);padding:2rem 1.4rem}}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .hero{align-items:flex-start;min-height:auto}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:2.5rem;padding-top:130px}
+  .hero-lead{margin:0 auto 2.4rem}.hero-cta,.hero-proof{justify-content:center}.hero-proof{margin:0 auto;max-width:420px}
+  .coffret,.results-grid,.why-grid,.faq-grid{grid-template-columns:1fr}
+  .coffret-img{min-height:300px}
+  .cards,.steps,.fcards{grid-template-columns:1fr}
+  .results-stats{grid-template-columns:repeat(3,1fr)}
+  .statband-grid{grid-template-columns:1fr 1fr}
+  .statband .c:nth-child(2){border-right:none}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .nav-burger{display:flex}
+  .nav-links{position:fixed;inset:0;background:linear-gradient(160deg,#FFFCFA,#FBEFEB 60%,#F4DCD6);flex-direction:column;justify-content:center;align-items:center;gap:.4rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);z-index:100;padding:2rem}
+  body.menu-open .nav-links{transform:translateX(0)}
+  body.menu-open{overflow:hidden}
+  .nav-links a{font-family:var(--serif);font-size:1.9rem;font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--text);padding:.6rem 0}
+  .darkcta-box{padding:2.6rem}
+}
+@media(max-width:560px){
+  .container,.nav,.hero-inner,.foot-top,.foot-bottom,.darkcta-inner{padding-left:1.4rem;padding-right:1.4rem}
+  .coffret-body{padding:2.4rem 1.8rem}
+  .results-stats{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .announce span{margin:0 .5rem}
+}
+
+/* ═══════════ PREMIUM POLISH · couture / clinique-luxe ═══════════ */
+:root{--ease:cubic-bezier(.22,1,.36,1)}
+body{line-height:1.6;letter-spacing:.005em;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale}
+::selection{background:var(--rose-light);color:var(--bordeaux-deep)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--rose-dark);outline-offset:3px;border-radius:4px}
+:focus:not(:focus-visible){outline:none}
+.hero h1,.h2,.coffret-body h3,.pcard h4,.step h4,.fcard h4,.darkcta h2,.faq-q{letter-spacing:-.014em}
+.eyebrow,.hero-eyebrow,.ticker-item,.foot-col h5{letter-spacing:.26em}
+.sec{padding:130px 0}
+.sec-head{margin-bottom:4.8rem}
+.hero-lead{line-height:1.85}
+.btn{letter-spacing:.16em;transition:transform .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+.btn-dark:hover{box-shadow:0 20px 44px -18px rgba(42,20,24,.55)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--rose-dark);transition:right .4s var(--ease)}
+.nav-links a:hover::after{right:0}
+.pcard,.step,.fcard{transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s var(--ease)}
+.pcard:hover,.step:hover{box-shadow:0 36px 64px -40px rgba(120,60,70,.4)}
+.pcard{overflow:hidden}
+.pcard-img{transition:transform .6s var(--ease)}
+.pcard:hover .pcard-img{transform:scale(1.035)}
+.coffret{border:1px solid rgba(185,142,94,.2)}
+.hero{background:linear-gradient(150deg,#FFFDFB 0%,#FCF4F0 55%,#F5E0DA 100%)}
+.hero-orb{opacity:.65}
+.hero-card{box-shadow:0 60px 100px -54px rgba(120,60,70,.5)}
+.ticker{border-top:1px solid rgba(185,142,94,.18);border-bottom:1px solid rgba(185,142,94,.18)}
+.coffret-price .now,.coffret-price .was,.pcard-price,.hero-badge .bv,.stat .v,.statband .v{font-variant-numeric:lining-nums tabular-nums}
+img{-webkit-user-drag:none}
+@media(max-width:768px){
+  .sec{padding:80px 0}
+  .sec-head{margin-bottom:2.8rem}
+  .hero-inner{padding-top:120px;gap:2rem}
+  .hero h1{font-size:clamp(3rem,12.5vw,4.3rem)}
+  .hero-lead{font-size:1rem;line-height:1.78}
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .btn{min-height:52px}
+  .nav-cart{min-height:44px;display:inline-flex;align-items:center}
+  .nav-burger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .pcard h4,.step h4,.fcard h4{font-size:1.4rem}
+  .h2{font-size:clamp(2.1rem,8vw,2.9rem)}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">Livraison offerte dès 149 €<span>|</span>30 jours satisfaite ou remboursée<span>|</span>Résultats visibles dès 4 semaines</div>
+
+<header id="header">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">LUMÉRA<b>.</b></a>
+    <nav class="nav-links">
+      <a href="bundle.html">Le Rituel</a>
+      <a href="product-mask.html">Le Masque</a>
+      <a href="product-serum.html">Le Sérum</a>
+      <a href="product-pen.html">Le Stylo</a>
+      <a href="about.html">Notre Science</a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-cart" id="cartToggle"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="cart-btn">Panier (0)</span></button>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <div class="hero-eyebrow">Édition Fondatrice · Série limitée 2026</div>
+      <h1>Révélez<br><em>votre lumière.</em></h1>
+      <p class="hero-lead">Le rituel haute-performance qui réveille la fermeté, l'éclat et le grain de peau — la technologie des cliniques esthétiques, documentée en clinique et conçue en France.</p>
+      <div class="hero-cta">
+        <a href="bundle.html" class="btn btn-dark">Le Rituel Complet — 289 €</a>
+        <a href="about.html" class="btn btn-ghost">Notre Science</a>
+      </div>
+      <a class="hero-entry" href="product-serum.html">Premier pas vers le rituel ? Commencez par le Sérum — 49 €&nbsp;→</a>
+      <ul class="hero-proof">
+        <li>Silicone médical, flexible</li>
+        <li>Visage + cou inclus</li>
+        <li>Résultats dès 4 semaines</li>
+        <li>30 j satisfaite ou remboursée</li>
+      </ul>
+    </div>
+    <div class="hero-visual reveal-r">
+      <div class="hero-card">
+        <video src="assets/coffret-reveal.mp4" poster="assets/coffret-hero.webp" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
+        <a href="bundle.html" class="hero-badge">
+          <div><span class="bv lnum">289 €</span><span class="bl">Le Rituel Complet</span></div>
+          <span class="hero-badge-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Dispositif CE</span><span class="ticker-item">Silicone médical grade A</span><span class="ticker-item">PDRN 1% · compatibilité ADN 97%</span><span class="ticker-item">Visage + cou</span><span class="ticker-item">Fabrication ISO 13485</span><span class="ticker-item">Maison française</span>
+    <span class="ticker-item">Dispositif CE</span><span class="ticker-item">Silicone médical grade A</span><span class="ticker-item">PDRN 1% · compatibilité ADN 97%</span><span class="ticker-item">Visage + cou</span><span class="ticker-item">Fabrication ISO 13485</span><span class="ticker-item">Maison française</span>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+<section class="sec collection">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">La collection</span>
+      <h2 class="h2">Le rituel,<br><em>pensé comme un tout.</em></h2>
+      <p class="sub">Commencez par le Rituel signature — masque, sérum et stylo conçus pour agir en synergie. Ou composez le vôtre, produit par produit.</p>
+    </div>
+
+    <div class="coffret reveal">
+      <div class="coffret-body">
+        <span class="eyebrow">Vedette · Le Coffret</span>
+        <h3>Le Rituel Complet</h3>
+        <p>Masque LED + Sérum PDRN + Stylo Microneedling + Guide Rituel. Les trois technologies pensées ensemble, livrées ensemble.</p>
+        <div class="coffret-price">
+          <span class="now lnum">289 €</span>
+          <span class="was lnum">327 €</span>
+          <span class="save">Économisez 38 €</span>
+        </div>
+        <p class="coffret-anchor">L'équivalent d'une cure de luminothérapie en institut : 600 à 1 200 €.</p>
+        <div class="coffret-cta">
+          <button class="btn btn-dark" onclick="addToCart('Le Rituel Complet', 289, 'assets/coffret-packshot.webp')">Ajouter le Rituel</button>
+          <a href="bundle.html" class="btn btn-ghost">Découvrir</a>
+        </div>
+      </div>
+      <div class="coffret-img"><img loading="lazy" src="assets/coffret-featured.webp" alt="Coffret Le Rituel Complet Luméra — masque LED, sérum PDRN, stylo microneedling"></div>
+    </div>
+
+    <div class="unit-label reveal">— Ou à l'unité —</div>
+
+    <div class="cards">
+      <article class="pcard reveal">
+        <img loading="lazy" class="pcard-img" src="assets/card-mask.webp" alt="Masque LED Luméra">
+        <div class="pcard-body">
+          <h4>Le Masque</h4>
+          <p>LED visage + cou en silicone médical flexible.</p>
+          <div class="pcard-foot">
+            <span class="pcard-price lnum">249 €</span>
+            <a href="product-mask.html" class="pcard-link">Découvrir →</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <img loading="lazy" class="pcard-img" src="assets/card-serum.webp" alt="Sérum PDRN Luméra">
+        <div class="pcard-body">
+          <h4>Le Sérum</h4>
+          <p>PDRN, peptides, niacinamide — la révélation quotidienne.</p>
+          <div class="pcard-foot">
+            <span class="pcard-price lnum">49 €</span>
+            <a href="product-serum.html" class="pcard-link">Découvrir →</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <img loading="lazy" class="pcard-img" src="assets/card-pen.webp" alt="Stylo Microneedling Luméra">
+        <div class="pcard-body">
+          <h4>Le Stylo</h4>
+          <p>Microneedling à domicile, 0,25 mm — précis et doux.</p>
+          <div class="pcard-foot">
+            <span class="pcard-price lnum">29 €</span>
+            <a href="product-pen.html" class="pcard-link">Découvrir →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER COFFRET -->
+<section class="lbanner reveal">
+  <img loading="lazy" src="assets/coffret-banner.webp" alt="Le Rituel Luméra — coffret édition limitée sur coiffeuse">
+  <div class="lbanner-txt">
+    <span class="eyebrow">Édition limitée 2026</span>
+    <h2>Le Rituel,<br><em>en un coffret.</em></h2>
+    <p>Masque LED, sérum PDRN et stylo microneedling — la valeur d'un soin d'institut, posé sur votre coiffeuse.</p>
+    <a href="bundle.html" class="btn btn-dark" style="align-self:flex-start">Le Coffret — 289 €</a>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="sec results">
+  <div class="container">
+    <div class="results-head reveal">
+      <span class="eyebrow">Résultats cliniques</span>
+      <h2 class="h2">La preuve,<br><em>pas la promesse.</em></h2>
+      <p class="sub">Chaque chiffre cité provient d'études publiées sur les actifs et les longueurs d'onde du rituel — jamais d'une note inventée.</p>
+    </div>
+    <div class="ba-cards reveal">
+      <figure class="ba-card">
+        <div class="ba-media">
+          <img loading="lazy" src="assets/ba-01.webp" alt="Avant / après — teint plus lumineux et unifié après le rituel Luméra">
+          <span class="ba-tag before">Avant</span>
+          <span class="ba-tag after">Après · 8 sem.</span>
+        </div>
+        <figcaption class="ba-cap"><strong>Éclat &amp; teint unifié</strong><span>Teint plus lumineux, cernes atténués, peau visiblement reposée.</span></figcaption>
+      </figure>
+      <figure class="ba-card">
+        <div class="ba-media">
+          <img loading="lazy" src="assets/ba-02.webp" alt="Avant / après — grain de peau affiné après le rituel Luméra">
+          <span class="ba-tag before">Avant</span>
+          <span class="ba-tag after">Après · 8 sem.</span>
+        </div>
+        <figcaption class="ba-cap"><strong>Grain de peau affiné</strong><span>Pores resserrés, texture lissée, rougeurs apaisées.</span></figcaption>
+      </figure>
+      <figure class="ba-card">
+        <div class="ba-media">
+          <img loading="lazy" src="assets/ba-03.webp" alt="Avant / après — fermeté et effet glass skin après le rituel Luméra">
+          <span class="ba-tag before">Avant</span>
+          <span class="ba-tag after">Après · 8 sem.</span>
+        </div>
+        <figcaption class="ba-cap"><strong>Fermeté &amp; glow</strong><span>Peau repulpée, effet glass skin, fermeté retrouvée.</span></figcaption>
+      </figure>
+    </div>
+    <div class="results-stats reveal">
+      <div class="stat"><span class="v lnum">−36%</span><span class="l">rides visibles à 12 semaines</span><span class="s">Lee et al., 2017</span></div>
+      <div class="stat"><span class="v lnum">+19%</span><span class="l">élasticité cutanée à 8 semaines</span><span class="s">Couturaud, 830 nm</span></div>
+      <div class="stat"><span class="v lnum">×4,7</span><span class="l">absorption des actifs post-needling</span><span class="s">Badran et al.</span></div>
+    </div>
+    <p class="results-disclaimer reveal">Photographies illustratives — simulation visuelle. Les résultats réels varient selon le phototype, l'âge et la régularité d'utilisation.</p>
+  </div>
+</section>
+
+<!-- RITUAL -->
+<section class="sec ritual">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Le rituel</span>
+      <h2 class="h2">Trois gestes.<br><em>Une lumière retrouvée.</em></h2>
+      <p class="sub">Un protocole où chaque étape amplifie la suivante. La synergie est la vraie innovation.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-top"><span class="step-num lnum">01</span><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/></svg></div>
+        <h4>Microneedling 0,25 mm</h4>
+        <p>Le stylo prépare la peau et ouvre la fenêtre d'absorption pendant 15 à 60 minutes.</p>
+        <span class="step-time">5 minutes</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-top"><span class="step-num lnum">02</span><svg viewBox="0 0 24 24"><path d="M12 3s5.5 5.9 5.5 10.2A5.5 5.5 0 0 1 6.5 13.2C6.5 8.9 12 3 12 3z"/></svg></div>
+        <h4>Sérum PDRN</h4>
+        <p>PDRN, peptides et niacinamide pénètrent en profondeur pour régénérer et unifier.</p>
+        <span class="step-time">5 minutes</span>
+      </div>
+      <div class="step reveal">
+        <div class="step-top"><span class="step-num lnum">03</span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h4>Masque LED</h4>
+        <p>La photobiomodulation amplifie la synthèse de collagène et scelle le rituel.</p>
+        <span class="step-time">10–20 minutes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="reveal">
+        <span class="eyebrow">Pourquoi Luméra</span>
+        <h2 class="h2">La fermeté ne s'applique pas <em>— elle se réveille.</em></h2>
+        <p class="sub">Les masques LED rigides existent depuis dix ans. Nous avons réécrit le cahier des charges : souplesse, couverture, intensité juste, et un prix qui ne masque rien.</p>
+      </div>
+      <div class="why-rows reveal-r">
+        <div class="why-row"><span class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><span>Silicone médical flexible — épouse les contours</span></div>
+        <div class="why-row"><span class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span>Cou inclus — la zone que les masques rigides ignorent</span></div>
+        <div class="why-row"><span class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5-6-10a6 6 0 0 1 12 0c0 5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></span><span>Marque française · Conçu en France</span></div>
+        <div class="why-row"><span class="why-icon"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span><span>Sourcing transparent, fabrication ISO 13485</span></div>
+      </div>
+    </div>
+    <div class="reveal" style="max-width:430px;margin:3.5rem auto 0;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(120,60,70,.5)">
+      <img loading="lazy" src="assets/coffret-macro.webp" alt="Masque LED Luméra allumé — luminothérapie rose, visage et cou" style="width:100%;display:block">
+    </div>
+    <div class="statband reveal">
+      <div class="statband-grid">
+        <div class="c"><span class="v lnum">1072</span><span class="l">nm · infrarouge profond</span></div>
+        <div class="c"><span class="v lnum">10–20 min</span><span class="l">par séance</span></div>
+        <div class="c"><span class="v lnum">0,25 mm</span><span class="l">microneedling doux</span></div>
+        <div class="c"><span class="v">ISO 13485</span><span class="l">fabrication</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOT DE LA FONDATRICE -->
+<section class="sec" style="background:var(--cream)">
+  <div class="container" style="max-width:780px;text-align:center">
+    <span class="eyebrow reveal">La fondatrice</span>
+    <blockquote class="reveal" style="font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,2.7vw,2.15rem);line-height:1.5;color:var(--text);margin:1.4rem 0 2.2rem;letter-spacing:-.012em">
+      «&nbsp;J'ai créé Luméra parce que je refusais de choisir entre l'efficacité d'un institut et le confort de chez moi. Ce rituel est devenu <em style="font-style:italic;color:var(--rose-dark)">mon moment</em> — dix minutes pour soi, et une peau qui le rend. Je ne promets pas de miracle&nbsp;: la technologie des cabinets, documentée, au juste prix — et reprise si votre peau n'y trouve pas son compte.&nbsp;»
+    </blockquote>
+    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:.35rem">
+      <span style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.7rem;color:var(--rose-dark);line-height:1">Maria</span>
+      <span style="font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-mid)">Fondatrice de Luméra</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER CIRCLE -->
+<section class="sec founder">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Le Cercle Fondateur</span>
+      <h2 class="h2">Nous lançons une marque. <em>Pas un avis acheté.</em></h2>
+      <p class="sub">Luméra naît avec ses premières fondatrices. Voici ce que nous vous engageons aujourd'hui.</p>
+    </div>
+    <div class="fcards">
+      <div class="fcard reveal">
+        <span class="eyebrow">Édition fondatrice</span>
+        <h4>Une série limitée 2026</h4>
+        <p>Les premières clientes rejoignent le Cercle Fondateur — accès prioritaire aux prochaines formules et tarif fondateur préservé.</p>
+      </div>
+      <div class="fcard reveal">
+        <span class="eyebrow">Garantie résultats</span>
+        <h4>30 jours, sans condition</h4>
+        <p>Si vous ne voyez pas de différence après quatre semaines de rituel, nous reprenons le coffret et vous remboursons intégralement.</p>
+      </div>
+      <div class="fcard reveal">
+        <span class="eyebrow">Avis sans filtre</span>
+        <h4>Bientôt — votre voix d'abord</h4>
+        <p>Nous publierons les premiers retours des fondatrices, vérifiés et non filtrés. Pas de faux avis, pas de notes inventées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK CTA -->
+<section class="darkcta">
+  <div class="darkcta-inner">
+    <div class="darkcta-box reveal">
+      <div class="darkcta-text">
+        <span class="eyebrow">Le Coffret Fondateur</span>
+        <h2>Un rituel complet. Un seul prix juste.</h2>
+        <p>Masque, sérum et stylo — pensés ensemble, livrés ensemble. 289 € au lieu de 327 €, livraison offerte.</p>
+      </div>
+      <button class="btn btn-light" onclick="addToCart('Le Rituel Complet', 289, 'assets/coffret-packshot.webp')">Ajouter — 289 €</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq" id="faq">
+  <div class="container faq-grid">
+    <div class="reveal">
+      <span class="eyebrow">Questions essentielles</span>
+      <h2 class="h2">Tout ce qu'il faut savoir avant de commencer.</h2>
+    </div>
+    <div class="faq-list reveal-r">
+      <div class="faq-item open">
+        <button class="faq-q">À quels types de peaux le rituel s'adresse-t-il ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>Le masque convient à la majorité des phototypes (I–IV). Il est déconseillé aux phototypes V–VI, sous médicaments photosensibilisants et pendant la grossesse. En cas de doute, demandez l'avis d'un dermatologue.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">À quelle fréquence utiliser le masque et le stylo ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>Le masque : 3 à 5 fois par semaine les 4 premières semaines, puis 2 à 3 fois en entretien. Le stylo : 1 à 2 fois par semaine, jamais deux jours de suite.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quel est le bon ordre des étapes ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>Stylo microneedling, puis Sérum PDRN dans la fenêtre d'absorption (15–60 min), puis Masque LED qui amplifie la synthèse de collagène déclenchée par les deux premières étapes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">En quoi Luméra se distingue de CurrentBody ou Foreo ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>Ces marques proposent des masques rigides entre 470 et 600 € — masque seul, sans le cou. Luméra est en silicone flexible (contact optimal), couvre visage + cou, et intègre PDRN + microneedling dans un rituel cohérent à 249 € le masque, 289 € le rituel complet.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Le PDRN est-il sûr ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>Le PDRN est extrait d'ADN de saumon par procédé enzymatique contrôlé. Sa compatibilité de 97 % avec l'ADN humain explique son excellente tolérance. Utilisé en médecine esthétique depuis 2000, il est aujourd'hui reconnu en cosmétique topique.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Le microneedling 0,25 mm est-il douloureux ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>La profondeur de 0,25 mm reste dans la couche cornée, au-dessus des terminaisons nerveuses : un léger picotement, sans douleur vive ni saignement. Une rougeur passagère peut apparaître quelques heures.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Y a-t-il un risque pour les yeux avec le masque LED ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>Le masque n'émet pas d'UV — uniquement du visible et du proche infrarouge — et intègre une zone de protection oculaire. Gardez simplement les yeux fermés pendant la séance.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quand voir les premiers résultats ?<span class="ic">⌄</span></button>
+        <div class="faq-a"><p>L'éclat et la texture s'améliorent généralement vers 4 semaines ; la fermeté et les rides se construisent sur 8 à 12 semaines de régularité. Si après 30 jours le rituel ne vous convainc pas, il est remboursé.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="index.html" class="foot-logo">LUMÉRA<b>.</b></a>
+      <p>Le rituel haute-performance pour réveiller la lumière de la peau. Marque française · Conçu en France.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Boutique</h5>
+      <ul>
+        <li><a href="product-mask.html">Le Masque</a></li>
+        <li><a href="product-serum.html">Le Sérum</a></li>
+        <li><a href="product-pen.html">Le Stylo</a></li>
+        <li><a href="bundle.html">Le Rituel Complet</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Maison</h5>
+      <ul>
+        <li><a href="about.html">Notre Science</a></li>
+        <li><a href="livraison.html">Livraison & Retours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="foot-news">
+      <h5>Newsletter</h5>
+      <p>Le rituel, les coulisses, les lancements.</p>
+      <form class="foot-form" id="footForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail" aria-label="Email"><button type="submit">OK</button></form>
+      <p class="foot-ok" id="footOk">Merci ✦ vous êtes dans le Cercle.</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Luméra · Marque française · Conçu en France · Fabriqué en Asie sous ISO 13485</p>
+    <div class="foot-legal">
+      <a href="legal.html#mentions">Mentions légales</a>
+      <a href="legal.html#cgv">CGV</a>
+      <a href="legal.html#confidentialite">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<!-- POPUP CERCLE FONDATEUR -->
+<div class="lm-pop-ov" id="lmPop">
+  <div class="lm-pop">
+    <button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button>
+    <span class="eyebrow">Le Cercle Fondateur</span>
+    <h3>Entrez dans le cercle.</h3>
+    <p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p>
+    <form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST">
+      <input type="email" name="email" required placeholder="Votre e-mail">
+      <button type="submit">Rejoindre le Cercle</button>
+    </form>
+    <p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p>
+    <p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h3>Mon Panier</h3><button class="cart-close" id="cartClose">✕</button></div>
+  <div class="cart-progress">
+    <p>Plus que <strong>149 €</strong> pour la livraison offerte</p>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
+  <div class="cart-items is-empty" id="cartItems"><div><p style="font-family:var(--serif);font-size:1.15rem;color:var(--text-mid)">Votre panier est vide</p></div></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">0 €</span></div>
+    <button class="cart-checkout" id="checkoutBtn">Passer commande</button>
+  </div>
+</div>
+
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+const burger=document.getElementById('navBurger');
+burger&&burger.addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+
+// Popup Cercle Fondateur
+(function(){
+  const pop=document.getElementById('lmPop');if(!pop)return;
+  const KEY='lm_pop_seen';
+  function show(){if(localStorage.getItem(KEY))return;pop.classList.add('active');}
+  function dismiss(){pop.classList.remove('active');localStorage.setItem(KEY,'1');}
+  if(!localStorage.getItem(KEY)){
+    setTimeout(show,12000);
+    document.addEventListener('mouseout',e=>{if(e.clientY<=0)show();});
+  }
+  document.getElementById('lmPopX').addEventListener('click',dismiss);
+  pop.addEventListener('click',e=>{if(e.target===pop)dismiss();});
+  addEventListener('keydown',e=>{if(e.key==='Escape')dismiss();});
+  // Soumission AJAX réutilisable (popup + footer)
+  function wire(form,onOk){
+    if(!form)return;
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+        .then(()=>onOk()).catch(()=>onOk());
+    });
+  }
+  wire(document.getElementById('lmPopForm'),()=>{
+    document.getElementById('lmPopForm').style.display='none';
+    document.getElementById('lmPopOk').style.display='block';
+    localStorage.setItem(KEY,'1');
+  });
+  const ff=document.getElementById('footForm');
+  wire(ff,()=>{ff.style.display='none';document.getElementById('footOk').style.display='block';});
+})();
+
+const ov=document.getElementById('cartOverlay'),dr=document.getElementById('cartDrawer');
+document.getElementById('cartToggle').addEventListener('click',()=>window.openCart&&window.openCart());
+document.getElementById('cartClose').addEventListener('click',()=>window.closeCart&&window.closeCart());
+ov.addEventListener('click',()=>window.closeCart&&window.closeCart());
+
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{
+  const it=b.closest('.faq-item'),open=it.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!open)it.classList.add('open');
+}));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal,.reveal-r').forEach(el=>io.observe(el));
+</script>
+<script src="cart.js"></script>
+</body>
+</html>
