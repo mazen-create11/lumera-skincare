@@ -1974,3 +1974,8 @@ img { -webkit-user-drag: none; }
 .bb-bullets li{list-style:none;display:flex;gap:.6rem;font-size:.89rem;line-height:1.5;color:var(--c-text-main)}
 .bb-bullets li svg{flex:0 0 auto;width:17px;height:17px;margin-top:.12rem;stroke:var(--c-accent-dark,#B06A74)}
 .bb-bullets li b{font-weight:600}
+
+/* Hover-zoom loupe galerie */
+.gallery-carousel{overflow-y:hidden}
+.gallery-carousel img{cursor:zoom-in;transition:transform .25s ease}
+.gallery-carousel img.zooming{transition:none}

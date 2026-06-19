@@ -33,7 +33,7 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=15">
     <style>
         /* Specs techniques grid */
         .specs-grid {
@@ -257,8 +257,8 @@
                 </div>
                 <div class="trust-row">
                     <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span><b>Livraison gratuite</b> en France · expédié sous 24 h</span></div>
-                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b> · retour gratuit</span></div>
-                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Paiement <b>100 % sécurisé</b> · chiffrement SSL</span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b></span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Paiement <b>100 % sécurisé</b></span></div>
                 </div>
                 <ul class="bb-bullets">
                     <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span>Visage <b>et</b> cou traités dans la même session de 10 min.</span></li>
@@ -582,6 +582,25 @@
     var raf;main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
     main.scrollLeft=0;sync();
     window.addEventListener('load',function(){main.scrollLeft=0;sync();});
+  });
+})();
+</script>
+<script>
+/* Loupe au survol : zoom suivant le curseur, sans clic */
+(function(){
+  document.querySelectorAll('.gallery-carousel img').forEach(function(img){
+    img.addEventListener('mousemove',function(e){
+      var r=img.getBoundingClientRect();
+      var x=((e.clientX-r.left)/r.width)*100, y=((e.clientY-r.top)/r.height)*100;
+      img.classList.add('zooming');
+      img.style.transformOrigin=x+'% '+y+'%';
+      img.style.transform='scale(2.3)';
+    });
+    img.addEventListener('mouseleave',function(){
+      img.classList.remove('zooming');
+      img.style.transform='';
+      img.style.transformOrigin='';
+    });
   });
 })();
 </script>
