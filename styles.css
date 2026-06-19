@@ -1117,45 +1117,65 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
 .faq-section h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); text-align: center; margin-bottom: 1rem; font-weight: 400; }
 .faq-section .section-sub { text-align: center; color: var(--c-text-muted); margin-bottom: 4rem; font-size: 0.95rem; font-weight: 300; }
 
-.accordion { border-top: 1px solid var(--c-border); }
-.accordion-item { border-bottom: 1px solid var(--c-border); }
+.accordion { display: flex; flex-direction: column; gap: 0.7rem; }
+.accordion-item {
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    background: var(--c-bg);
+    overflow: hidden;
+    transition: border-color .25s, box-shadow .25s, background .25s;
+}
+.accordion-item:has(.accordion-header.active) {
+    border-color: #E7C9CF;
+    background: var(--c-surface);
+    box-shadow: 0 8px 28px rgba(150,90,100,.08);
+}
 .accordion-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.6rem 0;
+    padding: 1.25rem 1.4rem;
     background: none;
     border: none;
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-weight: 500;
     cursor: pointer;
     font-family: var(--font-sans);
     color: var(--c-text-main);
-    transition: var(--t-fast);
+    transition: color .2s;
     text-align: left;
     gap: 1rem;
 }
 .accordion-header:hover { color: var(--c-accent-dark); }
 .accordion-header .icon {
-    color: var(--c-accent-dark);
-    font-size: 1.4rem;
-    font-weight: 300;
     flex-shrink: 0;
-    transition: transform var(--t-fast);
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: 1px solid #E7C9CF;
+    color: var(--c-accent-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem; font-weight: 300; line-height: 1;
     font-family: var(--font-sans);
+    transition: transform .3s var(--ease-out), background .25s, color .25s, border-color .25s;
 }
-.accordion-header.active .icon { transform: rotate(45deg); }
+.accordion-header.active .icon {
+    transform: rotate(45deg);
+    background: var(--c-accent-dark);
+    color: #fff;
+    border-color: var(--c-accent-dark);
+}
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s var(--ease-out), padding-bottom 0.6s var(--ease-out);
+    transition: max-height 0.5s var(--ease-out), padding 0.5s var(--ease-out);
     font-size: 0.9rem;
     color: var(--c-text-muted);
-    line-height: 1.85;
+    line-height: 1.8;
     font-weight: 300;
+    padding: 0 1.4rem;
 }
-.accordion-content.active { max-height: 2500px; padding-bottom: 2rem; }
+.accordion-content.active { max-height: 1200px; padding: 0 1.4rem 1.4rem; }
 
 /* =========================================
    FOOTER
@@ -1979,3 +1999,15 @@ img { -webkit-user-drag: none; }
 .gallery-carousel{overflow-y:hidden}
 .gallery-carousel img{cursor:zoom-in;transition:transform .25s ease}
 .gallery-carousel img.zooming{transition:none}
+
+/* Stylo — mécanisme CIT visuel */
+.cit-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--c-border);border:1px solid var(--c-border);border-radius:14px;overflow:hidden;margin-bottom:1.4rem}
+.cit-stat{background:var(--c-bg);padding:1.2rem .7rem;text-align:center}
+.cit-num{display:block;font-size:1.6rem;font-weight:600;color:var(--c-text-main);line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}
+.cit-num small{font-size:.72rem;font-weight:500}
+.cit-cap{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;color:var(--c-text-muted);margin-top:.45rem}
+.cit-steps{display:flex;flex-direction:column;gap:.9rem}
+.cit-step{display:flex;gap:.9rem;align-items:flex-start}
+.cit-badge{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--c-accent-dark);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;margin-top:.1rem}
+.cit-step b{display:block;font-size:.92rem;color:var(--c-text-main);margin-bottom:.2rem}
+.cit-step p{font-size:.85rem;color:var(--c-text-muted);line-height:1.6;margin:0}

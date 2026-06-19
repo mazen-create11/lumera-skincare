@@ -33,7 +33,7 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="styles.css?v=16">
     <style>
         .science-callout {
             background: var(--c-surface);
@@ -194,28 +194,25 @@
             </script>
 
             <!-- CIT Mechanism visual -->
-            <div style="background:var(--c-surface); padding:2rem; margin:2rem 0;" class="reveal">
-                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:var(--c-accent-dark); margin-bottom:1.5rem;">Le mécanisme CIT expliqué</p>
-                <div style="display:flex; flex-direction:column; gap:1rem;">
-                    <div style="display:flex; gap:1rem; align-items:flex-start;">
-                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">1</div>
-                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Micro-perforations</strong> — 0,25 mm traverse la couche cornée sans atteindre les terminaisons nerveuses. Indolore.</p>
+            <div class="reveal" style="margin:2.4rem 0;">
+                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:var(--c-accent-dark); margin-bottom:1.3rem;">Le mécanisme, en clair</p>
+                <div class="cit-stats">
+                    <div class="cit-stat"><span class="cit-num">0,25<small> mm</small></span><span class="cit-cap">Profondeur indolore</span></div>
+                    <div class="cit-stat"><span class="cit-num" style="color:var(--c-accent-dark);">×4,7</span><span class="cit-cap">Absorption PDRN</span></div>
+                    <div class="cit-stat"><span class="cit-num">4–12<small> sem</small></span><span class="cit-cap">Résultats visibles</span></div>
+                </div>
+                <div class="cit-steps">
+                    <div class="cit-step">
+                        <span class="cit-badge">1</span>
+                        <div><b>Perforer</b><p>Micro-canaux de 0,25 mm dans la couche cornée — sans atteindre les terminaisons nerveuses. Indolore, sans rougeur durable.</p></div>
                     </div>
-                    <div style="display:flex; gap:1rem; align-items:flex-start;">
-                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">2</div>
-                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Signal de blessure contrôlée</strong> — les plaquettes libèrent PDGF, TGF-β, VEGF et EGF. La cascade de cicatrisation s'active.</p>
+                    <div class="cit-step">
+                        <span class="cit-badge">2</span>
+                        <div><b>Régénérer</b><p>La peau active sa cascade de réparation : facteurs de croissance → fibroblastes → <b>nouveau collagène I &amp; III</b>.</p></div>
                     </div>
-                    <div style="display:flex; gap:1rem; align-items:flex-start;">
-                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">3</div>
-                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Migration fibroblastes</strong> → production de procollagène → collagène I et III. Remodeling de la matrice dermique.</p>
-                    </div>
-                    <div style="display:flex; gap:1rem; align-items:flex-start;">
-                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">4</div>
-                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Fenêtre PDRN</strong> — micro-canaux ouverts 15–60 min → absorption du Sérum PDRN significativement augmentée dans cette fenêtre.</p>
-                    </div>
-                    <div style="display:flex; gap:1rem; align-items:flex-start;">
-                        <div style="width:32px; height:32px; border-radius:50%; border:1px solid var(--c-accent-light); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; color:var(--c-accent-dark); flex-shrink:0;">5</div>
-                        <p style="font-size:0.85rem; color:var(--c-text-muted); line-height:1.65; margin:0;"><strong>Résultats progressifs</strong> sur 4–12 semaines : texture, pores, fermeté. La CIT est cumulative — la régularité prime.</p>
+                    <div class="cit-step">
+                        <span class="cit-badge">3</span>
+                        <div><b>Absorber</b><p>Les canaux restent ouverts 15–60 min : appliqué juste après, le <b>Sérum PDRN</b> pénètre bien plus profond.</p></div>
                     </div>
                 </div>
             </div>
@@ -225,7 +222,7 @@
     <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">Induction Tissulaire (CIT)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--c-text-muted); line-height:1.7;">
                             <p style="margin-bottom:1rem">Le microneedling agit par effraction mécanique de la couche cornée, générant un stress tissulaire contrôlé.</p>
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Cascade Cicatricielle :</strong> Libération autocrine de facteurs de croissance (PDGF, TGF-β, VEGF).</li>
@@ -238,7 +235,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">Protocole Sanitaire & Usage<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--c-text-muted); line-height:1.7;">
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Asepsie :</strong> Désinfection intégrale de l'embout à l'alcool à 70° avant et après chaque séance.</li>
                                 <li><strong>✦ Cinétique :</strong> Application en quadrillage doux (vertical, horizontal, diagonal). Ne jamais exercer de pression forte.</li>
@@ -251,7 +248,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">Contre-indications Strictes<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--c-text-muted); line-height:1.7;">
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Interdictions :</strong> Ne jamais utiliser sur acné active, rosacée inflammatoire, eczéma ou plaies ouvertes.</li>
                                 <li><strong>✦ Incompatibilités Topiques :</strong> Ne pas appliquer de Rétinol, AHA/BHA, ou Vitamine C pure dans les 24h suivant la séance.</li>
