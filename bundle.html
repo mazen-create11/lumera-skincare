@@ -36,7 +36,7 @@
     }
     </script>
     <link rel="preload" as="image" href="assets/coffret-hero.webp" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=18">
     <style>
         /* ── Contenu du coffret ── */
         .bundle-items { margin: 1.5rem 0; }
@@ -322,15 +322,12 @@
                 <span class="price-old">329 €</span>
                 <span class="savings-badge">Économisez 50 €</span>
             </div>
-            <p class="price-split reveal">ou <strong>3× 93 €</strong> sans frais — paiement en 3 fois</p>
-            <p class="reveal" style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0.75rem 0 0;">Le rituel d'institut complet, pour le prix d'un seul masque ailleurs : les références du marché facturent <strong style="color:var(--c-text-main);">470 à 600 €</strong> le masque seul — sans le sérum, sans le stylo.</p>
-
-            <p class="product-description reveal" style="margin-bottom:1.1rem;">
-                Trois technologies réunies dans un seul protocole, où chacune amplifie la suivante : le <strong style="color:var(--c-text-main);font-weight:600;">Sérum PDRN</strong> prépare la peau, le <strong style="color:var(--c-text-main);font-weight:600;">Stylo micro-needling</strong> ouvre les voies d'absorption, le <strong style="color:var(--c-text-main);font-weight:600;">Masque LED</strong> scelle et relance la synthèse de collagène.
-            </p>
-            <p class="product-description reveal">
-                Séparément, trois bons produits. <strong style="color:var(--c-text-main);font-weight:600;">Ensemble, un rituel</strong> — pensé pour des résultats visibles dès la 4ᵉ semaine.
-            </p>
+            <p class="bb-split reveal">ou <b>3× 93 €</b> sans frais · les leaders facturent <b>470–600 €</b> le masque seul, sans le sérum ni le stylo.</p>
+            <ul class="bb-bullets reveal" style="border-top:none; padding-top:0; margin-top:1.1rem;">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span>Le <b>Sérum</b> prépare · le <b>Stylo</b> ouvre l'absorption · le <b>Masque LED</b> scelle et relance le collagène.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span>Séparément, 3 bons produits. <b>Ensemble, un rituel</b> — résultats visibles dès la 4ᵉ semaine.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span><b>Guide protocole 8 semaines</b> offert avec le coffret.</span></li>
+            </ul>
 
             <!-- Contenu du coffret -->
             <div class="reveal">
@@ -386,11 +383,11 @@
 
             <!-- ATC -->
             <div class="atc-wrapper reveal" id="atcWrapper">
-                <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-packshot.webp')">Commander le Coffret — 279 €</button>
-                <div class="reassurance-list">
-                    <span>Paiement 100% sécurisé</span>
-                    <span>Livraison express offerte</span>
-                    <span>30 jours satisfaite ou remboursée</span>
+                <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-packshot.webp')">Commander le Coffret</button>
+                <div class="trust-row">
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span><b>Livraison gratuite</b> en France · expédié sous 24 h</span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b></span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Paiement <b>100 % sécurisé</b></span></div>
                 </div>
                 <div class="pay-row" style="margin-top:1.5rem;">
                     <span class="pay-chip pay-visa">VISA</span>
@@ -403,27 +400,12 @@
             </div>
 
             <!-- Réassurance visible (garanties sorties des accordéons) -->
-            <div class="trust-band reveal">
-                <div class="trust-item">
-                    <span class="trust-ico" aria-hidden="true">✓</span>
-                    <div><strong>30 jours satisfaite ou remboursée</strong><span>Remboursement intégral, sans justification requise.</span></div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-ico" aria-hidden="true">✓</span>
-                    <div><strong>Garantie 2 ans sur le Masque LED</strong><span>Défauts matériels et de fabrication couverts.</span></div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-ico" aria-hidden="true">✓</span>
-                    <div><strong>Retour gratuit en France · remboursement 5–7 j</strong><span>Support dédié, réponse sous 24 h.</span></div>
-                </div>
-            </div>
-
             <!-- Accordions -->
             <div class="accordion reveal">
     <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">1. L'Induction (CIT 0,25mm)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--c-text-muted); line-height:1.7;">
                             <p style="margin-bottom:1rem">La première phase du rituel consiste à bypasser la barrière cutanée.</p>
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Mécanisme :</strong> Le stylo crée des micro-canaux épidermiques, déclenchant un signal autocrine de réparation (facteurs de croissance).</li>
@@ -435,7 +417,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">2. L'Infusion (Sérum PDRN 1%)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--c-text-muted); line-height:1.7;">
                             <p style="margin-bottom:1rem">Application immédiate des bio-macromolécules dans la fenêtre thérapeutique de 60 minutes.</p>
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Mécanisme :</strong> Le PDRN (Polydésoxyribonucléotide) s'infiltre dans le derme papillaire via les micro-canaux et active les récepteurs A2A fibroblastiques.</li>
@@ -447,7 +429,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">3. La Photomodulation (Masque LED)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--c-text-muted); line-height:1.7;">
                             <p style="margin-bottom:1rem">L'étape finale fournit l'énergie nécessaire à la transcription cellulaire.</p>
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Mécanisme :</strong> L'irradiation (630nm / 840nm) stimule la cytochrome C oxydase. Le métabolisme cellulaire, déjà sollicité par le PDRN, est inondé d'ATP.</li>
