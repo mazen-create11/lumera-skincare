@@ -12,6 +12,9 @@
     <meta property="og:description" content="Masque LED, Sérum PDRN et Stylo microneedling — le rituel d'institut à la maison. Édition limitée, 289 €.">
     <meta property="og:image" content="assets/coffret-hero.webp">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,7 +23,7 @@
       "image": ["assets/coffret-hero.webp", "assets/coffret-packshot.webp", "assets/coffret-banner.webp"],
       "description": "Le coffret complet Luméra : Masque LED Face + Cou, Sérum PDRN Glass Skin et Stylo micro-needling. Le rituel de photobiomodulation d'institut, à la maison.",
       "brand": { "@type": "Brand", "name": "LUMÉRA" },
-      "category": "Soin du visage anti-âge",
+      "category": "Soin du visage régénératif",
       "offers": {
         "@type": "Offer",
         "url": "bundle.html",
@@ -31,9 +34,8 @@
       }
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="assets/coffret-hero.webp" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css?v=8">
     <style>
         /* ── Contenu du coffret ── */
         .bundle-items { margin: 1.5rem 0; }
@@ -45,7 +47,9 @@
             align-items: flex-start;
         }
         .bundle-item:last-child { border-bottom: none; }
-        .bundle-item.bonus { opacity: 0.65; }
+        .bundle-item.bonus .bundle-item-name,
+        .bundle-item.bonus .bundle-item-desc { color: var(--c-text-muted); }
+        .bundle-item.bonus .bundle-item-price { color: var(--c-accent-dark); font-style: normal; font-weight: 600; }
         .bundle-item-img { width: 80px; height: 80px; flex-shrink: 0; object-fit: cover; }
         .bundle-item-body { flex: 1; }
         .bundle-item-name { font-size: 0.88rem; font-weight: 700; color: var(--c-text-main); margin-bottom: 0.3rem; }
@@ -89,7 +93,7 @@
         }
         .price-col-old { font-size: 1.3rem; text-decoration: line-through; color: var(--c-text-light); font-weight: 600; }
         .price-col-new { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--c-text-main); }
-        .price-col-new-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--c-accent); margin-bottom: 0.3rem; }
+        .price-col-new-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--c-accent-dark); margin-bottom: 0.3rem; }
         .price-arrow { font-size: 1.3rem; color: var(--c-text-light); }
 
         /* ── Étapes du rituel ── */
@@ -106,7 +110,7 @@
             font-family: var(--font-serif);
             font-size: 3rem;
             font-weight: 300;
-            color: var(--c-accent-light);
+            color: var(--c-accent-dark);
             line-height: 1;
             text-align: center;
         }
@@ -138,7 +142,7 @@
         .timeline-label {
             font-family: var(--font-serif);
             font-size: 2.5rem;
-            color: var(--c-accent);
+            color: var(--c-accent-dark);
             margin-bottom: 0.5rem;
             font-weight: 300;
         }
@@ -222,7 +226,7 @@
         .value-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
         .value-list li { font-size: 0.86rem; color: var(--c-text-muted); line-height: 1.55; padding-left: 1.5rem; position: relative; }
         .value-col .value-list li::before { content: '–'; position: absolute; left: 0.35rem; color: var(--c-text-light); }
-        .value-col--lumera .value-list li::before { content: '✦'; left: 0.1rem; color: var(--c-accent); font-size: 0.72rem; top: 0.1rem; }
+        .value-col--lumera .value-list li::before { content: '✦'; left: 0.1rem; color: var(--c-accent-dark); font-size: 0.72rem; top: 0.1rem; }
         .value-list li strong { color: var(--c-text-main); font-weight: 700; }
         @media (max-width: 768px) {
             .value-compare { grid-template-columns: 1fr; max-width: 420px; }
@@ -240,13 +244,24 @@
         .ba-media { position: relative; aspect-ratio: 3/2; overflow: hidden; }
         .ba-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .ba-media::after { content: ''; position: absolute; top: 8%; bottom: 8%; left: 50%; width: 1px; background: rgba(255,255,255,.45); transform: translateX(-50%); }
-        .ba-tag { position: absolute; bottom: .7rem; font-size: .56rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(61,26,36,.58); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: .3rem .7rem; border-radius: 100px; }
+        .ba-tag { position: absolute; bottom: .7rem; font-size: .56rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(45,20,28,.85); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: .3rem .7rem; border-radius: 100px; }
         .ba-tag.before { left: .7rem; }
-        .ba-tag.after { right: .7rem; background: rgba(168,89,104,.85); }
+        .ba-tag.after { right: .7rem; background: rgba(138,66,80,.9); }
         .ba-cap { padding: 1.1rem 1.3rem 1.3rem; }
         .ba-cap strong { display: block; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--c-text-main); margin-bottom: .25rem; }
         .ba-cap span { font-size: .78rem; color: var(--c-text-muted); line-height: 1.5; }
         @media (max-width: 880px) { .ba-cards { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; } }
+
+        /* ── Prix : badge collé + paiement fractionné ── */
+        .product-price-block .savings-badge { align-self: center; border-radius: 100px; }
+        .price-split { font-size: 0.84rem; color: var(--c-text-muted); margin: -1.7rem 0 0; font-family: var(--font-sans); }
+        .price-split strong { color: var(--c-text-main); font-weight: 600; }
+        /* ── Bandeau de réassurance sous le CTA ── */
+        .trust-band { display: grid; gap: 0.95rem; padding: 1.3rem 1.45rem; margin: 0 0 1.6rem; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 14px; }
+        .trust-item { display: flex; gap: 0.75rem; align-items: flex-start; }
+        .trust-ico { flex-shrink: 0; width: 21px; height: 21px; border-radius: 50%; background: var(--c-accent-dark); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.68rem; margin-top: 1px; }
+        .trust-item strong { display: block; font-size: 0.85rem; color: var(--c-text-main); font-weight: 600; line-height: 1.3; }
+        .trust-item span { font-size: 0.77rem; color: var(--c-text-muted); line-height: 1.45; }
     </style>
 </head>
 <body>
@@ -274,7 +289,7 @@
         <div class="product-gallery">
             <div class="gallery-stage">
                 <div class="gallery-carousel" id="galleryMain">
-                    <video src="assets/coffret-reveal.mp4" poster="assets/coffret-hero.webp" autoplay muted loop playsinline style="flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;scroll-snap-align:center;display:block"></video>
+                    <video data-src="assets/coffret-reveal.mp4" poster="assets/coffret-hero.webp" muted loop playsinline preload="none" style="flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;scroll-snap-align:center;display:block"></video>
                     <img loading="lazy" src="assets/coffret-packshot.webp" alt="Coffret Le Rituel Complet — les 3 produits réunis">
                     <img loading="lazy" src="assets/coffret-banner.webp" alt="Coffret Le Rituel Complet Luméra sur la coiffeuse">
                 </div>
@@ -298,19 +313,23 @@
             <h1 class="product-title serif reveal">Le Rituel<br>Complet</h1>
 
             <div class="product-reviews reveal">
-                <span class="stars" style="color:var(--c-gold);">✦</span>
+                <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                 <span>Édition Fondatrice · Série limitée 2026</span>
-                <span class="savings-badge" style="margin-left:auto;">Économisez 38 €</span>
             </div>
 
             <div class="product-price-block reveal">
                 <span class="current-price">289 €</span>
                 <span class="price-old">327 €</span>
+                <span class="savings-badge">Économisez 38 €</span>
             </div>
+            <p class="price-split reveal">ou <strong>3× 96,33 €</strong> sans frais — paiement en 3 fois</p>
             <p class="reveal" style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:0.75rem 0 0;">Le rituel d'institut complet, pour le prix d'un seul masque ailleurs : les références du marché facturent <strong style="color:var(--c-text-main);">470 à 600 €</strong> le masque seul — sans le sérum, sans le stylo.</p>
 
+            <p class="product-description reveal" style="margin-bottom:1.1rem;">
+                Trois technologies réunies dans un seul protocole, où chacune amplifie la suivante : le <strong style="color:var(--c-text-main);font-weight:600;">Sérum PDRN</strong> prépare la peau, le <strong style="color:var(--c-text-main);font-weight:600;">Stylo micro-needling</strong> ouvre les voies d'absorption, le <strong style="color:var(--c-text-main);font-weight:600;">Masque LED</strong> scelle et relance la synthèse de collagène.
+            </p>
             <p class="product-description reveal">
-                Les trois technologies Luméra réunies dans un seul protocole. Chacune amplifie la suivante : le <strong style="color:var(--c-text-main);font-weight:600;">Sérum PDRN</strong> nourrit et prépare la peau, le <strong style="color:var(--c-text-main);font-weight:600;">Stylo micro-needling</strong> ouvre les voies d'absorption, le <strong style="color:var(--c-text-main);font-weight:600;">Masque LED</strong> scelle et relance la synthèse de collagène. Séparés, ce sont trois bons produits. Ensemble, c'est un rituel — pensé pour des résultats visibles dès la 4ᵉ semaine.
+                Séparément, trois bons produits. <strong style="color:var(--c-text-main);font-weight:600;">Ensemble, un rituel</strong> — pensé pour des résultats visibles dès la 4ᵉ semaine.
             </p>
 
             <!-- Contenu du coffret -->
@@ -321,7 +340,7 @@
                         <img loading="lazy" src="assets/card-mask.webp" alt="Masque LED Face + Cou" class="bundle-item-img">
                         <div class="bundle-item-body">
                             <div class="bundle-item-name">Masque LED Face + Cou</div>
-                            <div class="bundle-item-desc">Rouge 630 · Infrarouge 840 · Infrarouge profond 1072 nm · Silicone médical · CE</div>
+                            <div class="bundle-item-desc">Rouge 630 · Proche Infrarouge (NIR) 840nm 840 · Proche Infrarouge (NIR) 840nm profond 1072 nm · Silicone médical · CE</div>
                             <div class="bundle-item-price">Valeur individuelle : 249 €</div>
                         </div>
                     </div>
@@ -355,7 +374,7 @@
             <!-- Comparaison prix -->
             <div class="price-comparison reveal">
                 <div>
-                    <div class="price-col-label">Prix à l'unité</div>
+                    <div class="price-col-label">Les 3 produits séparément</div>
                     <div class="price-col-old">327 €</div>
                 </div>
                 <div class="price-arrow">→</div>
@@ -382,80 +401,58 @@
                 </div>
             </div>
 
+            <!-- Réassurance visible (garanties sorties des accordéons) -->
+            <div class="trust-band reveal">
+                <div class="trust-item">
+                    <span class="trust-ico" aria-hidden="true">✓</span>
+                    <div><strong>30 jours satisfaite ou remboursée</strong><span>Remboursement intégral, sans justification requise.</span></div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-ico" aria-hidden="true">✓</span>
+                    <div><strong>Garantie 2 ans sur le Masque LED</strong><span>Défauts matériels et de fabrication couverts.</span></div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-ico" aria-hidden="true">✓</span>
+                    <div><strong>Retour gratuit en France · remboursement 5–7 j</strong><span>Support dédié, réponse sous 24 h.</span></div>
+                </div>
+            </div>
+
             <!-- Accordions -->
             <div class="accordion reveal">
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Le Rituel Complet — Protocole 8 semaines <span class="icon">+</span></button>
+    <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">1. L'Induction (CIT 0,25mm)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div class="ritual-step" style="margin-top:1.5rem;">
-                            <div class="ritual-num">1</div>
-                            <div>
-                                <div class="ritual-title">Préparez & Nourrissez — 2 min</div>
-                                <div class="ritual-desc">Nettoyez votre visage. Appliquez 3–4 gouttes de Sérum PDRN sur le visage et le cou. Le PDRN commence à activer les récepteurs A2A des fibroblastes dès le contact.</div>
-                            </div>
-                        </div>
-                        <div class="ritual-step">
-                            <div class="ritual-num">2</div>
-                            <div>
-                                <div class="ritual-title">Infusez en Profondeur — 3 à 5 min</div>
-                                <div class="ritual-desc">Passez le Stylo Micro-needling sur les zones ciblées (mouvements circulaires doux). Les micro-canaux de 0,25 mm restent actifs 15–60 min. Appliquez une 2e couche de sérum — absorption maximale dans cette fenêtre.</div>
-                            </div>
-                        </div>
-                        <div class="ritual-step">
-                            <div class="ritual-num">3</div>
-                            <div>
-                                <div class="ritual-title">Scellez & Amplifiez — 10 à 20 min</div>
-                                <div class="ritual-desc">Placez le Masque LED (rouge 630 nm + infrarouge 840 nm) pendant 10 à 20 minutes. La photobiomodulation relance la synthèse de collagène, fixe les actifs et amplifie la cascade cellulaire déclenchée par le micro-needling.</div>
-                            </div>
-                        </div>
-                        <div class="callout" style="margin-top:1rem;">
-                            <p><strong>Semaines 1–4 :</strong> Rituel complet 5–7 soirs/semaine. <strong>Semaines 5–8 :</strong> Rituel complet 3 soirs/semaine, sérum + masque les autres soirs.</p>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">La première phase du rituel consiste à bypasser la barrière cutanée.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Mécanisme :</strong> Le stylo crée des micro-canaux épidermiques, déclenchant un signal autocrine de réparation (facteurs de croissance).</li>
+                                <li><strong>✦ Résultat :</strong> L'absorption des actifs appliqués par la suite est multipliée par 4.7.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">Pourquoi le coffret surpasse les produits séparés <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">2. L'Infusion (Sérum PDRN 1%)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <p class="block-body" style="margin-top:1.5rem;">Les trois technologies Luméra sont conçues pour se potentialiser mutuellement — ce n'est pas un bundle marketing, c'est une synergie physiologique documentée.</p>
-                        <div class="synergy-callout">
-                            <p><strong>PDRN → Micro-needling :</strong> les micro-canaux de 0,25 mm augmentent significativement l'absorption du PDRN dans le derme — la molécule atteint les récepteurs A2A en concentration plus élevée qu'une application topique standard.</p>
-                        </div>
-                        <div class="synergy-callout">
-                            <p><strong>Micro-needling → LED :</strong> la CIT déclenche une production de facteurs de croissance (TGF-β, PDGF). La lumière rouge 630 nm amplifie la cascade de collagène via un deuxième mécanisme indépendant — double stimulation simultanée.</p>
-                        </div>
-                        <div class="synergy-callout">
-                            <p><strong>PDRN → LED :</strong> le PDRN est anti-inflammatoire (réduit TNF-α et IL-6). Il réduit l'inflammation légère post-needling, permettant à la LED de travailler dans un environnement cutané optimal.</p>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">Application immédiate des bio-macromolécules dans la fenêtre thérapeutique de 60 minutes.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Mécanisme :</strong> Le PDRN (Polydésoxyribonucléotide) s'infiltre dans le derme papillaire via les micro-canaux et active les récepteurs A2A fibroblastiques.</li>
+                                <li><strong>✦ Résultat :</strong> Initiation massive de la synthèse d'acide hyaluronique et de collagène de type I.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">Garanties & conditions de retour <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">3. La Photomodulation (Masque LED)<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <ul class="conservation-list" style="margin-top:1rem;">
-                            <li><strong>30 jours Satisfaite ou Remboursée</strong> — remboursement intégral, sans justification requise</li>
-                            <li><strong>Garantie 2 ans</strong> sur le Masque LED (défauts matériels et fabrication)</li>
-                            <li><strong>Garantie 1 an</strong> sur le Stylo Micro-needling</li>
-                            <li><strong>Retour gratuit</strong> en France métropolitaine</li>
-                            <li><strong>Remboursement sous 5–7 jours ouvrés</strong> après réception du retour</li>
-                            <li><strong>Support dédié</strong> — réponse sous 24h, protocole personnalisé si besoin</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Livraison & packaging <span class="icon">+</span></button>
-                    <div class="accordion-content">
-                        <ul class="conservation-list" style="margin-top:1rem;">
-                            <li>Livraison Express 24H offerte dès 150 €</li>
-                            <li>Colissimo Suivi ou Chronopost selon région</li>
-                            <li>Coffret protégé dans une boîte rigide premium</li>
-                            <li>Papier de soie et ruban satiné — prêt à offrir</li>
-                            <li>Emballage éco-responsable, sans plastique superflu</li>
-                            <li>Numéro de suivi envoyé par email dès expédition</li>
-                        </ul>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">L'étape finale fournit l'énergie nécessaire à la transcription cellulaire.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Mécanisme :</strong> L'irradiation (630nm / 840nm) stimule la cytochrome C oxydase. Le métabolisme cellulaire, déjà sollicité par le PDRN, est inondé d'ATP.</li>
+                                <li><strong>✦ Résultat :</strong> La régénération cellulaire est accélérée, l'inflammation induite par le microneedling est résolue, et la peau est structurellement densifiée.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -470,22 +467,22 @@
             <div class="timeline-grid reveal">
                 <div class="timeline-card">
                     <div class="timeline-label">J7</div>
-                    <h4 class="timeline-title">Éclat & Hydratation</h4>
+                    <h3 class="timeline-title">Éclat & Hydratation</h3>
                     <p class="timeline-desc">Teint plus lumineux, peau plus hydratée. Texture déjà plus douce au toucher.</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-label">S3–4</div>
-                    <h4 class="timeline-title">Texture & Pores</h4>
+                    <h3 class="timeline-title">Texture & Pores</h3>
                     <p class="timeline-desc">Pores moins visibles. Grain de peau affiné. Teint uniforme. Premiers effets fermeté.</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-label">S5–8</div>
-                    <h4 class="timeline-title">Fermeté & Éclat</h4>
+                    <h3 class="timeline-title">Fermeté & Éclat</h3>
                     <p class="timeline-desc">Réduction visible des ridules. Fermeté nettement améliorée. Effet Glass Skin soutenu.</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-label">S8+</div>
-                    <h4 class="timeline-title">Transformation</h4>
+                    <h3 class="timeline-title">Transformation</h3>
                     <p class="timeline-desc">Résultats durables. Entretien 3×/semaine. Peau transformée et résistante au vieillissement.</p>
                 </div>
             </div>
@@ -569,23 +566,23 @@
     <section class="reviews-section">
         <div class="container">
             <div class="reviews-header" style="text-align:center;">
-                <div class="reveal" style="color:var(--c-accent); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; margin-bottom:1rem;">Cercle Fondateur</div>
+                <div class="reveal" style="color:var(--c-accent-dark); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; margin-bottom:1rem;">Cercle Fondateur</div>
                 <h2 class="serif reveal">Soyez parmi <em>les premières.</em></h2>
                 <p class="reveal" style="max-width:620px; margin:1.2rem auto 0; color:var(--c-text-muted); font-size:1rem; line-height:1.7;">Pas encore des milliers d'avis — et c'est assumé. Luméra est une maison qui commence, et vous offre la place rare d'en être à l'origine.</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card reveal">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                     <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Conçu &amp; assemblé en France</h3>
                     <p class="review-text">Silicone de qualité médicale, LED calibrées, coffret monté à la main. Masque garanti 2 ans — pensé pour vous suivre des années, pas une saison.</p>
                 </div>
                 <div class="review-card reveal" style="transition-delay:0.1s;">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                     <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Garantie résultats</h3>
                     <p class="review-text">30 jours pour juger sur votre peau. Si le coffret ne tient pas ses promesses, nous vous remboursons — sans condition.</p>
                 </div>
                 <div class="review-card reveal" style="transition-delay:0.2s;">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                     <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Avis sans filtre</h3>
                     <p class="review-text">Chaque avis publié viendra d'un achat réel et vérifié. Aucun avis acheté, aucun copié. La confiance se mérite — elle ne s'invente pas.</p>
                 </div>
@@ -640,7 +637,7 @@
                     <p class="footer-bio">La photobiomodulation clinique dans votre rituel du soir. Marque française · Conçu en France.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Boutique</h4>
+                    <h3>Boutique</h3>
                     <ul>
                         <li><a href="bundle.html">Le Rituel Complet</a></li>
                         <li><a href="product-mask.html">Masque LED Face + Cou</a></li>
@@ -649,7 +646,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Informations</h4>
+                    <h3>Informations</h3>
                     <ul>
                         <li><a href="about.html">Notre Science</a></li>
                         <li><a href="index.html#faq">FAQ</a></li>
@@ -658,7 +655,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Légal</h4>
+                    <h3>Légal</h3>
                     <ul>
                         <li><a href="legal.html#cgv">CGV</a></li>
                         <li><a href="legal.html#confidentialite">Confidentialité</a></li>
@@ -667,7 +664,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
+                <p class="footer-copy">&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
                 <div class="payment-icons">
                     <div class="payment-icon">VISA</div>
                     <div class="payment-icon">MC</div>
@@ -737,8 +734,8 @@
                 const content = this.nextElementSibling;
                 const isOpen = content.classList.contains('active');
                 document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
-                document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
-                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); }
+                document.querySelectorAll('.accordion-header').forEach(h => { h.classList.remove('active'); h.setAttribute('aria-expanded', 'false'); });
+                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); this.setAttribute('aria-expanded', 'true'); }
             });
         });
 
@@ -753,37 +750,43 @@
             });
         });
     </script>
+    
     <script>
-      (function(){
-        document.querySelectorAll('.gallery-stage').forEach(function(stage){
-          var main=stage.querySelector('.gallery-carousel');
-          if(!main)return;
-          var gallery=stage.closest('.product-gallery')||stage.parentNode;
-          var thumbsWrap=gallery.querySelector('.gallery-thumbs');
-          var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
-          var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
-          var count=main.querySelectorAll('img,video').length;
-          main.scrollLeft=0;
-          window.addEventListener('load',function(){main.scrollLeft=0;sync();});
-          function current(){return Math.round(main.scrollLeft/main.clientWidth);}
-          function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
-          ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
-          if(prev)prev.addEventListener('click',function(){go(current()-1);});
-          if(next)next.addEventListener('click',function(){go(current()+1);});
-          function sync(){
-            var i=current();
-            ts.forEach(function(t,j){t.classList.toggle('active',j===i);});
-            if(prev)prev.disabled=i<=0;
-            if(next)next.disabled=i>=count-1;
-            var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});
-          }
-          var raf;
-          main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
-          sync();
-        });
-      })();
+      /* Vidéo hero différée : la mp4 (3,4 Mo) ne se charge qu'après le LCP — le poster preloadé peint en premier. */
+      window.addEventListener('load', function () {
+        var v = document.querySelector('video[data-src]');
+        if (!v) return;
+        var start = function () { v.src = v.dataset.src; v.load(); var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+        if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 }); else setTimeout(start, 600);
+      });
     </script>
-    <script src="cart.js"></script>
+    <script>
+(function(){
+  document.querySelectorAll('.gallery-stage').forEach(function(stage){
+    var main=stage.querySelector('.gallery-carousel');
+    if(!main)return;
+    var gallery=stage.closest('.product-gallery')||stage.parentNode;
+    var thumbsWrap=gallery.querySelector('.gallery-thumbs');
+    var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
+    var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
+    var count=main.querySelectorAll('img').length;
+    var pagination=document.createElement('div');pagination.className='gallery-pagination';
+    var dots=[];
+    for(var k=0;k<count;k++){(function(idx){var dot=document.createElement('button');dot.type='button';dot.className='gallery-dot';dot.setAttribute('aria-label','Image '+(idx+1));dot.addEventListener('click',function(){go(idx);});pagination.appendChild(dot);dots.push(dot);})(k);}
+    if(count>1)gallery.appendChild(pagination);
+    function current(){return Math.round(main.scrollLeft/main.clientWidth);}
+    function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
+    function sync(){var i=current();ts.forEach(function(t,j){t.classList.toggle('active',j===i);});dots.forEach(function(d,j){d.classList.toggle('active',j===i);});if(prev)prev.disabled=i<=0;if(next)next.disabled=i>=count-1;var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});}
+    ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
+    if(prev)prev.addEventListener('click',function(){go(current()-1);});
+    if(next)next.addEventListener('click',function(){go(current()+1);});
+    var raf;main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
+    main.scrollLeft=0;sync();
+    window.addEventListener('load',function(){main.scrollLeft=0;sync();});
+  });
+})();
+</script>
+<script src="cart.js"></script>
 <script>(function(){var b=document.getElementById("navBurger");if(b)b.addEventListener("click",function(){document.body.classList.toggle("menu-open")});document.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open")})})})();</script>
 <div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
 

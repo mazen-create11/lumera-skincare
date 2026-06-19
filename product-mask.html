@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Masque LED Face + Cou | LUMÉRA</title>
     <meta name="description" content="Le masque LED silicone flexible qui couvre le visage ET le cou. Trois profondeurs de lumière : rouge 630, infrarouge 840, infrarouge profond 1072 nm. Photobiomodulation à domicile — 249 €">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
@@ -15,7 +16,7 @@
       "image": ["assets/mask-front.webp", "assets/mask-worn-open.webp"],
       "description": "Masque LED silicone flexible visage et cou. Trois longueurs d'onde : rouge 630 nm, infrarouge 840 nm, infrarouge profond 1072 nm. Photobiomodulation clinique à domicile.",
       "brand": { "@type": "Brand", "name": "LUMÉRA" },
-      "category": "Soin du visage anti-âge",
+      "category": "Soin du visage régénératif",
       "offers": { "@type": "Offer", "url": "product-mask.html", "priceCurrency": "EUR", "price": "249", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" }
     }
     </script>
@@ -25,13 +26,13 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "Combien de séances par semaine, et combien de temps ?", "acceptedAnswer": { "@type": "Answer", "text": "10 à 20 minutes par séance, 3 à 5 fois par semaine. Les premières semaines, une utilisation quasi quotidienne accélère les résultats, puis on passe à un entretien de 3 fois par semaine." } },
-        { "@type": "Question", "name": "Est-ce sans danger pour les yeux ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le masque comporte des ouvertures pour les yeux et n'émet ni UV ni chaleur ; la lumière rouge et infrarouge est non thermique. Gardez les yeux fermés ou détendus pendant la séance." } },
+        { "@type": "Question", "name": "Est-ce sans danger pour les yeux ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le masque comporte des ouvertures pour les yeux et n'émet ni UV ni chaleur ; la photobiomodulation 630nm et infrarouge est non thermique. Gardez les yeux fermés ou détendus pendant la séance." } },
         { "@type": "Question", "name": "Convient-il aux peaux sensibles ou à la rosacée ?", "acceptedAnswer": { "@type": "Answer", "text": "La photobiomodulation rouge est réputée apaisante et bien tolérée par les peaux réactives. Commencez par des séances courtes de 10 minutes. En cas de pathologie cutanée, demandez l'avis de votre dermatologue." } },
         { "@type": "Question", "name": "Puis-je l'associer à mon sérum et à mon rituel ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Appliquez le Sérum PDRN sur peau propre avant la séance LED : la lumière fixe les actifs et amplifie la synthèse de collagène. C'est le principe du Rituel Complet." } }
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=8">
     <style>
         /* Specs techniques grid */
         .specs-grid {
@@ -160,7 +161,7 @@
             border: 1px solid var(--c-border);
             transition: 0.22s;
         }
-        .gallery-thumbs img.active { opacity: 1; border-color: var(--c-accent); }
+        .gallery-thumbs img.active { opacity: 1; border-color: var(--c-accent-dark); }
         .gallery-thumbs img:hover { opacity: 0.85; }
         @media (max-width: 1024px) { .gallery-carousel img { aspect-ratio: 1/1; } }
     </style>
@@ -222,9 +223,9 @@
             <h1 class="product-title serif reveal">Masque LED<br>Face + Cou</h1>
 
             <div class="product-reviews reveal">
-                <span class="stars" style="color:var(--c-gold);">✦</span>
+                <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                 <span>Édition Fondatrice · Série limitée 2026</span>
-                <span style="margin-left:auto; font-size:0.78rem; color:var(--c-accent); font-weight:600;">Satisfait·e ou remboursé·e 30 j</span>
+                <span style="margin-left:auto; font-size:0.78rem; color:var(--c-accent-dark); font-weight:600;">Satisfait·e ou remboursé·e 30 j</span>
             </div>
 
             <div class="product-price-block reveal">
@@ -255,7 +256,7 @@
 
             <!-- Specs techniques -->
             <div class="reveal">
-                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--c-accent); font-weight:700; margin-bottom:1rem;">Caractéristiques techniques</p>
+                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--c-accent-dark); font-weight:700; margin-bottom:1rem;">Caractéristiques techniques</p>
                 <div class="specs-grid">
                     <div class="spec-row">
                         <span class="spec-label">Longueurs d'onde</span>
@@ -294,166 +295,56 @@
 
             <!-- Accordions -->
             <div class="accordion reveal">
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Trois profondeurs de lumière — détail scientifique <span class="icon">+</span></button>
+    <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">Spectre Optique : Photobiomodulation<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div class="wavelength-table">
-                            <div class="wavelength-row">
-                                <div class="wl-dot" style="background:#FF4444; color:#FF4444;"></div>
-                                <div>
-                                    <div class="wl-name">Lumière Rouge</div>
-                                    <div class="wl-nm">630 nm · Anti-âge principal</div>
-                                    <div class="wl-desc">Active la cytochrome c oxydase mitochondriale → production d'ATP → prolifération des fibroblastes → synthèse collagène I et III. Étude Couturaud 2023 : 90% des patientes avec peau plus lisse. Lee et al. : −36% de rides en 56 jours.</div>
-                                </div>
-                            </div>
-                            <div class="wavelength-row">
-                                <div class="wl-dot" style="background:#FF8C42; color:#FF8C42;"></div>
-                                <div>
-                                    <div class="wl-name">Proche Infrarouge</div>
-                                    <div class="wl-nm">840 nm · Derme profond</div>
-                                    <div class="wl-desc">Atteint le derme profond (4–5 mm). Active la voie TGF-β → synthèse de collagène + angiogenèse + réduction de l'inflammation profonde. +19% d'élasticité mesurée. Synergie optimale avec le rouge 630 nm — recommandée en alternance.</div>
-                                </div>
-                            </div>
-                            
-                            <div class="wavelength-row">
-                                <div class="wl-dot" style="background:#6E1023; color:#6E1023;"></div>
-                                <div>
-                                    <div class="wl-name">Infrarouge profond</div>
-                                    <div class="wl-nm">1072 nm · Pénétration maximale</div>
-                                    <div class="wl-desc">La longueur d'onde la plus pénétrante du masque — elle atteint les couches profondes de la peau, là où se forment les rides installées. Documentée comme agent anti-âge dans un essai clinique dédié au 1072 nm. Présente sur très peu de masques : la signature d'un dispositif premium.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="science-callout">
-                            <p><strong>La profondeur fait la différence.</strong> Plus la longueur d'onde est longue, plus la lumière pénètre : le Rouge 630 nm agit en surface (collagène, éclat), le Proche infrarouge 840 nm dans le derme (fermeté, élasticité), et l'Infrarouge profond 1072 nm atteint les couches que la plupart des masques n'éclairent jamais. C'est cette amplitude qui distingue un dispositif clinique d'un simple panneau rouge.</p>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">La photobiomodulation (PBM) ne chauffe pas les tissus, elle communique avec eux. Nos diodes émettent un rayonnement calibré pour être absorbé par la cytochrome c oxydase, l'enzyme clé de la respiration cellulaire.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Rouge Visible (630nm) :</strong> Pénétration épidermique. Rétablit l'uniformité du teint et stimule les kératinocytes superficiels.</li>
+                                <li><strong>✦ Proche Infrarouge (840nm) :</strong> Pénétration dermique profonde (réticulaire). Induit la synthèse d'ATP et favorise la néocollagenèse.</li>
+                                <li><strong>✦ Synergie :</strong> La combinaison des deux spectres permet une régulation globale de la matrice extra-cellulaire.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">Pourquoi le silicone flexible est supérieur <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Ingénierie des Matériaux : Élastomère de Silicone<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <p style="margin-top:1rem; margin-bottom:1.5rem; color:var(--c-text-muted); line-height:1.8;">
-                            L'intensité lumineuse décroît selon la <strong>loi du carré de la distance</strong> : à 3 cm de distance, la lumière perd ~90% de son intensité initiale. Les masques rigides laissent systématiquement un espace aux contours du visage (joues, mâchoire, tempes) — là où vous en avez le plus besoin. Le silicone médical de Luméra épouse chaque relief pour un contact direct et continu, garantissant une couverture à 100%.
-                        </p>
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-                            <div style="padding:1.5rem; background:var(--c-surface); border:1px solid var(--c-border);">
-                                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:700; color:var(--c-accent-dark); margin-bottom:0.8rem;">LUMÉRA Silicone</p>
-                                <ul style="font-size:0.85rem; color:var(--c-text-muted); line-height:2;">
-                                    <li>✓ Contact direct 100% surface</li>
-                                    <li>✓ Couverture cou native</li>
-                                    <li>✓ Léger, 0 marques de pression</li>
-                                    <li>✓ Nettoyage facile</li>
-                                    <li>✓ S'adapte à toutes morphologies</li>
-                                </ul>
-                            </div>
-                            <div style="padding:1.5rem; background:var(--c-bg); border:1px solid var(--c-border);">
-                                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:700; color:var(--c-text-light); margin-bottom:0.8rem;">Masques rigides</p>
-                                <ul style="font-size:0.85rem; color:var(--c-text-light); line-height:2;">
-                                    <li>✗ Zones d'ombre aux contours</li>
-                                    <li>✗ Cou non couvert</li>
-                                    <li>✗ Pesant, marques sur le nez</li>
-                                    <li>✗ Perte d'intensité (~90%)</li>
-                                    <li>✗ Taille unique inadaptée</li>
-                                </ul>
-                            </div>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">Les masques rigides conventionnels perdent jusqu'à 90% de l'intensité lumineuse selon la loi en carré inverse (dispersion optique). Le masque Luméra annule cette déperdition.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Biodisponibilité maximale :</strong> L'apposition directe sur la peau garantit qu'aucune énergie lumineuse ne se dissipe dans l'air.</li>
+                                <li><strong>✦ Tolérance Clinique :</strong> Silicone de grade biomédical non-poreux, antibactérien et inerte chimiquement.</li>
+                                <li><strong>✦ Couverture anatomique :</strong> Épouse chaque relief du visage et inclut le traitement spécifique du cou.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">Guide d'utilisation complet <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Protocole Thérapeutique<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div style="margin-top:1.5rem;">
-                            <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; font-weight:700; color:var(--c-accent); margin-bottom:1rem;">Protocole recommandé</p>
-                            <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
-                                <div style="display:flex; gap:1rem; align-items:flex-start;">
-                                    <div style="width:28px; height:28px; border-radius:50%; background:var(--c-surface-deep); color:var(--c-text-on-dark); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; flex-shrink:0;">1</div>
-                                    <p style="font-size:0.88rem; color:var(--c-text-muted); line-height:1.7; margin:0;">Nettoyez votre visage et séchez soigneusement. Retirez maquillage et SPF — la lumière doit atteindre directement l'épiderme.</p>
-                                </div>
-                                <div style="display:flex; gap:1rem; align-items:flex-start;">
-                                    <div style="width:28px; height:28px; border-radius:50%; background:var(--c-surface-deep); color:var(--c-text-on-dark); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; flex-shrink:0;">2</div>
-                                    <p style="font-size:0.88rem; color:var(--c-text-muted); line-height:1.7; margin:0;">Appliquez le Sérum PDRN pour maximiser la synergie. <em>Astuce : utilisez le Stylo Micro-needling avant pour une absorption encore amplifiée.</em></p>
-                                </div>
-                                <div style="display:flex; gap:1rem; align-items:flex-start;">
-                                    <div style="width:28px; height:28px; border-radius:50%; background:var(--c-surface-deep); color:var(--c-text-on-dark); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; flex-shrink:0;">3</div>
-                                    <p style="font-size:0.88rem; color:var(--c-text-muted); line-height:1.7; margin:0;">Placez le masque, sélectionnez votre longueur d'onde. Double-appui = cycle entre les 7 modes. Laissez agir <strong>10 à 20 minutes</strong>.</p>
-                                </div>
-                                <div style="display:flex; gap:1rem; align-items:flex-start;">
-                                    <div style="width:28px; height:28px; border-radius:50%; background:var(--c-surface-deep); color:var(--c-text-on-dark); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:0.9rem; flex-shrink:0;">4</div>
-                                    <p style="font-size:0.88rem; color:var(--c-text-muted); line-height:1.7; margin:0;">Après la session : hydratant léger si souhaité. Évitez rétinol et AHA dans les 2h suivantes.</p>
-                                </div>
-                            </div>
-                            <div class="science-callout">
-                                <p><strong>Fréquence optimale :</strong> 5–7 sessions/semaine les 4 premières semaines (phase d'induction), puis 3 sessions/semaine en entretien. La photobiomodulation est cumulative — la régularité prime sur la durée.</p>
-                            </div>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Phase d'attaque :</strong> 3 à 5 séances hebdomadaires (10 min) pendant 12 semaines pour atteindre le seuil thérapeutique.</li>
+                                <li><strong>✦ Phase d'entretien :</strong> 2 séances hebdomadaires suffisent à maintenir la sur-expression fibroblastique.</li>
+                                <li><strong>✦ Séquençage :</strong> À utiliser impérativement sur peau sèche. L'intégration optimale s'effectue après l'application du sérum PDRN.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">Contre-indications & précautions <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Conformité et Certification<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <p style="margin-top:1rem; margin-bottom:1rem; color:var(--c-text-muted); font-size:0.88rem; line-height:1.75;">Le masque Luméra est contre-indiqué dans les situations suivantes. Consultez votre médecin si vous avez un doute :</p>
-                        <ul style="font-size:0.88rem; color:var(--c-text-muted); line-height:2.2; list-style:none;">
-                            <li style="display:flex; gap:0.8rem;">⚠ Grossesse (données insuffisantes, précaution)</li>
-                            <li style="display:flex; gap:0.8rem;">⚠ Lupus, xeroderma pigmentosum ou toute maladie de photosensibilité</li>
-                            <li style="display:flex; gap:0.8rem;">⚠ Médicaments photosensibilisants (tétracyclines, isotrétinoïne, certains AINS, antidépresseurs)</li>
-                            <li style="display:flex; gap:0.8rem;">⚠ Épilepsie photosensible</li>
-                            <li style="display:flex; gap:0.8rem;">⚠ Implants ou matériaux photosensibles dans la zone de traitement</li>
-                            <li style="display:flex; gap:0.8rem;">⚠ Lésions cutanées actives, plaies ouvertes, cancer de la peau actif</li>
-                            <li style="display:flex; gap:0.8rem;">⚠ Phototype très foncé (Fitzpatrick V–VI) : consulter un dermatologue</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Contenu de la boîte & certifications <span class="icon">+</span></button>
-                    <div class="accordion-content">
-                        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-                            <div>
-                                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; font-weight:700; color:var(--c-accent); margin-bottom:1rem;">Contenu</p>
-                                <ul style="font-size:0.88rem; color:var(--c-text-muted); line-height:2.2; list-style:none;">
-                                    <li>✓ Masque LED silicone face + cou</li>
-                                    <li>✓ Câble USB-C de charge</li>
-                                    <li>✓ Guide d'utilisation FR</li>
-                                    <li>✓ Pochette de rangement</li>
-                                    <li>✓ Carte de garantie 2 ans</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; font-weight:700; color:var(--c-accent); margin-bottom:1rem;">Certifications</p>
-                                <ul style="font-size:0.88rem; color:var(--c-text-muted); line-height:2.2; list-style:none;">
-                                    <li>✓ CE — Conformité européenne</li>
-                                    <li>✓ ISO 13485 — Dispositifs médicaux</li>
-                                    <li>✓ RG0 — Sécurité photobiologique</li>
-                                    <li>✓ RoHS — Sans substances nocives</li>
-                                    <li>✓ Silicone médical hypoallergénique</li>
-                                </ul>
-                            </div>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Directive Européenne :</strong> Marquage CE validant la conformité électromagnétique et photobiologique (Norme sécurité oculaire).</li>
+                                <li><strong>✦ Ingénierie :</strong> Fabrication auditée selon la norme ISO 13485 (Dispositifs médicaux).</li>
+                                <li><strong>✦ Conception :</strong> Design et contrôle qualité exclusifs au territoire français.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- Upsell coffret -->
-            <div style="margin-top:2rem; padding:2rem; background:var(--c-surface); border:1px solid var(--c-border);" class="reveal">
-                <p style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:var(--c-accent); margin-bottom:1rem;">Souvent acheté ensemble</p>
-                <div style="display:flex; gap:1rem; align-items:center; margin-bottom:1.5rem;">
-                    <img loading="lazy" src="assets/mask-front.webp" alt="Le Rituel Complet" style="width:60px; height:60px; flex-shrink:0; object-fit:cover;">
-                    <div style="flex:1;">
-                        <p style="font-size:0.88rem; font-weight:600; margin-bottom:0.2rem;">Le Rituel Complet</p>
-                        <p style="font-size:0.78rem; color:var(--c-text-muted);">Masque + Sérum PDRN + Stylo — économisez 38 €</p>
-                    </div>
-                    <div style="text-align:right; flex-shrink:0;">
-                        <p style="font-size:0.9rem; font-weight:700; color:var(--c-text-main);">289 €</p>
-                        <p style="font-size:0.72rem; text-decoration:line-through; color:var(--c-text-light);">327 €</p>
-                    </div>
-                </div>
-                <a href="bundle.html" class="btn btn-rose">Voir le Coffret complet</a>
             </div>
         </div>
     </main>
@@ -463,23 +354,23 @@
     <section class="reviews-section" style="padding-top:6rem;">
         <div class="container">
             <div class="reviews-header" style="text-align:center;">
-                <div class="reveal" style="color:var(--c-accent); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; margin-bottom:1rem;">Cercle Fondateur</div>
+                <div class="reveal" style="color:var(--c-accent-dark); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; margin-bottom:1rem;">Cercle Fondateur</div>
                 <h2 class="serif reveal">Soyez parmi <em>les premières.</em></h2>
                 <p class="reveal" style="max-width:620px; margin:1.2rem auto 0; color:var(--c-text-muted); font-size:1rem; line-height:1.7;">Pas encore des milliers d'avis — et c'est assumé. Luméra est une maison qui commence, et vous offre la place rare d'en être à l'origine.</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card reveal">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                     <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Série fondatrice</h3>
                     <p class="review-text">Les toutes premières unités d'une maison française de photobiomodulation. Vous ne suivez pas une tendance — vous l'ouvrez.</p>
                 </div>
                 <div class="review-card reveal" style="transition-delay:0.1s;">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                     <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Garantie résultats</h3>
                     <p class="review-text">30 jours pour juger sur votre peau. Si la lumière ne tient pas ses promesses, nous vous remboursons — sans condition.</p>
                 </div>
                 <div class="review-card reveal" style="transition-delay:0.2s;">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
+                    <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                     <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Avis sans filtre</h3>
                     <p class="review-text">Chaque avis publié viendra d'un achat réel et vérifié. Aucun avis acheté, aucun copié. La confiance se mérite — elle ne s'invente pas.</p>
                 </div>
@@ -495,19 +386,19 @@
             <p class="reveal" style="text-align:center; color:var(--c-text-muted); margin-bottom:3rem; font-size:1rem;">Tout ce qu'il faut savoir sur le Masque LED.</p>
             <div class="accordion reveal">
                 <div class="accordion-item">
-                    <button class="accordion-header">Combien de séances par semaine, et combien de temps ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Combien de séances par semaine, et combien de temps ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">10 à 20 minutes par séance, 3 à 5 fois par semaine. Les premières semaines, une utilisation quasi quotidienne accélère les résultats ; passez ensuite à un entretien de 3 fois par semaine. La régularité prime toujours sur la durée.</p></div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">Est-ce sans danger pour les yeux ? <span class="icon">+</span></button>
-                    <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Oui. Le masque est conçu avec des ouvertures pour les yeux et n'émet ni UV ni chaleur. La lumière rouge et infrarouge est non thermique. Gardez simplement les yeux fermés ou détendus pendant la séance pour un confort optimal.</p></div>
+                    <button class="accordion-header" aria-expanded="false">Est-ce sans danger pour les yeux ? <span class="icon">+</span></button>
+                    <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Oui. Le masque est conçu avec des ouvertures pour les yeux et n'émet ni UV ni chaleur. La photobiomodulation 630nm et infrarouge est non thermique. Gardez simplement les yeux fermés ou détendus pendant la séance pour un confort optimal.</p></div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">Convient-il aux peaux sensibles ou à la rosacée ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Convient-il aux peaux sensibles ou à la rosacée ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">La photobiomodulation rouge est réputée apaisante et bien tolérée par les peaux réactives. Commencez par des séances courtes (10 min) pour habituer la peau. En cas de pathologie cutanée traitée, demandez l'avis de votre dermatologue.</p></div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">Puis-je l'associer à mon sérum et à mon rituel ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Puis-je l'associer à mon sérum et à mon rituel ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Oui, c'est même recommandé. Appliquez le Sérum PDRN sur peau propre avant la séance LED : la lumière fixe les actifs et amplifie la synthèse de collagène. C'est le principe du Rituel Complet, masque, sérum et stylo pensés en synergie.</p></div>
                 </div>
             </div>
@@ -524,7 +415,7 @@
                     <p class="footer-bio">La photobiomodulation clinique dans votre rituel du soir. Marque française · Conçu en France.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Boutique</h4>
+                    <h3>Boutique</h3>
                     <ul>
                         <li><a href="bundle.html">Le Rituel Complet</a></li>
                         <li><a href="product-mask.html">Masque LED Face + Cou</a></li>
@@ -533,7 +424,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Informations</h4>
+                    <h3>Informations</h3>
                     <ul>
                         <li><a href="about.html">Notre Science</a></li>
                         <li><a href="index.html#faq">FAQ</a></li>
@@ -542,7 +433,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Légal</h4>
+                    <h3>Légal</h3>
                     <ul>
                         <li><a href="#">CGV</a></li>
                         <li><a href="#">Politique RGPD</a></li>
@@ -551,7 +442,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
+                <p class="footer-copy">&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
                 <div class="payment-icons">
                     <div class="payment-icon">VISA</div>
                     <div class="payment-icon">MC</div>
@@ -571,7 +462,7 @@
             <button class="close-cart" onclick="closeCart()">×</button>
         </div>
         <div class="cart-progress">
-            <p>Plus que <strong>250,00 €</strong> pour la livraison offerte ✈</p>
+            <p>Plus que <strong>149,00 €</strong> pour la livraison offerte ✈</p>
             <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
         </div>
         <div class="cart-items" id="cartItems" style="display:flex; align-items:center; justify-content:center; color:var(--c-text-light);">
@@ -580,15 +471,15 @@
         <div class="cart-upsell">
             <img loading="lazy" src="assets/mask-front.webp" alt="Rituel Complet Luméra" style="width:80px; height:80px; object-fit:cover;">
             <div class="cart-upsell-info">
-                <h4>Meilleur choix</h4>
+                <h4>Maximisez l'effet</h4>
                 <p>Le Rituel Complet</p>
-                <span style="font-weight:700; font-size:0.9rem; color:var(--c-accent-dark);">289 € — économisez 38 €</span>
+                <span style="font-weight:700; font-size:0.9rem; color:var(--c-accent-dark);">289 €</span>
             </div>
             <a href="bundle.html" class="add-upsell">Voir</a>
         </div>
         <div class="cart-footer">
             <div class="cart-total"><span>Total</span><span id="cartTotal">0,00 €</span></div>
-            <button class="btn btn-solid" id="checkoutBtn" style="opacity:0.5; pointer-events:none;">Commander en toute sécurité</button>
+            <button class="btn btn-solid" id="checkoutBtn" disabled>Commander en toute sécurité</button>
             <div class="payment-icons" style="margin-top:1rem;">
                 <div class="payment-icon">VISA</div>
                 <div class="payment-icon">MC</div>
@@ -631,8 +522,8 @@
                 const icon = this.querySelector('.icon');
                 const isOpen = content.classList.contains('active');
                 document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
-                document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
-                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); }
+                document.querySelectorAll('.accordion-header').forEach(h => { h.classList.remove('active'); h.setAttribute('aria-expanded', 'false'); });
+                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); this.setAttribute('aria-expanded', 'true'); }
                 if (icon) icon.textContent = isOpen ? '+' : '+';
             });
         });
@@ -649,39 +540,47 @@
             });
         });
     </script>
+    
     <script>
-      (function(){
-        document.querySelectorAll('.gallery-stage').forEach(function(stage){
-          var main=stage.querySelector('.gallery-carousel');
-          if(!main)return;
-          var gallery=stage.closest('.product-gallery')||stage.parentNode;
-          var thumbsWrap=gallery.querySelector('.gallery-thumbs');
-          var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
-          var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
-          var count=main.querySelectorAll('img').length;
-          main.scrollLeft=0;
-          window.addEventListener('load',function(){main.scrollLeft=0;sync();});
-          function current(){return Math.round(main.scrollLeft/main.clientWidth);}
-          function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
-          ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
-          if(prev)prev.addEventListener('click',function(){go(current()-1);});
-          if(next)next.addEventListener('click',function(){go(current()+1);});
-          function sync(){
-            var i=current();
-            ts.forEach(function(t,j){t.classList.toggle('active',j===i);});
-            if(prev)prev.disabled=i<=0;
-            if(next)next.disabled=i>=count-1;
-            var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});
-          }
-          var raf;
-          main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
-          sync();
-        });
-      })();
-    </script>
-    <script src="cart.js"></script>
+(function(){
+  document.querySelectorAll('.gallery-stage').forEach(function(stage){
+    var main=stage.querySelector('.gallery-carousel');
+    if(!main)return;
+    var gallery=stage.closest('.product-gallery')||stage.parentNode;
+    var thumbsWrap=gallery.querySelector('.gallery-thumbs');
+    var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
+    var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
+    var count=main.querySelectorAll('img').length;
+    var pagination=document.createElement('div');pagination.className='gallery-pagination';
+    var dots=[];
+    for(var k=0;k<count;k++){(function(idx){var dot=document.createElement('button');dot.type='button';dot.className='gallery-dot';dot.setAttribute('aria-label','Image '+(idx+1));dot.addEventListener('click',function(){go(idx);});pagination.appendChild(dot);dots.push(dot);})(k);}
+    if(count>1)gallery.appendChild(pagination);
+    function current(){return Math.round(main.scrollLeft/main.clientWidth);}
+    function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
+    function sync(){var i=current();ts.forEach(function(t,j){t.classList.toggle('active',j===i);});dots.forEach(function(d,j){d.classList.toggle('active',j===i);});if(prev)prev.disabled=i<=0;if(next)next.disabled=i>=count-1;var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});}
+    ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
+    if(prev)prev.addEventListener('click',function(){go(current()-1);});
+    if(next)next.addEventListener('click',function(){go(current()+1);});
+    var raf;main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
+    main.scrollLeft=0;sync();
+    window.addEventListener('load',function(){main.scrollLeft=0;sync();});
+  });
+})();
+</script>
+<script src="cart.js"></script>
 <script>(function(){var b=document.getElementById("navBurger");if(b)b.addEventListener("click",function(){document.body.classList.toggle("menu-open")});document.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open")})})})();</script>
 <div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
 
+<div class="satc" id="satc">
+  <div class="satc-inner">
+    <img class="satc-thumb" src="assets/mask-front.webp" alt="" aria-hidden="true">
+    <div class="satc-info">
+      <div class="satc-name">Masque LED Face + Cou</div>
+      <div class="satc-price"><strong>249 €</strong> · ou 3× 83 € sans frais</div>
+    </div>
+    <button class="satc-btn" aria-label="Ajouter au panier" onclick="addToCart('Masque LED Face + Cou', 249, 'assets/mask-front.webp')">Ajouter au panier</button>
+  </div>
+</div>
+<script>(function(){var b=document.getElementById('satc');if(!b)return;var a=document.querySelector('.btn-solid'),f=document.querySelector('.site-footer');var ao=false,fi=false;function u(){b.classList.toggle('show',ao&&!fi);}if(a)new IntersectionObserver(function(e){ao=!e[0].isIntersecting;u();},{threshold:0}).observe(a);if(f)new IntersectionObserver(function(e){fi=e[0].isIntersecting;u();},{threshold:0}).observe(f);})();</script>
 </body>
 </html>

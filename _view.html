@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html,body{margin:0;overflow:hidden;background:#FDF8F6}iframe{display:block;border:0}</style></head><body>
+<iframe id="f"></iframe>
+<script>
+var q=location.search;
+var P=(q.match(/[?&]p=([^&]+)/)||[])[1]||'index.html';
+var W=+((q.match(/[?&]w=(\d+)/)||[])[1]||1380);
+var H=+((q.match(/[?&]h=(\d+)/)||[])[1]||900);
+var Y=+((q.match(/[?&]y=(\d+)/)||[])[1]||0);
+var f=document.getElementById('f');f.style.width=W+'px';f.style.height=H+'px';f.src=P;
+f.onload=function(){try{var d=f.contentDocument;var s=d.createElement('style');
+ s.textContent='.reveal,.reveal-r{opacity:1!important;transform:none!important}*{animation:none!important;transition:none!important;scroll-behavior:auto!important}#header,.satc{display:none!important}';
+ d.head.appendChild(s);
+ setTimeout(function(){f.contentWindow.scrollTo(0,Y);},300);}catch(e){}};
+</script></body></html>

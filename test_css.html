@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .gallery-carousel {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem !important;
+        overflow-x: visible !important;
+        background: transparent !important;
+        scroll-snap-type: none !important;
+    }
+    
+    .gallery-carousel img {
+        flex: none !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+        background: #FCF9F9;
+        border: 1px solid rgba(0,0,0,0.03);
+    }
+    
+    .gallery-carousel img:first-child {
+        grid-column: 1 / -1;
+    }
+</style>
+</head>
+<body>
+<div class="gallery-carousel">
+  <img src="dummy1.jpg" style="background: red;">
+  <img src="dummy2.jpg" style="background: blue;">
+  <img src="dummy3.jpg" style="background: green;">
+  <img src="dummy4.jpg" style="background: yellow;">
+</div>
+</body>
+</html>

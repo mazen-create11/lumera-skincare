@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Sérum PDRN "Glass Skin" | LUMÉRA</title>
     <meta name="description" content="Sérum PDRN 1% à l'ADN de saumon. Niacinamide 5%, Acide Hyaluronique multi-poids. Régénération cellulaire, éclat Glass Skin — 49 €">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
@@ -31,7 +32,7 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=8">
     <style>
         /* ── Ingrédients ── */
         .ingredient-card {
@@ -80,7 +81,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
-            color: var(--c-accent);
+            color: var(--c-accent-dark);
             margin-bottom: 1.4rem;
         }
         .block-body {
@@ -96,7 +97,7 @@
         .step-num {
             font-family: var(--font-serif);
             font-size: 1.8rem;
-            color: var(--c-accent-light);
+            color: var(--c-accent-dark);
             line-height: 1;
             flex-shrink: 0;
             width: 2rem;
@@ -162,7 +163,7 @@
             text-transform: uppercase;
             letter-spacing: 0.14em;
             font-weight: 700;
-            color: var(--c-accent);
+            color: var(--c-accent-dark);
             margin-bottom: 1rem;
         }
         .protocol-card ol {
@@ -189,7 +190,7 @@
 
         /* ── Prix / Reviews ── */
         .price-detail { font-size: 0.85rem; color: var(--c-text-light); }
-        .review-recommend { margin-left: auto; font-size: 0.78rem; color: var(--c-accent); font-weight: 600; }
+        .review-recommend { margin-left: auto; font-size: 0.78rem; color: var(--c-accent-dark); font-weight: 600; }
 
         /* ── Sticky bar ── */
         .sticky-bar {
@@ -266,7 +267,7 @@
             <h1 class="product-title serif reveal">Sérum PDRN<br>"Glass Skin"</h1>
 
             <div class="product-reviews reveal">
-                <span class="stars" style="color:var(--c-gold);">✦</span>
+                <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
                 <span>Édition Fondatrice · Série limitée 2026</span>
                 <span class="review-recommend">Satisfait·e ou remboursé·e 30 j</span>
             </div>
@@ -355,215 +356,43 @@
 
             <!-- Accordions -->
             <div class="accordion reveal">
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Formule complète — Ingrédients détaillés <span class="icon">+</span></button>
+    <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">Pharmacodynamie : PDRN 1%<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div class="ingredient-card">
-                            <div class="ingredient-pct">1%</div>
-                            <div>
-                                <div class="ingredient-name">PDRN — Polydeoxyribonucleotide</div>
-                                <div class="ingredient-inci">Sodium Polydeoxyribonucleotide · Extrait de saumon atlantique</div>
-                                <div class="ingredient-desc">Fragments d'ADN basse masse moléculaire. Active les récepteurs A2A → synthèse collagène I et III + élastine + HA endogène. Concentration premium : supérieure au Rejuran Healer injectable (0,5% c-PDRN). Anti-inflammatoire documenté (réduction TNF-α, IL-6).</div>
-                            </div>
-                        </div>
-                        <div class="ingredient-card">
-                            <div class="ingredient-pct">5%</div>
-                            <div>
-                                <div class="ingredient-name">Niacinamide</div>
-                                <div class="ingredient-inci">Vitamin B3 · Nicotinamide</div>
-                                <div class="ingredient-desc">Dose optimale cliniquement validée (5% = efficace sans effet irritant). Réduit l'apparence des pores, unifie le teint, régule la production de sébum, améliore la barrière cutanée. Synergie prouvée avec l'HA et le PDRN.</div>
-                            </div>
-                        </div>
-                        <div class="ingredient-card">
-                            <div class="ingredient-pct">3×</div>
-                            <div>
-                                <div class="ingredient-name">Acide Hyaluronique Multi-poids</div>
-                                <div class="ingredient-inci">Sodium Hyaluronate (HMW + MMW + LMW)</div>
-                                <div class="ingredient-desc">Trois poids moléculaires distincts : haut poids (surface, film hydratant), poids moyen (couches médiales), bas poids (derme profond). Action hydratante complète de la surface au derme — pas seulement en surface comme les sérums HA standard.</div>
-                            </div>
-                        </div>
-                        <div class="ingredient-card">
-                            <div class="ingredient-pct">+</div>
-                            <div>
-                                <div class="ingredient-name">Complexe Peptides actifs</div>
-                                <div class="ingredient-inci">Palmitoyl Tripeptide-5 · Acetyl Hexapeptide-3</div>
-                                <div class="ingredient-desc">Peptides signal qui amplifient l'action du PDRN sur les fibroblastes et inhibent la contraction des muscles superficiels. Résultat : effet lissant visible plus rapide dès la 2e semaine.</div>
-                            </div>
-                        </div>
-                        <div class="ingredient-card">
-                            <div class="ingredient-pct">+</div>
-                            <div>
-                                <div class="ingredient-name">Panthénol + Allantoïne</div>
-                                <div class="ingredient-inci">Panthenol · Allantoin</div>
-                                <div class="ingredient-desc">Agents apaisants et réparateurs. Réduisent les rougeurs post-micro-needling. Soutiennent l'intégrité de la barrière cutanée. Idéals pour peaux sensibles ou réactives.</div>
-                            </div>
-                        </div>
-                        <div class="callout">
-                            <p><strong>Sans :</strong> Parabènes · Sulfates · Parfum synthétique · Alcool dénaturé · Huiles minérales · OGM</p>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">Le Polydésoxyribonucléotide (PDRN) est un agoniste sélectif des récepteurs A2A purinergiques. Son homologie génomique (97%) annule la réponse immunogène et maximise la pénétration cellulaire.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Angiogenèse :</strong> Stimule la sécrétion de VEGF (Vascular Endothelial Growth Factor).</li>
+                                <li><strong>✦ Prolifération :</strong> Augmentation in vitro de la synthèse collagénique par les fibroblastes dermiques.</li>
+                                <li><strong>✦ Concentration :</strong> Formulé à 1% — dose maximale d'efficacité clinique topique.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">PDRN vs concurrents — Pourquoi Luméra ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Adjuvants Thérapeutiques<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div class="cmp-wrap">
-                            <table class="cmp-table">
-                                <thead>
-                                    <tr>
-                                        <th>Marque</th>
-                                        <th class="hl">LUMÉRA</th>
-                                        <th>Rejuran</th>
-                                        <th>Medicube</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Concentration PDRN</td>
-                                        <td class="hl">1%</td>
-                                        <td>0,5%</td>
-                                        <td>0,5%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Niacinamide</td>
-                                        <td class="hl">5%</td>
-                                        <td>—</td>
-                                        <td>Oui</td>
-                                    </tr>
-                                    <tr>
-                                        <td>HA Multi-poids</td>
-                                        <td class="hl">✓ 3 poids</td>
-                                        <td>1 poids</td>
-                                        <td>—</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Compatible micro-needling</td>
-                                        <td class="hl">✓ Conçu pour</td>
-                                        <td>—</td>
-                                        <td>—</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Prix</td>
-                                        <td class="hl">49 €</td>
-                                        <td>45–65 €</td>
-                                        <td>20–28 €</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <p style="margin-bottom:1rem">La formulation intègre des modélateurs synergiques pour optimiser l'environnement extra-cellulaire.</p>
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Niacinamide (5%) :</strong> Inhibe le transfert des mélanosomes. Consolidation de la fonction barrière.</li>
+                                <li><strong>✦ Complexe Peptidique :</strong> Peptides biomimétiques agissant sur les récepteurs transmembranaires.</li>
+                                <li><strong>✦ Acide Hyaluronique :</strong> Fractionné à triple poids moléculaire pour hydratation multi-stridale.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
-                    <button class="accordion-header">Protocole d'application optimal <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Protocole Séquencé<span class="icon">+</span></button>
                     <div class="accordion-content">
-                        <div class="protocol-grid">
-                            <div class="protocol-card">
-                                <p class="protocol-title">Rituel du matin</p>
-                                <ol>
-                                    <li>Visage propre, légèrement humide</li>
-                                    <li>3–4 gouttes, tapotements doux</li>
-                                    <li>Hydratant léger + SPF 50</li>
-                                </ol>
-                            </div>
-                            <div class="protocol-card">
-                                <p class="protocol-title">Rituel Luméra (soir)</p>
-                                <ol>
-                                    <li>Démaquillage complet</li>
-                                    <li>Sérum PDRN généreux</li>
-                                    <li>Stylo micro-needling (si soir dédié)</li>
-                                    <li>Masque LED 10–20 min</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="callout">
-                            <p><strong>Synergie PDRN + Micro-needling :</strong> appliquez le sérum immédiatement après le stylo. Les micro-canaux de 0,25 mm restent ouverts 15 à 60 minutes — fenêtre d'absorption maximale. Le PDRN est l'une des rares molécules dont le profil de tolérance autorise une application directe post-needling.</p>
-                        </div>
-                        <div class="callout warn">
-                            <p><strong>À éviter dans les 48h après le micro-needling :</strong> rétinol, AHA, BHA, acide glycolique, vitamine C acide. Risque d'irritation sur micro-canaux ouverts.</p>
+                        <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+                            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                <li><strong>✦ Séquence 1 (Induction) :</strong> Après utilisation du stylo CIT 0,25mm pour bypasser la couche cornée.</li>
+                                <li><strong>✦ Séquence 2 (Infusion) :</strong> Application immédiate du sérum. Absorption tissulaire multipliée.</li>
+                                <li><strong>✦ Séquence 3 (Photomodulation) :</strong> Irradiation LED pour activer l'ATP et soutenir le métabolisme fibroblastique induit par le PDRN.</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">Conservation & durée de vie <span class="icon">+</span></button>
-                    <div class="accordion-content">
-                        <p class="conservation-intro">
-                            Le PDRN est sensible à l'oxydation, à la lumière et à la chaleur. Conservez votre flacon à l'abri pour préserver toute la puissance de l'actif jusqu'à la dernière goutte.
-                        </p>
-                        <ul class="conservation-list">
-                            <li>✓ Conserver à l'abri de la lumière directe et de la chaleur (< 25°C)</li>
-                            <li>✓ Ne pas stocker en salle de bain humide — privilégier la chambre</li>
-                            <li>✓ Durée de vie après ouverture : <strong>6 mois</strong></li>
-                            <li>✓ Un flacon 35 ml = 4 à 5 semaines d'utilisation biquotidienne</li>
-                            <li>✓ Refermez bien le flacon après chaque usage — moins de contamination, zéro gaspillage</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Upsell coffret -->
-            <div class="info-block reveal">
-                <span class="block-label">Amplifiez les résultats</span>
-                <p class="block-body">Le Sérum PDRN est conçu pour être utilisé en synergie avec le Masque LED et le Stylo de micro-needling. L'absorption du PDRN est significativement augmentée après micro-needling, et la photobiomodulation amplifie la cascade de collagène.</p>
-                <a href="bundle.html" class="btn btn-rose">Voir le Coffret complet — 289 €</a>
-            </div>
-
-      </div><!-- /.story-inner -->
-    </section>
-
-    <!-- Avant/après ciblé sérum -->
-    <style>
-        .ba-hero { max-width: 720px; margin: 0 auto; background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 55px -42px rgba(92,45,58,.4); }
-        .ba-hero-media { position: relative; aspect-ratio: 3/2; overflow: hidden; }
-        .ba-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .ba-hero-media::after { content: ''; position: absolute; top: 8%; bottom: 8%; left: 50%; width: 1px; background: rgba(255,255,255,.45); transform: translateX(-50%); }
-        .ba-hero-tag { position: absolute; bottom: .8rem; font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(61,26,36,.58); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: .34rem .8rem; border-radius: 100px; }
-        .ba-hero-tag.before { left: .8rem; }
-        .ba-hero-tag.after { right: .8rem; background: rgba(168,89,104,.85); }
-    </style>
-    <section class="section-pad" style="background:var(--c-bg); border-top:1px solid var(--c-border);">
-        <div class="container">
-            <div style="text-align:center; max-width:560px; margin:0 auto 2.6rem;">
-                <span class="feature-eyebrow reveal" style="display:block;">L'effet Glass Skin</span>
-                <h2 class="serif reveal">La lumière revient<br><em>de l'intérieur.</em></h2>
-                <p class="reveal" style="color:var(--c-text-muted); font-size:1rem; line-height:1.7; margin-top:1rem;">Hydratation, rebond, éclat : le PDRN repulpe la peau jour après jour. Voici ce que le sérum change, seul.</p>
-            </div>
-            <div class="ba-hero reveal">
-                <div class="ba-hero-media">
-                    <img loading="lazy" src="assets/ba-serum.webp" alt="Avant / après — effet Glass Skin du Sérum PDRN Luméra">
-                    <span class="ba-hero-tag before">Avant</span>
-                    <span class="ba-hero-tag after">Après · 4 sem.</span>
-                </div>
-            </div>
-            <p class="reveal" style="text-align:center; font-size:0.7rem; font-style:italic; color:var(--c-text-light); margin-top:1.4rem;">Photographie illustrative — simulation visuelle. Les résultats varient selon le phototype et la régularité.</p>
-        </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="reviews-section" style="padding-top:6rem;">
-        <div class="container">
-            <div class="reviews-header" style="text-align:center;">
-                <div class="reveal" style="color:var(--c-accent); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; margin-bottom:1rem;">Cercle Fondateur</div>
-                <h2 class="serif reveal">Soyez parmi <em>les premières.</em></h2>
-                <p class="reveal" style="max-width:620px; margin:1.2rem auto 0; color:var(--c-text-muted); font-size:1rem; line-height:1.7;">Pas encore des milliers d'avis — et c'est assumé. Luméra est une maison qui commence, et vous offre la place rare d'en être à l'origine.</p>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card reveal">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
-                    <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Série fondatrice</h3>
-                    <p class="review-text">Les toutes premières unités d'une maison française de soin. Vous ne suivez pas une tendance — vous l'ouvrez.</p>
-                </div>
-                <div class="review-card reveal" style="transition-delay:0.1s;">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
-                    <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Garantie résultats</h3>
-                    <p class="review-text">30 jours pour juger sur votre peau. Si le sérum ne tient pas ses promesses, nous vous remboursons — sans condition.</p>
-                </div>
-                <div class="review-card reveal" style="transition-delay:0.2s;">
-                    <span class="stars" style="color:var(--c-gold);">✦</span>
-                    <h3 class="serif" style="font-size:1.5rem; font-weight:400; margin:0.6rem 0 0.8rem;">Avis sans filtre</h3>
-                    <p class="review-text">Chaque avis publié viendra d'un achat réel et vérifié. Aucun avis acheté, aucun copié. La confiance se mérite — elle ne s'invente pas.</p>
                 </div>
             </div>
         </div>
@@ -577,19 +406,19 @@
             <p class="reveal" style="text-align:center; color:var(--c-text-muted); margin-bottom:3rem; font-size:1rem;">Tout ce qu'il faut savoir sur le Sérum PDRN.</p>
             <div class="accordion reveal">
                 <div class="accordion-item">
-                    <button class="accordion-header">Qu'est-ce que le PDRN exactement ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Qu'est-ce que le PDRN exactement ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Le PDRN (polydésoxyribonucléotide) est un actif issu d'ADN de saumon, reconnu pour stimuler les fibroblastes, soutenir la régénération cellulaire et apaiser. C'est l'un des actifs phares de la « K-beauty » clinique, ici dosé à 1 %.</p></div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">Matin ou soir, à quelle étape l'appliquer ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Matin ou soir, à quelle étape l'appliquer ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Matin et soir, sur peau propre, avant la crème hydratante. Le soir, c'est le moment idéal : appliquez-le avant la séance de Masque LED pour que la lumière fixe les actifs en profondeur.</p></div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">Avec quels actifs l'associer ou l'éviter ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Avec quels actifs l'associer ou l'éviter ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Le PDRN se marie très bien avec la niacinamide et l'acide hyaluronique (déjà présents). Évitez de le superposer le même soir qu'un rétinol fort ou un acide exfoliant puissant : alternez les soirs pour ménager la peau.</p></div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">Convient-il aux peaux sensibles ? Et pendant la grossesse ? <span class="icon">+</span></button>
+                    <button class="accordion-header" aria-expanded="false">Convient-il aux peaux sensibles ? Et pendant la grossesse ? <span class="icon">+</span></button>
                     <div class="accordion-content"><p class="block-body" style="margin-top:1.2rem;">Sa formule est pensée pour être douce et apaisante, adaptée aux peaux sensibles. En cas de grossesse ou d'allaitement, comme pour tout soin, demandez l'avis de votre médecin avant utilisation.</p></div>
                 </div>
             </div>
@@ -605,7 +434,7 @@
                     <p class="footer-bio">La photobiomodulation clinique dans votre rituel du soir. Marque française · Conçu en France.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Boutique</h4>
+                    <h3>Boutique</h3>
                     <ul>
                         <li><a href="bundle.html">Le Rituel Complet</a></li>
                         <li><a href="product-mask.html">Masque LED Face + Cou</a></li>
@@ -614,7 +443,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Informations</h4>
+                    <h3>Informations</h3>
                     <ul>
                         <li><a href="about.html">Notre Science</a></li>
                         <li><a href="index.html#faq">FAQ</a></li>
@@ -623,7 +452,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Légal</h4>
+                    <h3>Légal</h3>
                     <ul>
                         <li><a href="#">CGV</a></li>
                         <li><a href="#">Politique RGPD</a></li>
@@ -632,7 +461,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
+                <p class="footer-copy">&copy; 2026 LUMÉRA SKINCARE. Tous droits réservés.</p>
                 <div class="payment-icons">
                     <div class="payment-icon">VISA</div>
                     <div class="payment-icon">MC</div>
@@ -651,7 +480,7 @@
             <button class="close-cart" onclick="closeCart()">×</button>
         </div>
         <div class="cart-progress">
-            <p>Plus que <strong>250,00 €</strong> pour la livraison offerte ✈</p>
+            <p>Plus que <strong>149,00 €</strong> pour la livraison offerte ✈</p>
             <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
         </div>
         <div class="cart-items" id="cartItems">
@@ -660,15 +489,15 @@
         <div class="cart-upsell">
             <img loading="lazy" src="assets/coffret-packshot.webp" alt="Rituel Complet Luméra" style="width:80px; height:80px; object-fit:cover;">
             <div class="cart-upsell-info">
-                <h4>Meilleur résultat</h4>
-                <p>Le Rituel Complet complet</p>
+                <h4>Maximisez l'effet</h4>
+                <p>Le Rituel Complet</p>
                 <span style="font-weight:700; font-size:0.9rem; color:var(--c-accent-dark);">289 €</span>
             </div>
             <a href="bundle.html" class="add-upsell">Voir</a>
         </div>
         <div class="cart-footer">
             <div class="cart-total"><span>Total</span><span>0,00 €</span></div>
-            <button class="btn btn-solid" style="opacity:0.5; pointer-events:none;">Commander en toute sécurité</button>
+            <button class="btn btn-solid" id="checkoutBtn" disabled>Commander en toute sécurité</button>
         </div>
     </div>
 
@@ -698,8 +527,8 @@
                 const content = this.nextElementSibling;
                 const isOpen = content.classList.contains('active');
                 document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
-                document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
-                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); }
+                document.querySelectorAll('.accordion-header').forEach(h => { h.classList.remove('active'); h.setAttribute('aria-expanded', 'false'); });
+                if (!isOpen) { content.classList.add('active'); this.classList.add('active'); this.setAttribute('aria-expanded', 'true'); }
             });
         });
 
@@ -714,37 +543,34 @@
             });
         });
     </script>
+    
     <script>
-      (function(){
-        document.querySelectorAll('.gallery-stage').forEach(function(stage){
-          var main=stage.querySelector('.gallery-carousel');
-          if(!main)return;
-          var gallery=stage.closest('.product-gallery')||stage.parentNode;
-          var thumbsWrap=gallery.querySelector('.gallery-thumbs');
-          var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
-          var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
-          var count=main.querySelectorAll('img').length;
-          main.scrollLeft=0;
-          window.addEventListener('load',function(){main.scrollLeft=0;sync();});
-          function current(){return Math.round(main.scrollLeft/main.clientWidth);}
-          function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
-          ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
-          if(prev)prev.addEventListener('click',function(){go(current()-1);});
-          if(next)next.addEventListener('click',function(){go(current()+1);});
-          function sync(){
-            var i=current();
-            ts.forEach(function(t,j){t.classList.toggle('active',j===i);});
-            if(prev)prev.disabled=i<=0;
-            if(next)next.disabled=i>=count-1;
-            var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});
-          }
-          var raf;
-          main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
-          sync();
-        });
-      })();
-    </script>
-    <script src="cart.js"></script>
+(function(){
+  document.querySelectorAll('.gallery-stage').forEach(function(stage){
+    var main=stage.querySelector('.gallery-carousel');
+    if(!main)return;
+    var gallery=stage.closest('.product-gallery')||stage.parentNode;
+    var thumbsWrap=gallery.querySelector('.gallery-thumbs');
+    var ts=thumbsWrap?Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')):[];
+    var prev=stage.querySelector('.gallery-arrow.prev'),next=stage.querySelector('.gallery-arrow.next');
+    var count=main.querySelectorAll('img').length;
+    var pagination=document.createElement('div');pagination.className='gallery-pagination';
+    var dots=[];
+    for(var k=0;k<count;k++){(function(idx){var dot=document.createElement('button');dot.type='button';dot.className='gallery-dot';dot.setAttribute('aria-label','Image '+(idx+1));dot.addEventListener('click',function(){go(idx);});pagination.appendChild(dot);dots.push(dot);})(k);}
+    if(count>1)gallery.appendChild(pagination);
+    function current(){return Math.round(main.scrollLeft/main.clientWidth);}
+    function go(i){i=Math.max(0,Math.min(count-1,i));main.scrollTo({left:main.clientWidth*i,behavior:'smooth'});}
+    function sync(){var i=current();ts.forEach(function(t,j){t.classList.toggle('active',j===i);});dots.forEach(function(d,j){d.classList.toggle('active',j===i);});if(prev)prev.disabled=i<=0;if(next)next.disabled=i>=count-1;var act=ts[i];if(act&&thumbsWrap)thumbsWrap.scrollTo({left:act.offsetLeft-(thumbsWrap.clientWidth-act.clientWidth)/2,behavior:'smooth'});}
+    ts.forEach(function(t,i){t.addEventListener('click',function(){go(i);});});
+    if(prev)prev.addEventListener('click',function(){go(current()-1);});
+    if(next)next.addEventListener('click',function(){go(current()+1);});
+    var raf;main.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){sync();raf=null;});},{passive:true});
+    main.scrollLeft=0;sync();
+    window.addEventListener('load',function(){main.scrollLeft=0;sync();});
+  });
+})();
+</script>
+<script src="cart.js"></script>
     <script>
         (function () {
             var opts = document.querySelectorAll('#buyOptions .buy-opt');
@@ -768,5 +594,16 @@
 <script>(function(){var b=document.getElementById("navBurger");if(b)b.addEventListener("click",function(){document.body.classList.toggle("menu-open")});document.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open")})})})();</script>
 <div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
 
+<div class="satc" id="satc">
+  <div class="satc-inner">
+    <img class="satc-thumb" src="assets/card-serum.webp" alt="" aria-hidden="true">
+    <div class="satc-info">
+      <div class="satc-name">Sérum PDRN Glass Skin</div>
+      <div class="satc-price"><strong>49 €</strong> · 35 ml · livraison offerte dès 149 €</div>
+    </div>
+    <button class="satc-btn" aria-label="Ajouter au panier" onclick="addToCart('Sérum PDRN Glass Skin', 49, 'assets/card-serum.webp')">Ajouter au panier</button>
+  </div>
+</div>
+<script>(function(){var b=document.getElementById('satc');if(!b)return;var a=document.querySelector('.btn-solid'),f=document.querySelector('.site-footer');var ao=false,fi=false;function u(){b.classList.toggle('show',ao&&!fi);}if(a)new IntersectionObserver(function(e){ao=!e[0].isIntersecting;u();},{threshold:0}).observe(a);if(f)new IntersectionObserver(function(e){fi=e[0].isIntersecting;u();},{threshold:0}).observe(f);})();</script>
 </body>
 </html>

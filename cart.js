@@ -63,7 +63,8 @@
 
   window.openCart = function () {
     var o = document.querySelector('.cart-overlay'), d = document.getElementById('cartDrawer');
-    if (o) o.classList.add('active'); if (d) d.classList.add('active');
+    if (o) { o.classList.add('active'); o.style.userSelect = 'none'; o.style.webkitUserSelect = 'none'; }
+    if (d) d.classList.add('active');
   };
   window.closeCart = function () {
     var o = document.querySelector('.cart-overlay'), d = document.getElementById('cartDrawer');
@@ -87,4 +88,29 @@
 
   if (document.readyState !== 'loading') render();
   else document.addEventListener('DOMContentLoaded', render);
+
+  // Auto-ouverture rétention intelligente
+  window.addEventListener('load', function() {
+    var c = get();
+    if (c.length > 0 && !sessionStorage.getItem('lumera_retention_shown')) {
+      sessionStorage.setItem('lumera_retention_shown', 'true');
+      setTimeout(function() {
+        if(window.openCart) window.openCart();
+      }, 1800); // 1.8s de délai naturel avant affichage
+    }
+  });
+
+  // UX Feedback : Bouton d'ajout au panier
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('button[onclick^="addToCart"]');
+    if (btn) {
+      var oldHtml = btn.innerHTML;
+      btn.innerHTML = 'Ajouté ! ✓';
+      btn.style.pointerEvents = 'none';
+      setTimeout(function() {
+        btn.innerHTML = oldHtml;
+        btn.style.pointerEvents = 'auto';
+      }, 1500);
+    }
+  });
 })();
