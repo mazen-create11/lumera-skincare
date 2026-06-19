@@ -43,7 +43,7 @@
     --c-sale:         #9C4A55;
 
     /* ── Typo ── */
-    --font-serif:     'Fraunces', Georgia, serif;
+    --font-serif:     'Hanken Grotesk', -apple-system, sans-serif;
     --font-sans:      'Hanken Grotesk', -apple-system, Helvetica, sans-serif;
 
     /* ── Transitions ── */
@@ -1874,7 +1874,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     body.menu-open .nav-links { transform: translateX(0); }
     body.menu-open { overflow: hidden; }
     .nav-links a {
-        font-family: var(--font-serif, 'Fraunces', serif);
+        font-family: var(--font-serif, 'Hanken Grotesk', sans-serif);
         font-size: 1.9rem;
         text-transform: none;
         letter-spacing: 0.04em;
@@ -1942,3 +1942,29 @@ img { -webkit-user-drag: none; }
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* ===== BUYBOX PREMIUM (ref CurrentBody / Nooance) ===== */
+.buybox{margin:1.3rem 0 1.4rem}
+.buybox-price{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+.buybox-price .bb-now{font-size:2.05rem;font-weight:600;color:var(--c-text-main);letter-spacing:-.02em;line-height:1}
+.buybox-price .bb-was{font-size:1rem;color:var(--c-text-light);text-decoration:line-through}
+.buybox-price .bb-save{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:var(--c-accent-dark,#B06A74);padding:.3rem .6rem;border-radius:999px}
+.bb-split{font-size:.86rem;color:var(--c-text-muted);margin:.5rem 0 1.15rem;line-height:1.55}
+.bb-split b{color:var(--c-text-main);font-weight:600}
+.buybox-cta{display:flex;gap:.6rem;align-items:stretch}
+.qty{display:flex;align-items:center;border:1px solid #E8D6DA;border-radius:14px;background:#fff;flex:0 0 auto;overflow:hidden}
+.qty button{width:44px;align-self:stretch;border:0;background:none;font-size:1.15rem;color:var(--c-text-muted);cursor:pointer;line-height:1;transition:background .15s}
+.qty button:hover{background:#FBF1F3}
+.qty input{width:30px;text-align:center;border:0;background:none;font-size:1rem;font-weight:600;color:var(--c-text-main);font-family:inherit}
+.buybox-cta .btn{flex:1 1 auto;min-height:58px;font-size:.96rem}
+.pay-row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:1.1rem}
+.pay-chip{height:30px;min-width:46px;padding:0 .55rem;border:1px solid #ECE0E3;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;letter-spacing:.03em;color:#7A6670}
+.trust-row{margin-top:1.25rem;display:flex;flex-direction:column;gap:.6rem}
+.trust-row .tr{display:flex;align-items:center;gap:.65rem;font-size:.86rem;color:var(--c-text-main);line-height:1.4}
+.trust-row .tr svg{flex:0 0 auto;width:18px;height:18px;stroke:var(--c-accent-dark,#B06A74)}
+.trust-row .tr b{font-weight:600}
+.bb-bullets{margin:1.3rem 0 0;padding-top:1.2rem;border-top:1px solid #F1E6E9;display:flex;flex-direction:column;gap:.75rem}
+.bb-bullets li{list-style:none;display:flex;gap:.6rem;font-size:.89rem;line-height:1.5;color:var(--c-text-main)}
+.bb-bullets li svg{flex:0 0 auto;width:17px;height:17px;margin-top:.12rem;stroke:var(--c-accent-dark,#B06A74)}
+.bb-bullets li b{font-weight:600}

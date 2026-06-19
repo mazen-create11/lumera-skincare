@@ -7,8 +7,8 @@
     <meta name="description" content="Le masque LED silicone flexible qui couvre le visage ET le cou. Trois profondeurs de lumière : rouge 630, infrarouge 840, infrarouge profond 1072 nm. Photobiomodulation à domicile — 249 €">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,7 +33,7 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <style>
         /* Specs techniques grid */
         .specs-grid {
@@ -229,31 +229,41 @@
                 <span style="margin-left:auto; font-size:0.78rem; color:var(--c-accent-dark); font-weight:600;">Satisfait·e ou remboursé·e 30 j</span>
             </div>
 
-            <div class="product-price-block reveal">
-                <span class="current-price">249 €</span>
-            </div>
-            <p class="reveal" style="font-size:0.82rem; color:var(--c-text-muted); line-height:1.6; margin:-0.5rem 0 1.5rem;">Les leaders du marché facturent <strong style="color:var(--c-text-main);">470 à 600 €</strong> pour un masque seul, sans le cou. Même technologie clinique — pensée en France, au juste prix.</p>
-
-            <p class="product-description reveal">
-                Le visage <em>et</em> le cou traités dans la même session, sans appareil supplémentaire. Silicone médical ultra-flexible : la lumière épouse chaque millimètre de votre peau. Là où les masques rigides perdent jusqu'à 90% de leur intensité lumineuse à distance, Luméra maintient un contact direct — efficacité maximale, énergie minimale.
-            </p>
-
-            <!-- ATC -->
-            <div class="atc-wrapper reveal" id="atcWrapper">
-                <button class="btn btn-solid" onclick="addToCart('Masque LED Face + Cou', 249, 'assets/mask-front.webp')">Ajouter au panier — 249 €</button>
-                <div class="reassurance-list">
-                    <span>✓ Paiement sécurisé</span>
-                    <span>✓ Livraison express 24H</span>
-                    <span>✓ 30j retour gratuit</span>
+            <!-- BUYBOX PREMIUM -->
+            <div class="buybox reveal">
+                <div class="buybox-price">
+                    <span class="bb-now">249 €</span>
+                    <span class="bb-was">470 €</span>
+                    <span class="bb-save">Juste prix France</span>
                 </div>
-                <div class="payment-icons" style="margin-top:1.5rem; justify-content:flex-start;">
-                    <div class="payment-icon">VISA</div>
-                    <div class="payment-icon">MC</div>
-                    <div class="payment-icon">AMEX</div>
-                    <div class="payment-icon">PAYPAL</div>
-                    <div class="payment-icon">APPLE</div>
+                <p class="bb-split">ou <b>3× 83 €</b> sans frais · les leaders facturent <b>470–600 €</b> le masque seul, sans le cou.</p>
+                <div class="buybox-cta">
+                    <div class="qty">
+                        <button type="button" aria-label="Diminuer" onclick="bbStep(-1)">−</button>
+                        <input id="bbQty" value="1" readonly aria-label="Quantité">
+                        <button type="button" aria-label="Augmenter" onclick="bbStep(1)">+</button>
+                    </div>
+                    <button class="btn btn-solid" onclick="bbAdd('Masque LED Face + Cou', 249, 'assets/mask-front.webp')">Ajouter au panier</button>
                 </div>
+                <div class="pay-row">
+                    <span class="pay-chip">VISA</span><span class="pay-chip">MASTERCARD</span><span class="pay-chip">AMEX</span><span class="pay-chip">PAYPAL</span><span class="pay-chip">APPLE&nbsp;PAY</span><span class="pay-chip">KLARNA</span>
+                </div>
+                <div class="trust-row">
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span><b>Livraison gratuite</b> en France · expédié sous 24 h</span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b> · retour gratuit</span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Paiement <b>100 % sécurisé</b> · chiffrement SSL</span></div>
+                </div>
+                <ul class="bb-bullets">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span>Visage <b>et</b> cou traités dans la même session de 10 min.</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span>Silicone médical souple : la lumière épouse <b>100 % de la peau</b>.</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span>3 longueurs d'onde cliniques — rouge 633, infrarouge 830 &amp; 1072 nm.</span></li>
+                </ul>
             </div>
+            <script>
+            function bbStep(d){var i=document.getElementById('bbQty');var v=Math.max(1,(parseInt(i.value)||1)+d);i.value=v;}
+            function bbQtyVal(){return Math.max(1,parseInt(document.getElementById('bbQty').value)||1);}
+            function bbAdd(n,p,img){var q=bbQtyVal();addToCart(n,p,img);if(q>1&&window.lumeraQty)lumeraQty(n,q-1);}
+            </script>
 
             <!-- Specs techniques -->
             <div class="reveal">
