@@ -6,8 +6,6 @@
    Palette : Crème rosé · Rose signature · Bordeaux profond
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
-
 @view-transition {
     navigation: auto;
 }
@@ -91,7 +89,7 @@ body {
 }
 h1, h2, h3, h4, .serif {
     font-family: var(--font-serif);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.08;
     letter-spacing: -0.02em;
 }
@@ -409,7 +407,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     margin-bottom: 2rem;
     color: var(--c-text-main);
     letter-spacing: -0.03em;
-    font-weight: 300;
+    font-weight: 400;
 }
 .hero h1 em {
     font-style: italic;
@@ -683,7 +681,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     margin-bottom: 1rem;
     color: var(--c-text-on-dark);
-    font-weight: 300;
+    font-weight: 400;
 }
 .science-section .subtitle {
     font-size: 0.95rem;
@@ -890,7 +888,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     font-size: clamp(2.2rem, 4vw, 3.5rem);
     text-align: center;
     margin-bottom: 0.8rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 .comparison-section .section-sub {
     text-align: center;
@@ -940,7 +938,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     gap: 6rem;
     align-items: center;
 }
-.guarantee-content h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1.5rem; font-weight: 300; }
+.guarantee-content h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1.5rem; font-weight: 400; }
 .guarantee-content p { font-size: 0.95rem; color: var(--c-text-muted); line-height: 1.85; margin-bottom: 1.5rem; font-weight: 300; }
 .guarantee-seal {
     width: 170px; height: 170px;
@@ -1008,7 +1006,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     border-top: 1px solid var(--c-border);
 }
 .reviews-header { text-align: center; margin-bottom: 4rem; }
-.reviews-header h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem; font-weight: 300; }
+.reviews-header h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem; font-weight: 400; }
 .reviews-header .rating-summary {
     display: flex;
     align-items: center;
@@ -1086,7 +1084,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     padding: var(--sp-section) 0;
     border-top: 1px solid var(--c-border);
 }
-.ugc-section h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); text-align: center; margin-bottom: 0.8rem; font-weight: 300; }
+.ugc-section h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); text-align: center; margin-bottom: 0.8rem; font-weight: 400; }
 .ugc-section .section-sub { text-align: center; color: var(--c-text-muted); margin-bottom: 4rem; font-size: 0.95rem; font-weight: 300; }
 .masonry-grid { columns: 3; gap: 1px; }
 .masonry-item { break-inside: avoid; margin-bottom: 1px; }
@@ -1116,7 +1114,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     border-top: 1px solid var(--c-border);
 }
 .faq-container { max-width: 780px; margin: 0 auto; }
-.faq-section h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); text-align: center; margin-bottom: 1rem; font-weight: 300; }
+.faq-section h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); text-align: center; margin-bottom: 1rem; font-weight: 400; }
 .faq-section .section-sub { text-align: center; color: var(--c-text-muted); margin-bottom: 4rem; font-size: 0.95rem; font-weight: 300; }
 
 .accordion { border-top: 1px solid var(--c-border); }
@@ -1300,7 +1298,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     align-items: center;
     border-bottom: 1px solid var(--c-border);
 }
-.cart-header h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 300; }
+.cart-header h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; }
 .close-cart {
     background: none;
     border: none;
@@ -1629,7 +1627,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     font-size: clamp(2.4rem, 3.5vw, 3.5rem);
     margin-bottom: 1.2rem;
     color: var(--c-text-main);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.02em;
 }
 .product-reviews {
@@ -1711,7 +1709,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
 .section-title {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.12;
     color: var(--c-text-main);
     margin-bottom: 1rem;
