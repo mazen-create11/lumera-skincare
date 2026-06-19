@@ -2009,5 +2009,6 @@ img { -webkit-user-drag: none; }
 .cit-steps{display:flex;flex-direction:column;gap:.9rem}
 .cit-step{display:flex;gap:.9rem;align-items:flex-start}
 .cit-badge{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--c-accent-dark);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;margin-top:.1rem}
-.cit-step b{display:block;font-size:.92rem;color:var(--c-text-main);margin-bottom:.2rem}
+.cit-step .cit-t{display:block;font-size:.92rem;font-weight:600;color:var(--c-text-main);margin-bottom:.2rem}
+.cit-step p b{color:var(--c-text-main);font-weight:600}
 .cit-step p{font-size:.85rem;color:var(--c-text-muted);line-height:1.6;margin:0}
