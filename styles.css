@@ -1959,7 +1959,13 @@ img { -webkit-user-drag: none; }
 .qty input{width:30px;text-align:center;border:0;background:none;font-size:1rem;font-weight:600;color:var(--c-text-main);font-family:inherit}
 .buybox-cta .btn{flex:1 1 auto;min-height:58px;font-size:.96rem}
 .pay-row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:1.1rem}
-.pay-chip{height:30px;min-width:46px;padding:0 .55rem;border:1px solid #ECE0E3;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;letter-spacing:.03em;color:#7A6670}
+.pay-chip{height:32px;min-width:46px;padding:0 .6rem;border:1px solid #ECE0E3;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;gap:.16rem;box-shadow:0 1px 2px rgba(120,80,90,.05)}
+.pay-chip svg{height:17px;width:auto;display:block}
+.pay-visa{font-style:italic;font-weight:800;font-size:.85rem;letter-spacing:-.02em;color:#1434CB}
+.pay-amex{font-weight:800;font-size:.64rem;letter-spacing:.03em;color:#fff;background:#006FCF;border-color:#006FCF}
+.pay-klarna{font-weight:700;font-size:.74rem;color:#17120F;background:#FFB3C7;border-color:#FFB3C7}
+.pay-apple{font-weight:600;font-size:.78rem;color:#000}
+.pay-apple svg{height:15px}
 .trust-row{margin-top:1.25rem;display:flex;flex-direction:column;gap:.6rem}
 .trust-row .tr{display:flex;align-items:center;gap:.65rem;font-size:.86rem;color:var(--c-text-main);line-height:1.4}
 .trust-row .tr svg{flex:0 0 auto;width:18px;height:18px;stroke:var(--c-accent-dark,#B06A74)}
