@@ -41,9 +41,9 @@
     if (tot) tot.textContent = fmt(total(c));
     var co = document.getElementById('checkoutBtn') || document.querySelector('.cart-footer .btn-solid, .cart-footer button');
     if (co) { var on = c.length > 0; co.disabled = !on; co.style.opacity = on ? '1' : '0.5'; co.style.pointerEvents = on ? 'auto' : 'none'; co.onclick = window.lumeraCheckout; }
-    var FREE_SHIP = 149, t2 = total(c);
+    var FREE_SHIP = 0, t2 = total(c);
     var prog = document.querySelector('.cart-progress p');
-    if (prog) prog.innerHTML = t2 >= FREE_SHIP ? 'Livraison offerte débloquée ✦' : 'Plus que <strong>' + fmt(FREE_SHIP - t2) + '</strong> pour la livraison offerte';
+    if (prog) prog.innerHTML = 'Livraison offerte incluse ✦';
     var fill = document.querySelector('.progress-bar-fill');
     if (fill) fill.style.width = Math.min(100, Math.round(t2 / FREE_SHIP * 100)) + '%';
     if (co && c.length) co.textContent = 'Commander en toute sécurité';

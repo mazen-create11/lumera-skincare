@@ -185,7 +185,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
 </head>
 <body>
 
-<div class="announce">Édition Fondatrice 2026 · Livraison offerte dès 149 € · Garantie 30 jours</div>
+<div class="announce">Édition Fondatrice 2026 · Livraison offerte · Garantie 30 jours</div>
 
 <header>
   <div class="hd">
@@ -325,7 +325,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
   <div class="wrap">
     <h2>Votre lumière <em>vous attend.</em></h2>
     <button class="btn btn-dark" onclick="addToCart('Masque LED Face + Cou', 249.99, 'assets/mask-front.webp')">Je commence — 249,99 €</button>
-    <p style="font-size:.74rem;color:var(--text-light);margin-top:.9rem">Livraison offerte dès 149 € · Garantie 30 jours · Paiement sécurisé</p>
+    <p style="font-size:.74rem;color:var(--text-light);margin-top:.9rem">Livraison offerte · Garantie 30 jours · Paiement sécurisé</p>
   </div>
 </section>
 
@@ -361,7 +361,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header"><h3>Mon Panier</h3><button class="cart-close" id="cartClose" aria-label="Fermer le panier">✕</button></div>
   <div class="cart-progress">
-    <p>Plus que <strong>149 €</strong> pour la livraison offerte</p>
+    <p>Livraison offerte incluse ✦</p>
     <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
   </div>
   <div class="cart-items is-empty" id="cartItems"><div><p style="font-family:var(--serif);font-size:1.1rem;color:var(--text-mid)">Votre panier est vide</p></div></div>
@@ -400,6 +400,6 @@ addEventListener('scroll',()=>sticky.classList.toggle('show',scrollY>560),{passi
   f.addEventListener('submit',e=>{e.preventDefault();function ok(){f.style.display='none';document.getElementById('lmPopOk').style.display='block';localStorage.setItem(K,'1');}fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(ok).catch(ok);});
 })();
 </script>
-<script src="cart.js?v=2"></script>
+<script src="cart.js?v=3"></script>
 </body>
 </html>
