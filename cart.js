@@ -40,7 +40,7 @@
     var tot = document.getElementById('cartTotal') || document.querySelector('.cart-total span:last-child');
     if (tot) tot.textContent = fmt(total(c));
     var co = document.getElementById('checkoutBtn') || document.querySelector('.cart-footer .btn-solid, .cart-footer button');
-    if (co) { var on = c.length > 0; co.style.opacity = on ? '1' : '0.5'; co.style.pointerEvents = on ? 'auto' : 'none'; }
+    if (co) { var on = c.length > 0; co.disabled = !on; co.style.opacity = on ? '1' : '0.5'; co.style.pointerEvents = on ? 'auto' : 'none'; co.onclick = window.lumeraCheckout; }
     var FREE_SHIP = 149, t2 = total(c);
     var prog = document.querySelector('.cart-progress p');
     if (prog) prog.innerHTML = t2 >= FREE_SHIP ? 'Livraison offerte débloquée ✦' : 'Plus que <strong>' + fmt(FREE_SHIP - t2) + '</strong> pour la livraison offerte';
@@ -84,6 +84,21 @@
     it.qty += delta;
     if (it.qty < 1) c = c.filter(function (i) { return i.name !== name; });
     save(c); render();
+  };
+
+  // Checkout — prise de commande par e-mail avec récap (lien de paiement envoyé en retour).
+  // Pour brancher Stripe plus tard : remplacer le corps par window.location.href = '<Payment Link>'.
+  window.lumeraCheckout = function () {
+    var c = get();
+    if (!c.length) return;
+    var lines = c.map(function (i) { return '- ' + i.qty + ' x ' + i.name + '  (' + fmt(i.price) + ' l\'unite)  = ' + fmt(i.price * i.qty); }).join('\n');
+    var tot = fmt(total(c));
+    var subject = 'Commande Lumera — ' + tot;
+    var body = 'Bonjour Lumera,\n\nJe souhaite passer commande :\n\n' + lines
+      + '\n\nTotal : ' + tot + '\nLivraison offerte · 30 jours satisfaite ou remboursee\n\n'
+      + 'Mes coordonnees de livraison :\nNom & prenom : \nAdresse complete : \nCode postal / Ville : \nTelephone : \n\n'
+      + 'Merci de m\'envoyer le lien de paiement securise pour finaliser ma commande. A tres vite !';
+    window.location.href = 'mailto:contact@lumera-skincare.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   };
 
   if (document.readyState !== 'loading') render();
