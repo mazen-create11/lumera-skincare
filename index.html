@@ -73,6 +73,15 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 @keyframes pulse{0%,100%{transform:translateY(-50%) scale(1);opacity:.8}50%{transform:translateY(-52%) scale(1.07);opacity:1}}
 .hero-inner{max-width:1080px;margin:0 auto;padding:104px 2.5rem 1.2rem;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2}
 .hero-buy{width:100%;display:flex;flex-direction:column;align-items:center;margin-top:.2rem}
+.social-band{background:linear-gradient(180deg,#FFFCFA,#FBEEE9);padding:1.9rem 0;border-top:1px solid var(--blush-mid);border-bottom:1px solid var(--blush-mid)}
+.social-band-inner{display:flex;align-items:center;justify-content:center;gap:1.1rem 2.4rem;flex-wrap:wrap}
+.social-band-lead{display:flex;align-items:center;gap:1rem}
+.social-band-lead>svg{width:34px;height:34px;fill:var(--ink);flex-shrink:0}
+.social-band-txt{text-align:left}
+.social-band-txt strong{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--text);line-height:1.1}
+.social-band-txt span{font-size:.82rem;color:var(--text-mid)}
+.social-band-btn{width:auto;padding:.85rem 1.8rem}
+@media(max-width:560px){.social-band-inner{flex-direction:column}.social-band-lead{flex-direction:column;text-align:center;gap:.55rem}.social-band-txt{text-align:center}}
 .hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:1rem}
 .hero h1{font-family:var(--serif);font-size:clamp(2.7rem,5vw,4.4rem);font-weight:420;line-height:1.02;color:var(--text);margin-bottom:.9rem}
 .hero h1 em{font-style:italic;color:var(--rose-dark);display:block}
@@ -548,6 +557,20 @@ img{-webkit-user-drag:none}
     <span class="ticker-item">Dispositif CE</span><span class="ticker-item">Silicone médical grade A</span><span class="ticker-item">PDRN 1% · compatibilité ADN 97%</span><span class="ticker-item">Visage + cou</span><span class="ticker-item">Fabrication ISO 13485</span><span class="ticker-item">Maison française</span>
   </div>
 </div>
+
+<!-- COMMUNAUTÉ TIKTOK (preuve sociale réelle) -->
+<section class="social-band reveal">
+  <div class="container social-band-inner">
+    <div class="social-band-lead">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 5.3c-.9-.6-1.5-1.6-1.7-2.8h-2.6v11.4c0 1.3-1.1 2.4-2.4 2.4s-2.4-1.1-2.4-2.4 1.1-2.4 2.4-2.4c.3 0 .5 0 .7.1V8.9c-.2 0-.5-.1-.7-.1-2.9 0-5.2 2.3-5.2 5.2s2.3 5.2 5.2 5.2 5.2-2.3 5.2-5.2V8.4c1 .7 2.3 1.2 3.6 1.2V7c-.7 0-1.3-.2-1.8-.5z"/></svg>
+      <div class="social-band-txt">
+        <strong>+18 000 abonnées sur TikTok</strong>
+        <span>Le rituel Luméra partagé chaque jour, sans filtre · @lumera.skincare</span>
+      </div>
+    </div>
+    <a href="https://www.tiktok.com/@lumera.skincare" target="_blank" rel="noopener" class="btn btn-ghost social-band-btn">Voir nos vidéos</a>
+  </div>
+</section>
 
 <!-- COLLECTION -->
 <section class="sec collection">
