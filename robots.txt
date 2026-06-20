@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /_ccheck.html
+Disallow: /_view.html
+Disallow: /test_css.html
+
+Sitemap: https://lumera-skincare.com/sitemap.xml
