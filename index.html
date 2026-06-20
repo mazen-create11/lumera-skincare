@@ -71,11 +71,12 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 .hero{height:auto;min-height:auto;background:linear-gradient(180deg,#FFFCFA 0%,#FCF1EC 58%,#F6E2DC 100%);display:flex;align-items:flex-start;position:relative;overflow:hidden;padding-bottom:1rem}
 .hero-orb{position:absolute;left:calc(50% - 320px);top:34%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(232,174,184,.34) 0%,transparent 68%);transform:translateY(-50%);pointer-events:none;animation:pulse 9s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:translateY(-50%) scale(1);opacity:.8}50%{transform:translateY(-52%) scale(1.07);opacity:1}}
-.hero-inner{max-width:1080px;margin:0 auto;padding:178px 2.5rem 0;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2}
-.hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:1.8rem}
-.hero h1{font-family:var(--serif);font-size:clamp(3.4rem,6vw,6rem);font-weight:420;line-height:1.0;color:var(--text);margin-bottom:1.8rem}
+.hero-inner{max-width:1080px;margin:0 auto;padding:104px 2.5rem 1.2rem;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2}
+.hero-buy{width:100%;display:flex;flex-direction:column;align-items:center;margin-top:.2rem}
+.hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-dark);margin-bottom:1rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.7rem,5vw,4.4rem);font-weight:420;line-height:1.02;color:var(--text);margin-bottom:.9rem}
 .hero h1 em{font-style:italic;color:var(--rose-dark);display:block}
-.hero-lead{font-size:1.1rem;color:var(--text-mid);line-height:1.75;max-width:560px;margin:0 auto 1.3rem}
+.hero-lead{font-size:1.05rem;color:var(--text-mid);line-height:1.7;max-width:520px;margin:0 auto 1.3rem}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.7rem}
 .hero-proof{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem 1.9rem;max-width:700px;margin:0 auto}
 .hero-proof li{font-size:.8rem;color:var(--text-mid);display:flex;align-items:center;gap:.55rem}
@@ -91,7 +92,7 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 .hero-badge .bl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mid)}
 .hero-badge-arrow{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:.25s}
 .hero-badge:hover .hero-badge-arrow{background:var(--rose-dark)}
-.hero-video-wrap{position:relative;width:min(680px,90vw);margin:.6rem auto 0;border-radius:26px;overflow:hidden;box-shadow:0 46px 80px -34px rgba(120,60,70,.46);background:#F6E2DC;isolation:isolate}
+.hero-video-wrap{position:relative;width:min(540px,82vw);margin:.3rem auto 1.7rem;border-radius:24px;overflow:hidden;box-shadow:0 40px 72px -34px rgba(120,60,70,.46);background:#F6E2DC;isolation:isolate}
 .hero-video-wrap video{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 .hero-video-wrap::after{content:'';position:absolute;inset:0;border-radius:26px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);pointer-events:none;z-index:2}
 .hero-video-glow{position:absolute;left:50%;top:50%;width:120%;height:120%;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(232,174,184,.35) 0%,transparent 65%);filter:blur(20px);z-index:-1;pointer-events:none}
@@ -314,8 +315,11 @@ footer{background:var(--ink);color:rgba(255,255,255,.6)}
 /* RESPONSIVE */
 @media(max-width:980px){
   .hero{align-items:flex-start;min-height:auto}
-  .hero-inner{grid-template-columns:1fr;text-align:center;gap:2.5rem;padding-top:130px}
-  .hero-lead{margin:0 auto 2.4rem}.hero-cta,.hero-proof{justify-content:center}.hero-proof{margin:0 auto;max-width:420px}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:0;padding-top:86px}
+  .hero h1{font-size:clamp(2.3rem,9vw,3rem);margin-bottom:.7rem}
+  .hero-eyebrow{margin-bottom:.8rem}
+  .hero-lead{margin:0 auto 1.1rem}.hero-cta,.hero-proof{justify-content:center}.hero-proof{margin:0 auto;max-width:420px}
+  .hero-video-wrap{margin:.2rem auto 1.3rem;width:min(420px,88vw)}
   .coffret,.results-grid,.why-grid,.faq-grid{grid-template-columns:1fr}
   .coffret-img{min-height:300px}
   .cards,.steps,.fcards{grid-template-columns:1fr}
@@ -349,6 +353,7 @@ body{font-optical-sizing:auto}
 .hero h1{font-variation-settings:"opsz" 80;letter-spacing:-.012em}
 .pcard h4,.step h4,.fcard h4,.faq-q{font-variation-settings:"opsz" 30;letter-spacing:0}
 .hero h1 em,.h2 em,blockquote em,.g-title em,.lbanner-txt h2 em{font-style:normal;font-weight:300;color:var(--c-text-muted)}
+.hero h1 em{color:var(--rose-dark);font-weight:400}
 .eyebrow,.hero-eyebrow,.ticker-item,.foot-col h5{letter-spacing:.26em}
 .sec{padding:130px 0}
 .sec-head{margin-bottom:4.8rem}
@@ -374,8 +379,8 @@ img{-webkit-user-drag:none}
 @media(max-width:768px){
   .sec{padding:80px 0}
   .sec-head{margin-bottom:2.8rem}
-  .hero-inner{padding-top:120px;gap:2rem}
-  .hero h1{font-size:clamp(3rem,12.5vw,4.3rem)}
+  .hero-inner{padding-top:82px;gap:0}
+  .hero h1{font-size:clamp(2.3rem,9vw,3rem);margin-bottom:.7rem}
   .hero-lead{font-size:1rem;line-height:1.78}
   .hero-cta{flex-direction:column}
   .hero-cta .btn{width:100%;justify-content:center}
@@ -493,11 +498,17 @@ img{-webkit-user-drag:none}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-orb"></div>
-  <div class="hero-inner">
-    <div class="hero-text reveal visible">
-      <div class="hero-eyebrow">Édition Fondatrice · Série limitée 2026</div>
-      <h1>Révélez<br><em>votre lumière.</em></h1>
-      <p class="hero-lead">Le rituel des cliniques esthétiques — masque LED, sérum PDRN, microneedling — repensé pour la maison. Documenté en clinique, conçu en France.</p>
+  <div class="hero-inner reveal visible">
+    <div class="hero-eyebrow">Édition Fondatrice · Série limitée 2026</div>
+    <h1>Révélez<br><em>votre lumière.</em></h1>
+    <p class="hero-lead">La technologie des cliniques esthétiques — masque LED, sérum PDRN et microneedling — réunie en un rituel, à domicile.</p>
+    <div class="hero-video-wrap">
+      <video id="heroVideo" autoplay muted playsinline preload="auto" poster="assets/coffret-closed.webp?v=2">
+        <source src="assets/coffret-reveal.mp4?v=3" type="video/mp4">
+      </video>
+      <span class="hero-video-glow" aria-hidden="true"></span>
+    </div>
+    <div class="hero-buy">
       <div class="hero-price">
         <span class="hp-now lnum">279,97 €</span>
         <span class="hp-was lnum">329,97 €</span>
@@ -505,26 +516,15 @@ img{-webkit-user-drag:none}
       </div>
       <p class="hero-bnpl lnum">ou <strong>3× 93,32 €</strong> sans frais · Livraison offerte</p>
       <div class="hero-cta">
-        <button class="btn btn-dark" onclick="addToCart('Le Rituel Complet', 279.97, 'assets/coffret-open.webp')">Ajouter le Rituel au panier</button>
-        <a href="bundle.html" class="btn btn-ghost">Découvrir le rituel</a>
+        <button class="btn btn-dark" onclick="addToCart('Le Rituel Complet', 279.97, 'assets/coffret-open.webp')">Ajouter le Rituel — 279,97 €</button>
+        <a href="bundle.html" class="btn btn-ghost">Voir le détail</a>
       </div>
       <ul class="hero-proof">
-        <li>Silicone médical flexible</li>
         <li>Visage + cou inclus</li>
         <li>Résultats dès 4 semaines</li>
         <li>30 j satisfaite ou remboursée</li>
       </ul>
     </div>
-    <div class="hero-video-wrap reveal visible">
-      <video id="heroVideo" autoplay muted playsinline preload="auto" poster="assets/coffret-closed.webp?v=2">
-        <source src="assets/coffret-reveal.mp4?v=3" type="video/mp4">
-      </video>
-      <span class="hero-video-glow" aria-hidden="true"></span>
-    </div>
-    <button class="hero-scroll" type="button" aria-label="Découvrir le rituel" onclick="(document.querySelector('.hero').nextElementSibling||{}).scrollIntoView&&document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})">
-      <span>Le rituel comme un tout</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-    </button>
   </div>
 </section>
 <script>(function(){var v=document.getElementById('heroVideo');if(!v)return;function go(){var p=v.play();if(p&&p.catch)p.catch(function(){});}go();v.addEventListener('canplay',go,{once:true});document.addEventListener('touchstart',go,{once:true});document.addEventListener('click',go,{once:true});})();</script>
