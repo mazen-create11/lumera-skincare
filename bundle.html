@@ -21,7 +21,7 @@
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Le Rituel Complet — Coffret Luméra",
-      "image": ["assets/coffret-hero.webp", "assets/coffret-packshot.webp", "assets/coffret-banner.webp"],
+      "image": ["assets/coffret-hero.webp", "assets/coffret-open.webp", "assets/coffret-closed.webp"],
       "description": "Le coffret complet Luméra : Masque LED Face + Cou, Sérum PDRN Glass Skin et Stylo micro-needling. Le rituel de photobiomodulation d'institut, à la maison.",
       "brand": { "@type": "Brand", "name": "LUMÉRA" },
       "category": "Soin du visage régénératif",
@@ -290,17 +290,17 @@
         <div class="product-gallery">
             <div class="gallery-stage">
                 <div class="gallery-carousel" id="galleryMain">
-                    <video data-src="assets/coffret-reveal.mp4" poster="assets/coffret-hero.webp" muted loop playsinline preload="none" style="flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;scroll-snap-align:center;display:block"></video>
-                    <img loading="lazy" src="assets/coffret-packshot.webp" alt="Coffret Le Rituel Complet — les 3 produits réunis">
-                    <img loading="lazy" src="assets/coffret-banner.webp" alt="Coffret Le Rituel Complet Luméra sur la coiffeuse">
+                    <video data-src="assets/coffret-reveal.mp4?v=3" poster="assets/coffret-closed.webp?v=2" muted loop playsinline preload="none" style="flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;scroll-snap-align:center;display:block"></video>
+                    <img loading="lazy" src="assets/coffret-open.webp?v=2" alt="Coffret Le Rituel Complet ouvert — masque LED, sérum PDRN et stylo réunis">
+                    <img loading="lazy" src="assets/coffret-closed.webp?v=2" alt="Coffret Le Rituel Complet Luméra fermé, ruban satin rosé">
                 </div>
                 <button class="gallery-arrow prev" type="button" aria-label="Image précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
                 <button class="gallery-arrow next" type="button" aria-label="Image suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
             </div>
             <div class="gallery-thumbs" id="galleryThumbs">
-                <img loading="lazy" src="assets/coffret-hero.webp" alt="" class="active">
-                <img loading="lazy" src="assets/coffret-packshot.webp" alt="">
-                <img loading="lazy" src="assets/coffret-banner.webp" alt="">
+                <img loading="lazy" src="assets/coffret-closed.webp?v=2" alt="" class="active">
+                <img loading="lazy" src="assets/coffret-open.webp?v=2" alt="">
+                <img loading="lazy" src="assets/coffret-closed.webp?v=2" alt="">
             </div>
         </div>
 
@@ -383,7 +383,7 @@
 
             <!-- ATC -->
             <div class="atc-wrapper reveal" id="atcWrapper">
-                <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-packshot.webp')">Commander le Coffret</button>
+                <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-open.webp')">Commander le Coffret</button>
                 <div class="trust-row">
                     <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span><b>Livraison gratuite</b> en France · expédié sous 24 h</span></div>
                     <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b></span></div>
@@ -605,7 +605,7 @@
             <span class="feature-eyebrow reveal" style="display:block;">Édition Fondatrice · Série limitée 2026</span>
             <h2 class="serif reveal" style="margin-bottom:1rem;">Commencez votre rituel<br><em>ce soir.</em></h2>
             <p class="reveal" style="color:var(--c-text-muted); font-size:1rem; line-height:1.7; margin-bottom:2rem;">Le coffret complet — masque, sérum, stylo et guide — livré en 24 h, garanti 30 jours. Si votre peau n'est pas au rendez-vous, nous vous remboursons sans condition.</p>
-            <button class="btn btn-solid reveal" style="width:auto; padding:1rem 2.6rem;" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-packshot.webp')">Commander le Coffret — 279 €</button>
+            <button class="btn btn-solid reveal" style="width:auto; padding:1rem 2.6rem;" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-open.webp')">Commander le Coffret — 279 €</button>
             <p class="reveal" style="font-size:0.75rem; color:var(--c-text-light); margin-top:1.2rem;">Économisez 50 € · Livraison express offerte · 30 jours satisfaite ou remboursée</p>
         </div>
     </section>
@@ -699,7 +699,7 @@
             <span class="sticky-price">279 €</span>
             <span class="sticky-price-old">329 €</span>
         </div>
-        <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-packshot.webp')">Commander le Coffret</button>
+        <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279, 'assets/coffret-open.webp')">Commander le Coffret</button>
     </div>
 
     <script>
