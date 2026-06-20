@@ -2012,3 +2012,6 @@ img { -webkit-user-drag: none; }
 .cit-step .cit-t{display:block;font-size:.92rem;font-weight:600;color:var(--c-text-main);margin-bottom:.2rem}
 .cit-step p b{color:var(--c-text-main);font-weight:600}
 .cit-step p{font-size:.85rem;color:var(--c-text-muted);line-height:1.6;margin:0}
+
+/* Sliders avant/apres : pas de label, juste l image */
+.ba-hero-tag{display:none!important}
