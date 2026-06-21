@@ -188,7 +188,9 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 .step:hover{transform:translateY(-4px);box-shadow:0 30px 50px -34px rgba(120,60,70,.35)}
 .step-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.6rem}
 .step-num{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--rose-light)}
-.step-top svg{width:24px;height:24px;stroke:var(--rose);stroke-width:1.4;fill:none}
+.step-ic{width:48px;height:48px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-top svg{width:22px;height:22px;stroke:var(--rose-dark);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.step:hover{transform:translateY(-4px);box-shadow:0 28px 50px -36px rgba(120,60,70,.42);border-color:var(--rose-light)}
 .step h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.6rem}
 .step p{font-size:.86rem;color:var(--text-mid);line-height:1.65}
 .step-time{display:inline-block;margin-top:1.1rem;font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-dark);background:var(--blush);padding:.35rem .9rem;border-radius:100px}
@@ -456,19 +458,22 @@ img{-webkit-user-drag:none}
 
 /* Comparatif Luméra vs masques rigides */
 .compare{background:var(--blush)}
-.compare-wrap{max-width:920px;margin:0 auto;border:1px solid rgba(185,142,94,.22);border-radius:22px;overflow:hidden;background:var(--cream);box-shadow:0 36px 70px -48px rgba(120,60,70,.4)}
-.compare-row{display:grid;grid-template-columns:1.35fr 1fr 1fr;align-items:stretch}
+.compare-wrap{width:100%;border:1px solid var(--blush-mid);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 30px 64px -46px rgba(120,60,70,.42)}
+.compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;align-items:stretch}
 .compare-row+.compare-row{border-top:1px solid var(--blush-mid)}
-.compare-row>div{padding:1.15rem 1.35rem;font-size:.92rem;display:flex;align-items:center}
+.compare-row>div{padding:1.05rem 1.25rem;font-size:.9rem;display:flex;align-items:center;line-height:1.35}
 .compare-feat{color:var(--text);font-weight:500}
-.compare-lum{background:var(--blush);color:var(--text);font-weight:600;justify-content:center;text-align:center}
+.compare-lum{background:var(--blush);color:var(--text);font-weight:600;justify-content:center;text-align:center;gap:.4rem}
+.compare-lum svg{width:15px;height:15px;stroke:var(--rose-dark);stroke-width:2.4;fill:none;flex-shrink:0}
 .compare-other{color:var(--text-mid);justify-content:center;text-align:center}
-.compare-head .compare-feat{font-family:var(--serif);font-size:1.1rem;color:var(--text)}
-.compare-head .compare-lum{font-family:var(--serif);font-size:1.3rem;color:var(--rose-dark);font-weight:500}
-.compare-head .compare-other{font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mid)}
-.compare-lum strong{color:var(--rose-dark)}
-.compare-note{text-align:center;font-size:.72rem;font-style:italic;color:var(--text-light);margin-top:1.4rem}
-@media(max-width:680px){.compare-row{grid-template-columns:1.3fr .85fr .85fr}.compare-row>div{padding:.85rem .65rem;font-size:.74rem}.compare-head .compare-lum{font-size:1rem}.compare-head .compare-other{font-size:.62rem}}
+.compare-head{background:var(--cream)}
+.compare-head>div{padding-top:1.25rem;padding-bottom:1.25rem}
+.compare-head .compare-feat{font-family:var(--serif);font-size:1.05rem;color:var(--text)}
+.compare-head .compare-lum{background:var(--rose-dark)}
+.compare-head .compare-lum .cmp-badge{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.compare-head .compare-other{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid)}
+.compare-note{text-align:center;font-size:.74rem;font-style:italic;color:var(--text-mid);margin:1.2rem auto 0;max-width:760px}
+@media(max-width:680px){.compare-row{grid-template-columns:1.25fr .85fr .85fr}.compare-row>div{padding:.78rem .55rem;font-size:.72rem}.compare-head .compare-feat{font-size:.82rem}.compare-lum svg{display:none}}
 
 /* Garantie sombre (risk reversal) */
 .guarantee{background:var(--ink);color:#fff;position:relative;overflow:hidden}
@@ -539,7 +544,12 @@ img{-webkit-user-drag:none}
     </div>
   </div>
 </section>
-<script>(function(){var v=document.getElementById('heroVideo');if(!v)return;function go(){var p=v.play();if(p&&p.catch)p.catch(function(){});}go();v.addEventListener('canplay',go,{once:true});document.addEventListener('touchstart',go,{once:true});document.addEventListener('click',go,{once:true});})();</script>
+<script>(function(){var v=document.getElementById('heroVideo');if(!v)return;
+function replay(){try{v.currentTime=0;}catch(e){}var p=v.play();if(p&&p.catch)p.catch(function(){});}
+// Relance la vidéo depuis le début à chaque fois qu'elle (re)entre dans le viewport
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)replay();});},{threshold:0.45});io.observe(v);}else{replay();}
+v.addEventListener('canplay',function(){var r=v.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)replay();},{once:true});
+document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});},{once:true});})();</script>
 
 <!-- TRUST BAND -->
 <div class="trustband">
@@ -578,31 +588,9 @@ img{-webkit-user-drag:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">La collection</span>
-      <h2 class="h2">Le rituel,<br><em>pensé comme un tout.</em></h2>
-      <p class="sub">Commencez par le Rituel signature — masque, sérum et stylo conçus pour agir en synergie. Ou composez le vôtre, produit par produit.</p>
+      <h2 class="h2">Trois gestes,<br><em>un seul rituel.</em></h2>
+      <p class="sub">Masque LED, sérum PDRN et stylo microneedling — conçus pour agir en synergie. Adoptez-les ensemble dans le Rituel, ou composez le vôtre, produit par produit.</p>
     </div>
-
-    <div class="coffret reveal">
-      <div class="coffret-body">
-        <span class="eyebrow">Vedette · Le Coffret</span>
-        <h3>Le Rituel Complet</h3>
-        <p>Masque LED + Sérum PDRN + Stylo Microneedling + Guide Rituel. Les trois technologies pensées ensemble, livrées ensemble.</p>
-        <div class="coffret-price">
-          <span class="now lnum">279,97 €</span>
-          <span class="was lnum">329,97 €</span>
-          <span class="save">Économisez 50 €</span>
-        </div>
-        <p class="coffret-bnpl lnum">ou <strong>3× 93,32 €</strong> sans frais — paiement en 3 fois</p>
-        <p class="coffret-anchor">L'équivalent d'une cure de luminothérapie en institut : 600 à 1 200 €.</p>
-        <div class="coffret-cta">
-          <button class="btn btn-dark" onclick="addToCart('Le Rituel Complet', 279.97, 'assets/coffret-open.webp')">Ajouter le Rituel</button>
-          <a href="bundle.html" class="btn btn-ghost">Découvrir</a>
-        </div>
-      </div>
-      <div class="coffret-img"><img loading="lazy" src="assets/coffret-featured.webp?v=3" alt="Coffret Le Rituel Complet Luméra — masque LED, sérum PDRN, stylo microneedling"></div>
-    </div>
-
-    <div class="unit-label reveal">— Ou à l'unité —</div>
 
     <div class="cards">
       <article class="pcard reveal">
@@ -739,7 +727,7 @@ img{-webkit-user-drag:none}
             <div class="step reveal">
                 <div class="step-top">
                     <span class="step-num lnum">I</span>
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+                    <span class="step-ic"><svg viewBox="0 0 24 24"><path d="M15 3l6 6-11 11H4v-6L15 3z"></path><path d="M13 5l6 6"></path></svg></span>
                 </div>
                 <h4>L'Induction (CIT)</h4>
                 <p>Création de micro-canaux à 0,25 mm. Déclenche la libération de facteurs de croissance (PDGF, TGF-β) et augmente la perméabilité cutanée par ×4.7.</p>
@@ -748,7 +736,7 @@ img{-webkit-user-drag:none}
             <div class="step reveal">
                 <div class="step-top">
                     <span class="step-num lnum">II</span>
-                    <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <span class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3C12 3 5 10 5 15a7 7 0 0 0 14 0c0-5-7-12-7-12z"></path></svg></span>
                 </div>
                 <h4>L'Infusion (PDRN)</h4>
                 <p>Application immédiate du Sérum à 1% de PDRN dans la fenêtre d'ouverture transdermique (60 min). Activation des récepteurs A2A.</p>
@@ -757,7 +745,7 @@ img{-webkit-user-drag:none}
             <div class="step reveal">
                 <div class="step-top">
                     <span class="step-num lnum">III</span>
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <span class="step-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span>
                 </div>
                 <h4>La Photomodulation</h4>
                 <p>Irradiation LED (630nm/840nm) inondant la matrice d'ATP mitochondrial pour alimenter la prolifération cellulaire initiée par le PDRN.</p>
@@ -792,33 +780,35 @@ img{-webkit-user-drag:none}
                     </div>
                 </div>
             </div>
-            <div class="compare-wrap reveal-r" style="border:none; box-shadow:none; background:transparent">
-                <div class="compare-row compare-head" style="background:var(--cream); border-radius:12px 12px 0 0">
-                    <div class="compare-feat">Étude Comparative</div>
-                    <div class="compare-lum">Le protocole<br><strong>LUMÉRA</strong></div>
-                    <div class="compare-other">Masques LED<br>Rigides</div>
+            <div class="reveal-r">
+              <div class="compare-wrap">
+                <div class="compare-row compare-head">
+                    <div class="compare-feat">Critère clinique</div>
+                    <div class="compare-lum"><span class="cmp-badge">Luméra</span></div>
+                    <div class="compare-other">Masques rigides</div>
                 </div>
-                <div class="compare-row" style="background:#fff">
+                <div class="compare-row">
                     <div class="compare-feat">Couverture dermique</div>
-                    <div class="compare-lum">Visage + Cou (intégral)</div>
+                    <div class="compare-lum"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Visage + cou</div>
                     <div class="compare-other">Visage seul</div>
                 </div>
-                <div class="compare-row" style="background:#fff">
-                    <div class="compare-feat">Distance Tissu-Source</div>
-                    <div class="compare-lum">1 mm (Silicone Flexible)</div>
+                <div class="compare-row">
+                    <div class="compare-feat">Distance tissu–source</div>
+                    <div class="compare-lum"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>1 mm (contact)</div>
                     <div class="compare-other">&gt; 15 mm</div>
                 </div>
-                <div class="compare-row" style="background:#fff">
-                    <div class="compare-feat">Déperdition Optique</div>
-                    <div class="compare-lum">Nulle (Contact Direct)</div>
-                    <div class="compare-other">Dispersive (Loi inverse)</div>
+                <div class="compare-row">
+                    <div class="compare-feat">Déperdition optique</div>
+                    <div class="compare-lum"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Nulle</div>
+                    <div class="compare-other">Dispersive</div>
                 </div>
-                <div class="compare-row" style="background:#fff; border-radius:0 0 12px 12px">
+                <div class="compare-row">
                     <div class="compare-feat">Biodisponibilité PDRN</div>
-                    <div class="compare-lum">×4.7 (post-induction)</div>
-                    <div class="compare-other">Topique (Limitée)</div>
+                    <div class="compare-lum"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>×4,7</div>
+                    <div class="compare-other">Topique</div>
                 </div>
-                <div class="compare-note">L'intensité lumineuse diminue de façon quadratique avec la distance. L'apposition totale du silicone médical Luméra garantit une irradiation optimale.</div>
+              </div>
+              <p class="compare-note">L'intensité lumineuse décroît avec le carré de la distance. Le contact total du silicone médical Luméra garantit une irradiation optimale — là où un masque rigide en perd l'essentiel.</p>
             </div>
         </div>
         
@@ -857,34 +847,6 @@ img{-webkit-user-drag:none}
     <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:.35rem">
       <span style="font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.7rem;color:var(--rose-dark);line-height:1">Maria</span>
       <span style="font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-mid)">Fondatrice de Luméra</span>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER CIRCLE -->
-<section class="sec founder">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Le Cercle Fondateur</span>
-      <h2 class="h2">Nous lançons une marque. <em>Pas un avis acheté.</em></h2>
-      <p class="sub">Luméra naît avec ses premières fondatrices. Voici ce que nous vous engageons aujourd'hui.</p>
-    </div>
-    <div class="fcards">
-      <div class="fcard reveal">
-        <span class="eyebrow">Édition fondatrice</span>
-        <h4>Une série limitée 2026</h4>
-        <p>Les premières clientes rejoignent le Cercle Fondateur — accès prioritaire aux prochaines formules et tarif fondateur préservé.</p>
-      </div>
-      <div class="fcard reveal">
-        <span class="eyebrow">Garantie résultats</span>
-        <h4>30 jours, sans condition</h4>
-        <p>Si vous ne voyez pas de différence après quatre semaines de rituel, nous reprenons le coffret et vous remboursons intégralement.</p>
-      </div>
-      <div class="fcard reveal">
-        <span class="eyebrow">Avis sans filtre</span>
-        <h4>Bientôt — votre voix d'abord</h4>
-        <p>Nous publierons les premiers retours des fondatrices, vérifiés et non filtrés. Pas de faux avis, pas de notes inventées.</p>
-      </div>
     </div>
   </div>
 </section>
