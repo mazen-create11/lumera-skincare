@@ -89,9 +89,15 @@
       var d = document.createElement('div');
       d.className = 'cart-reassure';
       d.style.cssText = 'margin:0.5rem 0 0.2rem;';
-      d.innerHTML = '<p style="font-size:0.76rem;color:#A85968;font-weight:600;text-align:center;margin:0 0 0.55rem;">ou 3× sans frais dès 100 € — sans intérêts</p>'
-        + '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.35rem 0.9rem;font-size:0.68rem;color:#8A6A72;">'
-        + '<span>🔒 Paiement sécurisé</span><span>✓ 30 j satisfaite ou remboursée</span><span>🚚 Livraison offerte</span></div>';
+      var ic = function (p) { return '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#B07E89" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">' + p + '</svg>'; };
+      var icLock = ic('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>');
+      var icShield = ic('<path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/>');
+      var icTruck = ic('<path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/>');
+      d.innerHTML = '<p style="font-size:0.76rem;color:#A85968;font-weight:600;text-align:center;margin:0 0 0.6rem;">ou 3× sans frais dès 100 € — sans intérêts</p>'
+        + '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.45rem 1rem;font-size:0.68rem;color:#8A6A72;font-weight:500;">'
+        + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icLock + 'Paiement sécurisé</span>'
+        + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icShield + '30 j satisfaite ou remboursée</span>'
+        + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icTruck + 'Livraison offerte</span></div>';
       var btn = f.querySelector('button, .btn');
       if (btn) f.insertBefore(d, btn); else f.appendChild(d);
     });

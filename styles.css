@@ -162,15 +162,16 @@ strong { font-weight: 600; }
 }
 .nav-logo {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    letter-spacing: 0.28em;
-    font-weight: 400;
-    color: var(--c-text-main);
+    font-size: 1.65rem;
+    letter-spacing: -0.006em;
+    font-weight: 500;
+    color: #33161D;
     transition: var(--t-fast);
     flex-shrink: 0;
 }
 .nav-logo:hover { color: var(--c-accent-dark); }
-.nav-logo b, .footer-logo b { color: var(--c-accent-dark); font-weight: inherit; }
+.nav-logo b, .footer-logo b { color: var(--c-accent); font-weight: inherit; }
+.footer-logo { font-weight: 500; letter-spacing: -0.006em; }
 
 .nav-links {
     display: flex;
