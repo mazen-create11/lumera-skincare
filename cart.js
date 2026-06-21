@@ -111,6 +111,7 @@
     var c = get(), ex = c.find(function (i) { return i.name === name; });
     if (ex) ex.qty++; else c.push({ name: name, price: Number(price) || 0, img: img || '', qty: 1 });
     save(c); render(); window.openCart();
+    if (window.lumeraTrack) lumeraTrack('add_to_cart', { value: Number(price) || 0, name: name });
   };
   window.lumeraRemove = function (name) {
     save(get().filter(function (i) { return i.name !== name; })); render();
@@ -128,6 +129,7 @@
   window.lumeraCheckout = function () {
     var c = get();
     if (!c.length) return;
+    if (window.lumeraTrack) lumeraTrack('begin_checkout', { value: total(c) });
     var lines = c.map(function (i) { return '- ' + i.qty + ' x ' + i.name + '  (' + fmt(i.price) + ' l\'unite)  = ' + fmt(i.price * i.qty); }).join('\n');
     var tot = fmt(total(c));
     var subject = 'Commande Lumera — ' + tot;

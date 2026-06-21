@@ -400,6 +400,7 @@ addEventListener('scroll',()=>sticky.classList.toggle('show',scrollY>560),{passi
   f.addEventListener('submit',e=>{e.preventDefault();function ok(){f.style.display='none';document.getElementById('lmPopOk').style.display='block';localStorage.setItem(K,'1');}fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(ok).catch(ok);});
 })();
 </script>
+<script src="analytics.js?v=1"></script>
 <script src="cart.js?v=4"></script>
 </body>
 </html>
