@@ -330,8 +330,27 @@
                 <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg><span><b>Guide protocole 8 semaines</b> offert avec le coffret.</span></li>
             </ul>
 
+            <!-- ATC -->
+            <div class="atc-wrapper reveal" id="atcWrapper">
+                <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279.97, 'assets/coffret-open.webp')">Commander le Coffret</button>
+                <p class="bb-bnpl" style="text-align:center;font-size:0.84rem;color:var(--c-accent-dark);font-weight:600;margin:0.85rem 0 0;">ou payez en <b>3× 93,32 €</b> sans frais — sans intérêts</p>
+                <div class="trust-row" style="margin-top:1.4rem;">
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span><b>Livraison gratuite</b> en France · expédié sous 24 h</span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b></span></div>
+                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Paiement <b>100 % sécurisé</b></span></div>
+                </div>
+                <div class="pay-row" style="margin-top:1.5rem;">
+                    <span class="pay-chip pay-visa">VISA</span>
+                    <span class="pay-chip"><svg viewBox="0 0 36 22" aria-label="Mastercard"><circle cx="14" cy="11" r="8" fill="#EB001B"/><circle cx="22" cy="11" r="8" fill="#F79E1B"/><path d="M18 5.4a7.97 7.97 0 0 1 0 11.2 7.97 7.97 0 0 1 0-11.2z" fill="#FF5F00"/></svg></span>
+                    <span class="pay-chip pay-amex">AMEX</span>
+                    <span class="pay-chip"><svg viewBox="7 3 38 45" aria-label="PayPal"><path fill="#002991" d="M38.914 13.35c0 5.574-5.144 12.15-12.927 12.15H18.49l-.368 2.322L16.373 39H7.056l5.605-36h15.095c5.083 0 9.082 2.833 10.555 6.77a9.687 9.687 0 0 1 .603 3.58z"/><path fill="#60CDFF" d="M44.284 23.7A12.894 12.894 0 0 1 31.53 34.5h-5.206L24.157 48H14.89l1.483-9 1.75-11.178.367-2.322h7.497c7.773 0 12.927-6.576 12.927-12.15 3.825 1.974 6.055 5.963 5.37 10.35z"/><path fill="#008CFF" d="M38.914 13.35C37.31 12.511 35.365 12 33.248 12h-12.64L18.49 25.5h7.497c7.773 0 12.927-6.576 12.927-12.15z"/></svg></span>
+                    <span class="pay-chip pay-apple"><svg viewBox="0 0 24 24" aria-label="Apple Pay"><path fill="#000" d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.02-3.76-2.05-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.71-1.04-2.74-4.13M14.6 4.7c.71-.86 1.19-2.05 1.06-3.24-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.97-1.08 3.13 1.14.09 2.3-.58 3.01-1.43"/></svg><b>Pay</b></span>
+                    <span class="pay-chip pay-klarna">Klarna</span>
+                </div>
+            </div>
+
             <!-- Contenu du coffret -->
-            <div class="reveal">
+            <div class="reveal" style="margin-top:2.4rem;">
                 <span class="block-label">Contenu du coffret</span>
                 <div class="bundle-items">
                     <div class="bundle-item">
@@ -366,37 +385,6 @@
                             <div class="bundle-item-price">Offert avec le coffret</div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Comparaison prix -->
-            <div class="price-comparison reveal">
-                <div>
-                    <div class="price-col-label">Les 3 produits séparément</div>
-                    <div class="price-col-old">329,97 €</div>
-                </div>
-                <div class="price-arrow">→</div>
-                <div style="text-align:right;">
-                    <div class="price-col-new-label">Le Rituel Complet</div>
-                    <div class="price-col-new">279,97 €</div>
-                </div>
-            </div>
-
-            <!-- ATC -->
-            <div class="atc-wrapper reveal" id="atcWrapper">
-                <button class="btn btn-solid" onclick="addToCart('Le Rituel Complet', 279.97, 'assets/coffret-open.webp')">Commander le Coffret</button>
-                <div class="trust-row">
-                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span><b>Livraison gratuite</b> en France · expédié sous 24 h</span></div>
-                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Satisfait·e ou remboursé·e 30 jours</b></span></div>
-                    <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Paiement <b>100 % sécurisé</b></span></div>
-                </div>
-                <div class="pay-row" style="margin-top:1.5rem;">
-                    <span class="pay-chip pay-visa">VISA</span>
-                    <span class="pay-chip"><svg viewBox="0 0 36 22" aria-label="Mastercard"><circle cx="14" cy="11" r="8" fill="#EB001B"/><circle cx="22" cy="11" r="8" fill="#F79E1B"/><path d="M18 5.4a7.97 7.97 0 0 1 0 11.2 7.97 7.97 0 0 1 0-11.2z" fill="#FF5F00"/></svg></span>
-                    <span class="pay-chip pay-amex">AMEX</span>
-                    <span class="pay-chip"><svg viewBox="7 3 38 45" aria-label="PayPal"><path fill="#002991" d="M38.914 13.35c0 5.574-5.144 12.15-12.927 12.15H18.49l-.368 2.322L16.373 39H7.056l5.605-36h15.095c5.083 0 9.082 2.833 10.555 6.77a9.687 9.687 0 0 1 .603 3.58z"/><path fill="#60CDFF" d="M44.284 23.7A12.894 12.894 0 0 1 31.53 34.5h-5.206L24.157 48H14.89l1.483-9 1.75-11.178.367-2.322h7.497c7.773 0 12.927-6.576 12.927-12.15 3.825 1.974 6.055 5.963 5.37 10.35z"/><path fill="#008CFF" d="M38.914 13.35C37.31 12.511 35.365 12 33.248 12h-12.64L18.49 25.5h7.497c7.773 0 12.927-6.576 12.927-12.15z"/></svg></span>
-                    <span class="pay-chip pay-apple"><svg viewBox="0 0 24 24" aria-label="Apple Pay"><path fill="#000" d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.02-3.76-2.05-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.71-1.04-2.74-4.13M14.6 4.7c.71-.86 1.19-2.05 1.06-3.24-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.97-1.08 3.13 1.14.09 2.3-.58 3.01-1.43"/></svg><b>Pay</b></span>
-                    <span class="pay-chip pay-klarna">Klarna</span>
                 </div>
             </div>
 
