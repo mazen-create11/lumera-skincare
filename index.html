@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="styles.css?v=19">
+<link rel="stylesheet" href="styles.css?v=20">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -233,14 +233,16 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 /* FAQ */
 .faq{background:var(--cream)}
 .faq-grid{display:grid;grid-template-columns:.85fr 1.4fr;gap:4rem;align-items:start}
-.faq-list{display:flex;flex-direction:column}
-.faq-item{border-bottom:1px solid var(--blush-mid)}
-.faq-q{width:100%;background:none;border:none;text-align:left;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;cursor:pointer;font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--text)}
-.faq-q .ic{transition:.3s;color:var(--rose);font-size:1.2rem}
-.faq-item.open .faq-q .ic{transform:rotate(180deg)}
+.faq-list{display:flex;flex-direction:column;gap:.7rem}
+.faq-item{border:1px solid var(--blush-mid);border-radius:16px;background:#fff;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.faq-item.open{border-color:var(--rose-light);box-shadow:0 16px 36px -26px rgba(120,60,70,.42)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:1.3rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1.4rem;cursor:pointer;font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--text)}
+.faq-q .ic{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--rose-light);color:var(--rose-dark);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:transform .3s,background .25s,color .25s,border-color .25s}
+.faq-q:hover .ic{background:var(--blush)}
+.faq-item.open .faq-q .ic{transform:rotate(180deg);background:var(--rose-dark);color:#fff;border-color:var(--rose-dark)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.faq-item.open .faq-a{max-height:320px}
-.faq-a p{padding:0 0 1.5rem;font-size:.9rem;color:var(--text-mid);line-height:1.8}
+.faq-item.open .faq-a{max-height:380px}
+.faq-a p{padding:0 1.5rem 1.4rem;font-size:.9rem;color:var(--text-mid);line-height:1.8}
 
 /* FOOTER */
 footer{background:var(--ink);color:rgba(255,255,255,.6)}
