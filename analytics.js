@@ -12,7 +12,7 @@
   var CONFIG = {
     ga4:    'G-XXXXXXXXXX',          // Google Analytics 4
     meta:   'XXXXXXXXXXXXXXX',       // Meta (Facebook/Instagram) Pixel
-    tiktok: 'XXXXXXXXXXXXXXXXXXXX'   // TikTok Pixel
+    tiktok: 'D8S207JC77U4HL2FF3VG'   // TikTok Pixel
   };
   function isSet(v) { return v && v.indexOf('X') === -1; }
 
