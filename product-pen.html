@@ -125,7 +125,7 @@
         <div class="product-gallery">
             <div class="gallery-stage">
                 <div class="gallery-carousel" id="galleryMain">
-                    <img loading="eager" fetchpriority="high" src="assets/pen-marble.webp" alt="Stylo micro-needling Luméra rose-gold sur marbre — écran LED">
+                    <img loading="eager" fetchpriority="high" src="assets/pen-marble.webp?v=2" alt="Stylo micro-needling Luméra rose-gold sur marbre — écran LED">
                     <img loading="lazy" src="assets/pen-kit-marble.webp" alt="Stylo micro-needling Luméra et ses accessoires sur marbre — pochette, câble USB-C et cartouches titane">
                     <img loading="lazy" src="assets/pen-apply.webp" alt="Application du stylo micro-needling sur le visage au miroir">
                 </div>
@@ -133,7 +133,7 @@
                 <button class="gallery-arrow next" type="button" aria-label="Image suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
             </div>
             <div class="gallery-thumbs" id="galleryThumbs">
-                <img loading="lazy" src="assets/pen-marble.webp" alt="" class="active">
+                <img loading="lazy" src="assets/pen-marble.webp?v=2" alt="" class="active">
                 <img loading="lazy" src="assets/pen-kit-marble.webp" alt="">
                 <img loading="lazy" src="assets/pen-apply.webp" alt="">
             </div>
@@ -167,7 +167,7 @@
                         <input id="bbQty" value="1" readonly aria-label="Quantité">
                         <button type="button" aria-label="Augmenter" onclick="bbStep(1)">+</button>
                     </div>
-                    <button class="btn btn-solid" onclick="bbAdd('Stylo Micro-needling', 39.99, 'assets/pen-marble.webp')">Ajouter au panier</button>
+                    <button class="btn btn-solid" onclick="bbAdd('Stylo Micro-needling', 39.99, 'assets/pen-marble.webp?v=2')">Ajouter au panier</button>
                 </div>
                 <div class="pay-row">
                     <span class="pay-chip pay-visa">VISA</span>
@@ -435,7 +435,7 @@
             <div style="font-size:0.72rem; color:var(--c-text-muted);">Édition Fondatrice · 30 j satisfait ou remboursé</div>
         </div>
         <div style="font-size:1.1rem; font-weight:700;">39,99 €</div>
-        <button class="btn btn-solid btn-shimmer" onclick="addToCart('Stylo Micro-needling', 39.99, 'assets/pen-marble.webp')">Ajouter au panier</button>
+        <button class="btn btn-solid btn-shimmer" onclick="addToCart('Stylo Micro-needling', 39.99, 'assets/pen-marble.webp?v=2')">Ajouter au panier</button>
     </div>
 
     <script>
@@ -511,12 +511,12 @@
 
 <div class="satc" id="satc">
   <div class="satc-inner">
-    <img class="satc-thumb" src="assets/pen-marble.webp" alt="" aria-hidden="true">
+    <img class="satc-thumb" src="assets/pen-marble.webp?v=2" alt="" aria-hidden="true">
     <div class="satc-info">
       <div class="satc-name">Stylo Micro-needling</div>
       <div class="satc-price"><strong>39,99 €</strong> · 0,25 mm · livraison offerte</div>
     </div>
-    <button class="satc-btn" aria-label="Ajouter au panier" onclick="addToCart('Stylo Micro-needling', 39.99, 'assets/pen-marble.webp')">Ajouter au panier</button>
+    <button class="satc-btn" aria-label="Ajouter au panier" onclick="addToCart('Stylo Micro-needling', 39.99, 'assets/pen-marble.webp?v=2')">Ajouter au panier</button>
   </div>
 </div>
 <script>(function(){var b=document.getElementById('satc');if(!b)return;var a=document.querySelector('.btn-solid'),f=document.querySelector('.site-footer');var ao=false,fi=false;function u(){b.classList.toggle('show',ao&&!fi);}if(a)new IntersectionObserver(function(e){ao=!e[0].isIntersecting;u();},{threshold:0}).observe(a);if(f)new IntersectionObserver(function(e){fi=e[0].isIntersecting;u();},{threshold:0}).observe(f);})();</script>
