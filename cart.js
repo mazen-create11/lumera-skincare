@@ -10,6 +10,42 @@
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function attr(s) { return String(s).replace(/'/g, "\\'"); }
 
+  // Image de repli si l'item n'a pas d'image (robustesse panier)
+  function imgFor(name, img) {
+    if (img) return img;
+    var n = String(name).toLowerCase();
+    if (/masque|mask/.test(n)) return 'assets/card-mask.webp';
+    if (/s[ée]rum/.test(n)) return 'assets/card-serum.webp';
+    if (/stylo|pen|needl/.test(n)) return 'assets/card-pen.webp';
+    if (/rituel|coffret/.test(n)) return 'assets/coffret-closed.webp';
+    return 'assets/coffret-closed.webp';
+  }
+  function isCoffret(name) { return /rituel|coffret/i.test(name); }
+
+  // Cross-sell intelligent : coffret si produits à l'unité (et pas déjà le coffret),
+  // recharge sérum si le coffret est là, masqué sinon. Injecté sur toutes les pages.
+  function updateUpsell(c) {
+    var hasCoffret = c.some(function (i) { return isCoffret(i.name); });
+    var hasUnit = c.some(function (i) { return !isCoffret(i.name); });
+    var mode = (c.length && hasUnit && !hasCoffret) ? 'coffret' : (c.length && hasCoffret ? 'serum' : null);
+    document.querySelectorAll('.cart-footer').forEach(function (f) {
+      var drawer = f.parentNode;
+      var up = drawer.querySelector('.cart-upsell');
+      if (!mode) { if (up) up.style.display = 'none'; return; }
+      if (!up) { up = document.createElement('div'); up.className = 'cart-upsell'; drawer.insertBefore(up, f); }
+      up.style.display = '';
+      if (mode === 'coffret') {
+        up.innerHTML = '<img src="assets/coffret-closed.webp" alt="Coffret Le Rituel Complet" style="width:54px;height:54px;object-fit:cover;border-radius:10px">'
+          + '<div class="cart-upsell-info"><h4>Passez au Rituel · économisez 50 €</h4><p>Les 3 soins réunis — <strong>279,97 €</strong> <s style="color:var(--c-text-light)">329,97 €</s></p></div>'
+          + '<a href="bundle.html" class="add-upsell">Voir</a>';
+      } else {
+        up.innerHTML = '<img src="assets/card-serum.webp" alt="Sérum PDRN" style="width:54px;height:54px;object-fit:cover;border-radius:10px">'
+          + '<div class="cart-upsell-info"><h4>Complétez votre rituel</h4><p>Sérum PDRN — recharge · <strong>39,99 €</strong></p></div>'
+          + '<button class="add-upsell" onclick="addToCart(\'Sérum PDRN Glass Skin\',39.99,\'assets/card-serum.webp\')">+ Ajouter</button>';
+      }
+    });
+  }
+
   function render() {
     var c = get();
     document.querySelectorAll('.cart-btn').forEach(function (b) { b.textContent = 'Panier (' + count(c) + ')'; });
@@ -20,7 +56,7 @@
         items.innerHTML = c.map(function (i) {
           var a = attr(i.name), n = esc(i.name);
           return '<div class="ci-row">'
-            + (i.img ? '<img class="ci-thumb" src="' + esc(i.img) + '" alt="' + n + '">' : '<div class="ci-thumb"></div>')
+            + '<img class="ci-thumb" src="' + esc(imgFor(i.name, i.img)) + '" alt="' + n + '">'
             + '<div class="ci-info">'
             + '<div class="ci-head"><span class="ci-name">' + n + '</span>'
             + '<button class="ci-remove" onclick="lumeraRemove(\'' + a + '\')">Retirer</button></div>'
@@ -59,6 +95,7 @@
       var btn = f.querySelector('button, .btn');
       if (btn) f.insertBefore(d, btn); else f.appendChild(d);
     });
+    updateUpsell(c);
   }
 
   window.openCart = function () {

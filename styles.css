@@ -1389,24 +1389,28 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
 .cart-upsell {
     margin: 0.9rem 1.5rem;
     padding: 0.8rem 0.9rem;
-    background: var(--c-surface);
-    border: 1px solid var(--c-border);
+    background: linear-gradient(135deg, var(--c-surface), #FBEEE9);
+    border: 1px solid #EAD3D9;
+    border-radius: 16px;
     display: flex;
     gap: 0.85rem;
     align-items: center;
+    box-shadow: 0 12px 28px -22px rgba(120,60,70,.55);
 }
-.cart-upsell img { width: 48px; height: 48px; }
-.cart-upsell .placeholder-box { width: 48px; height: 48px; flex-shrink: 0; }
-.cart-upsell-info { flex: 1; line-height: 1.3; }
-.cart-upsell-info h4 { font-size: 0.62rem; margin-bottom: 0.15rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-accent-dark); }
-.cart-upsell-info p { font-size: 0.78rem; color: var(--c-text-main); font-weight: 400; font-family: var(--font-serif); }
-.cart-upsell-info span { font-size: 0.72rem !important; }
+.cart-upsell img { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.cart-upsell .placeholder-box { width: 54px; height: 54px; flex-shrink: 0; }
+.cart-upsell-info { flex: 1; line-height: 1.32; }
+.cart-upsell-info h4 { font-size: 0.6rem; margin-bottom: 0.2rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-accent-dark); }
+.cart-upsell-info p { font-size: 0.82rem; color: var(--c-text-main); font-weight: 400; font-family: var(--font-serif); }
+.cart-upsell-info p strong { font-weight: 700; }
+.cart-upsell-info p s { font-size: 0.78rem; }
 .add-upsell {
     background: var(--c-text-main);
     border: none;
-    padding: 0.55rem 1rem;
+    border-radius: 100px;
+    padding: 0.62rem 1.2rem;
     cursor: pointer;
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 700;
     color: white;
     transition: var(--t-fast);
@@ -1414,8 +1418,10 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     font-family: var(--font-sans);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    text-decoration: none;
+    flex-shrink: 0;
 }
-.add-upsell:hover { background: var(--c-accent); }
+.add-upsell:hover { background: var(--c-accent-dark); }
 .cart-footer { padding: 1.5rem 2rem; border-top: 1px solid var(--c-border); }
 .cart-total { display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; font-family: var(--font-sans); }
 
