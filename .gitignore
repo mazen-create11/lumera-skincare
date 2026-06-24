@@ -1,0 +1,18 @@
+# Scripts de génération Gemini
+*.py
+snap.mjs
+update_cache.py
+BRIEF-GEMINI.md
+
+# Screenshots de dev
+screenshot_*.png
+v2-*.png
+_view.html
+_ccheck.html
+
+# Sources PNG non optimisées
+_png-sources/
+
+# Fichiers système
+.DS_Store
+assets/.DS_Store

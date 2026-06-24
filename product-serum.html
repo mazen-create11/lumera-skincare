@@ -34,7 +34,7 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=22">
+    <link rel="stylesheet" href="styles.css?v=25">
     <style>
         /* ── Ingrédients ── */
         .ingredient-card {
@@ -233,7 +233,7 @@
                 <a href="about.html">Notre Science</a>
             </nav>
             <div class="nav-actions">
-                <button class="cart-btn" onclick="openCart()">Panier (0)</button>
+                <button class="nav-cart" onclick="openCart()"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span class="cart-btn">Panier (0)</span></button>
                 <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
             </div>
         </div>
@@ -423,7 +423,8 @@
     <!-- FAQ -->
     <section class="section-pad" style="background:var(--c-surface); border-top:1px solid var(--c-border);">
         <div class="container" style="max-width:760px;">
-            <h2 class="serif reveal" style="text-align:center; margin-bottom:0.8rem;">Questions fréquentes</h2>
+            <span class="reveal" style="display:block;text-align:center;color:var(--c-accent-dark);letter-spacing:.22em;text-transform:uppercase;font-size:.7rem;font-weight:600;margin-bottom:.85rem;">✦&nbsp; Vos questions, nos réponses &nbsp;✦</span>
+            <h2 class="serif reveal" style="text-align:center; margin-bottom:0.8rem; font-style:italic; font-weight:420;">Questions fréquentes</h2>
             <p class="reveal" style="text-align:center; color:var(--c-text-muted); margin-bottom:3rem; font-size:1rem;">Tout ce qu'il faut savoir sur le Sérum PDRN.</p>
             <div class="accordion reveal">
                 <div class="accordion-item">
