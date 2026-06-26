@@ -2,14 +2,24 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sérum PDRN "Glass Skin" | LUMÉRA</title>
     <link rel="canonical" href="https://lumera-skincare.com/product-serum.html">
     <meta name="description" content="Sérum PDRN 1% à l'ADN de saumon. Niacinamide 5%, Acide Hyaluronique multi-poids. Régénération cellulaire, éclat Glass Skin — 39,99 €">
+    <meta property="og:type" content="product">
+    <meta property="og:title" content='Sérum PDRN "Glass Skin" | LUMÉRA'>
+    <meta property="og:description" content="Sérum PDRN 1% à l'ADN de saumon. Niacinamide 5%, Acide Hyaluronique multi-poids. Régénération cellulaire, éclat Glass Skin — 39,99 €">
+    <meta property="og:url" content="https://lumera-skincare.com/product-serum.html">
+    <meta property="og:image" content="https://lumera-skincare.com/assets/serum-hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content='Sérum PDRN "Glass Skin" | LUMÉRA'>
+    <meta name="twitter:description" content="Sérum PDRN 1% à l'ADN de saumon. Niacinamide 5%, Acide Hyaluronique multi-poids. Régénération cellulaire, éclat Glass Skin — 39,99 €">
+    <meta name="twitter:image" content="https://lumera-skincare.com/assets/serum-hero.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,7 +44,8 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=25">
+    <link rel="preload" as="image" href="assets/serum-hero.webp" fetchpriority="high">
+<link rel="stylesheet" href="styles.css?v=28">
     <style>
         /* ── Ingrédients ── */
         .ingredient-card {
@@ -194,30 +205,6 @@
         .price-detail { font-size: 0.85rem; color: var(--c-text-light); }
         .review-recommend { margin-left: auto; font-size: 0.78rem; color: var(--c-accent-dark); font-weight: 600; }
 
-        /* ── Sticky bar ── */
-        .sticky-bar {
-            position: fixed;
-            bottom: -80px;
-            left: 0; right: 0;
-            background: rgba(253,248,246,0.96);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid var(--c-border);
-            padding: 1rem 2rem;
-            z-index: 190;
-            transition: bottom 0.4s var(--ease-out);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-        }
-        .sticky-bar.visible { bottom: 0; }
-        .sticky-bar .btn { width: auto; padding: 0.9rem 2rem; }
-        .sticky-name { font-family: var(--font-serif); font-size: 1.2rem; color: var(--c-text-main); }
-        .sticky-meta { display: flex; flex-direction: column; gap: 0.2rem; }
-        .sticky-reviews-text { font-size: 0.72rem; color: var(--c-text-muted); }
-        .sticky-price { font-size: 1.1rem; font-weight: 700; color: var(--c-text-main); }
-        /* sticky-bar visible mobile (conversion TikTok), masquee desktop via styles.css */
     </style>
 </head>
 <body>
@@ -262,25 +249,25 @@
         <!-- INFO -->
         <div class="product-info">
             <div class="breadcrumbs">
-                <a href="index.html">LUMÉRA<b>.</b></a> / <a href="#">Soins</a> / Sérum PDRN
+                <a href="index.html">LUMÉRA<b>.</b></a> / <a href="about.html">Soins</a> / Sérum PDRN
             </div>
 
             <h1 class="product-title serif reveal">Sérum PDRN<br>"Glass Skin"</h1>
 
             <div class="product-reviews reveal">
-                <span class="stars" style="color:var(--c-gold);" aria-hidden="true">✦</span>
-                <span>Édition Fondatrice · Série limitée 2026</span>
+                <span class="stars" style="color:var(--c-gold); letter-spacing:1px;" aria-label="Noté 5 sur 5">★★★★★</span>
+                <span style="font-size:0.82rem;"><b>4,7</b> · 6 testeuses <span style="color:var(--c-text-muted);">· panel fondateur Luméra</span></span>
                 <span class="review-recommend">Satisfait·e ou remboursé·e 30 j</span>
             </div>
+            <blockquote class="reveal" style="margin:1.1rem 0 0; padding:0.9rem 1.1rem; border-left:2px solid var(--c-gold); background:var(--c-surface); font-style:italic; font-size:0.9rem; color:var(--c-text-main); line-height:1.6;">« Texture légère qui pénètre vite, zéro effet collant. Mon teint est plus lumineux et hydraté au réveil. »<span style="display:block; margin-top:0.5rem; font-style:normal; font-size:0.76rem; font-weight:600; color:var(--c-text-muted);">Sophia, 26 ans · Marseille — testeuse Luméra</span></blockquote>
 
             <!-- BUYBOX PREMIUM -->
             <div class="buybox reveal" id="atcWrapper">
                 <div class="buybox-price">
                     <span class="bb-now">39,99 €</span>
-                    <span class="bb-was">59 €</span>
                     <span class="bb-save">PDRN clinique</span>
                 </div>
-                <p class="bb-split"><b>35 ml</b> · 4–5 semaines · l'actif des injections <b>Rejuran</b>, ici en soin quotidien, sans aiguille.</p>
+                <p class="bb-split"><b>35 ml</b> · 4–5 semaines · le même actif (PDRN) que la médecine esthétique, ici en application topique quotidienne.</p>
                 <div class="buy-options reveal" id="buyOptions">
                     <label class="buy-opt selected" data-mode="once">
                         <input type="radio" name="buymode" checked>
@@ -341,7 +328,7 @@
             <header class="story-head reveal">
                 <span class="block-label">La science du résultat</span>
                 <h2 class="serif">L'actif des cliniques, sans l'aiguille</h2>
-                <p>Le PDRN est la molécule des injections de régénération les plus réputées. Nous l'avons reformulée en soin topique, à concentration premium — pour des résultats visibles, sans piqûre et sans rendez-vous.</p>
+                <p>Le PDRN est une molécule de référence en médecine régénérative. Nous l'avons reformulée en soin topique, à concentration premium — pour des résultats visibles, sans piqûre et sans rendez-vous.</p>
             </header>
 
             <!-- Mécanisme PDRN -->
@@ -394,11 +381,11 @@
                     <button class="accordion-header" aria-expanded="false">Adjuvants Thérapeutiques<span class="icon">+</span></button>
                     <div class="accordion-content">
                         <div style="padding-bottom:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
-                            <p style="margin-bottom:1rem">La formulation intègre des modélateurs synergiques pour optimiser l'environnement extra-cellulaire.</p>
+                            <p style="margin-bottom:1rem">La formulation intègre des modulateurs synergiques pour optimiser l'environnement extra-cellulaire.</p>
                             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
                                 <li><strong>✦ Niacinamide (5%) :</strong> Inhibe le transfert des mélanosomes. Consolidation de la fonction barrière.</li>
                                 <li><strong>✦ Complexe Peptidique :</strong> Peptides biomimétiques agissant sur les récepteurs transmembranaires.</li>
-                                <li><strong>✦ Acide Hyaluronique :</strong> Fractionné à triple poids moléculaire pour hydratation multi-stridale.</li>
+                                <li><strong>✦ Acide Hyaluronique :</strong> Fractionné à triple poids moléculaire pour hydratation multi-niveaux.</li>
                             </ul>
                         </div>
                     </div>
@@ -476,9 +463,9 @@
                 <div class="footer-col">
                     <h3>Légal</h3>
                     <ul>
-                        <li><a href="#">CGV</a></li>
-                        <li><a href="#">Politique RGPD</a></li>
-                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="legal.html#cgv">CGV</a></li>
+                        <li><a href="legal.html#confidentialite">Politique RGPD</a></li>
+                        <li><a href="legal.html#mentions">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
@@ -501,10 +488,6 @@
             <h3 class="serif">Votre Panier</h3>
             <button class="close-cart" onclick="closeCart()">×</button>
         </div>
-        <div class="cart-progress">
-            <p>Livraison offerte incluse ✦</p>
-            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
-        </div>
         <div class="cart-items" id="cartItems">
             <p>Votre panier est vide.</p>
         </div>
@@ -523,24 +506,9 @@
         </div>
     </div>
 
-    <!-- Sticky bar -->
-    <div class="sticky-bar" id="stickyBar">
-        <div class="sticky-meta">
-            <div class="sticky-name">Sérum PDRN "Glass Skin"</div>
-            <div class="sticky-reviews-text">Édition Fondatrice · 30 j satisfait ou remboursé</div>
-        </div>
-        <div class="sticky-price">39,99 €</div>
-        <button class="btn btn-solid" onclick="serumAdd()">Ajouter au panier</button>
-    </div>
-
     <script>
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
-
-        const atcWrapper = document.getElementById('atcWrapper');
-        const stickyBar = document.getElementById('stickyBar');
-        const obs = new IntersectionObserver(([e]) => stickyBar.classList.toggle('visible', !e.isIntersecting), { threshold: 0 });
-        obs.observe(atcWrapper);
 
         // Panier géré par cart.js (window.openCart / closeCart / addToCart)
 
@@ -600,7 +568,7 @@
 });})();
 </script>
 <script src="analytics.js?v=2"></script>
-<script src="cart.js?v=5"></script>
+<script src="cart.js?v=7"></script>
     <script>
         (function () {
             var opts = document.querySelectorAll('#buyOptions .buy-opt');
@@ -625,7 +593,7 @@
         })();
     </script>
 <script>(function(){var b=document.getElementById("navBurger");if(b)b.addEventListener("click",function(){document.body.classList.toggle("menu-open")});document.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open")})})})();</script>
-<div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
+<div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail" autocomplete="email"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
 
 <div class="satc" id="satc">
   <div class="satc-inner">

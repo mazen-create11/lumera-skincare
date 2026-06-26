@@ -292,7 +292,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
       <div class="offer-top"><h4>Le Sérum PDRN</h4><span class="tag">Premier pas</span></div>
       <p>Budget serré ? Découvrez la marque par son sérum signature.</p>
       <div class="offer-price"><span class="now lnum">39,99 €</span><span class="was lnum">59 €</span></div>
-      <button class="btn btn-ghost" onclick="addToCart('Sérum PDRN', 39.99, 'assets/serum-pack.webp')">Ajouter le Sérum</button>
+      <button class="btn btn-ghost" onclick="addToCart('Sérum PDRN Glass Skin', 39.99, 'assets/serum-pack.webp')">Ajouter le Sérum</button>
     </div>
   </div>
 </section>
@@ -348,7 +348,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
     <h3>Entrez dans le cercle.</h3>
     <p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p>
     <form id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST">
-      <input type="email" name="email" required placeholder="Votre e-mail">
+      <input type="email" name="email" required placeholder="Votre e-mail" autocomplete="email">
       <button type="submit">Rejoindre le Cercle</button>
     </form>
     <p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p>
@@ -360,10 +360,6 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
 <div class="cart-overlay" id="cartOverlay"></div>
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header"><h3>Mon Panier</h3><button class="cart-close" id="cartClose" aria-label="Fermer le panier">✕</button></div>
-  <div class="cart-progress">
-    <p>Livraison offerte incluse ✦</p>
-    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
-  </div>
   <div class="cart-items is-empty" id="cartItems"><div><p style="font-family:var(--serif);font-size:1.1rem;color:var(--text-mid)">Votre panier est vide</p></div></div>
   <div class="cart-footer">
     <div class="cart-total"><span>Total</span><span id="cartTotal">0 €</span></div>
@@ -401,6 +397,6 @@ addEventListener('scroll',()=>sticky.classList.toggle('show',scrollY>560),{passi
 })();
 </script>
 <script src="analytics.js?v=2"></script>
-<script src="cart.js?v=5"></script>
+<script src="cart.js?v=7"></script>
 </body>
 </html>

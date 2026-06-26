@@ -2,7 +2,7 @@
    LUMÉRA SKINCARE — Design System v4.0
    Direction : Clinique Intime
    Refs : Augustinus Bader · Tamburins · CurrentBody
-   Typo : Cormorant Garamond + DM Sans
+   Typo : Fraunces (display) + Hanken Grotesk (texte)
    Palette : Crème rosé · Rose signature · Bordeaux profond
 ========================================= */
 
@@ -43,7 +43,7 @@
     --c-sale:         #9C4A55;
 
     /* ── Typo ── */
-    --font-serif:     'Hanken Grotesk', -apple-system, sans-serif;
+    --font-serif:     'Fraunces', Georgia, 'Times New Roman', serif;
     --font-sans:      'Hanken Grotesk', -apple-system, Helvetica, sans-serif;
 
     /* ── Transitions ── */
@@ -1251,7 +1251,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgba(245,240,237,0.25);
+    color: rgba(245,240,237,0.62);
     font-size: 0.72rem;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -1821,7 +1821,7 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
     font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: rgba(245,240,237,0.25);
+    color: rgba(245,240,237,0.62);
     text-transform: uppercase;
     padding: 3px 7px;
     border: 1px solid rgba(255,255,255,0.08);
@@ -2050,3 +2050,65 @@ img { -webkit-user-drag: none; }
 
 /* Sliders avant/apres : pas de label, juste l image */
 .ba-hero-tag{display:none!important}
+
+/* ===================== PANIER PREMIUM v2 ===================== */
+.cart-overlay{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.cart-drawer{box-shadow:-26px 0 70px -24px rgba(58,30,38,.4)}
+
+/* Panier vide : on masque progression + footer (total 0EUR/bouton gris), l'etat vide porte ses propres CTA */
+.cart-drawer:has(.cart-items.is-empty) .cart-progress,
+.cart-drawer:has(.cart-items.is-empty) .cart-footer{display:none}
+.cart-items.is-empty{align-items:stretch;justify-content:flex-start;padding-top:2.2rem}
+
+/* Etat vide premium */
+.lm-empty{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
+.lm-empty-ic{width:66px;height:66px;border-radius:50%;background:var(--c-surface);display:flex;align-items:center;justify-content:center;color:var(--c-accent);margin-bottom:1.15rem}
+.lm-empty-t{font-family:var(--font-serif);font-size:1.4rem;font-weight:400;color:var(--c-text-main);margin-bottom:.45rem}
+.lm-empty-s{font-size:.83rem;line-height:1.55;color:var(--c-text-light);max-width:290px;margin:0 auto 2rem}
+.lm-suggest{width:100%;display:flex;flex-direction:column;gap:.65rem;text-align:left}
+.lm-suggest-h{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--c-accent-dark);text-align:center;margin-bottom:.35rem}
+.lm-sug{display:flex;align-items:center;gap:.9rem;padding:.7rem;border:1px solid var(--c-border);border-radius:14px;background:rgba(255,255,255,.55);transition:transform .3s var(--ease-out),border-color .3s,box-shadow .3s}
+.lm-sug:hover{transform:translateY(-2px);border-color:var(--c-accent-light);box-shadow:0 10px 26px -14px rgba(156,82,99,.5)}
+.lm-sug img{width:54px;height:54px;border-radius:11px;object-fit:cover;flex-shrink:0}
+.lm-sug-info{flex:1;display:flex;flex-direction:column;min-width:0}
+.lm-sug-n{font-family:var(--font-serif);font-size:.96rem;color:var(--c-text-main);line-height:1.2}
+.lm-sug-p{font-size:.8rem;color:var(--c-text-light);font-weight:600;margin-top:.12rem}
+.lm-sug-add{width:36px;height:36px;flex-shrink:0;border-radius:50%;border:none;background:var(--c-accent);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .25s var(--ease-out)}
+.lm-sug-add:hover{background:var(--c-accent-dark);transform:scale(1.12)}
+.lm-sug-add:active{transform:scale(.96)}
+
+/* Bouton commande premium (pill + lift + shine) */
+.cart-checkout{width:100%;padding:1.1rem;border:none;border-radius:100px;background:var(--c-accent);color:#fff;font-family:var(--font-sans);font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;position:relative;overflow:hidden;transition:transform .35s var(--ease-out),box-shadow .35s,background .3s}
+.cart-checkout:hover{background:var(--c-accent-dark);transform:translateY(-2px);box-shadow:0 16px 34px -14px rgba(156,82,99,.6)}
+.cart-checkout:active{transform:translateY(0)}
+.cart-checkout::after{content:"";position:absolute;top:0;left:-130%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-18deg);pointer-events:none}
+.cart-checkout:hover::after{animation:lmShine .9s var(--ease-out)}
+@keyframes lmShine{to{left:140%}}
+
+/* Stagger entree des lignes a l'ouverture */
+@keyframes ciIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.cart-items.lm-stagger .ci-row,.cart-items.lm-stagger .lm-sug,.cart-items.lm-stagger .lm-empty>*{animation:ciIn .5s var(--ease-out) both}
+.cart-items.lm-stagger .ci-row:nth-child(2),.cart-items.lm-stagger .lm-suggest .lm-sug:nth-child(2){animation-delay:.06s}
+.cart-items.lm-stagger .ci-row:nth-child(3),.cart-items.lm-stagger .lm-suggest .lm-sug:nth-child(3){animation-delay:.12s}
+.cart-items.lm-stagger .ci-row:nth-child(4){animation-delay:.18s}
+.cart-items.lm-stagger .ci-row:nth-child(5){animation-delay:.24s}
+.cart-items.lm-stagger .ci-row:nth-child(n+6){animation-delay:.3s}
+
+/* Upsell contextuel en liste (compact pour ne pas comprimer les articles) */
+.cart-items{min-height:120px}
+.cart-upsell{display:flex;flex-direction:column;align-items:stretch;gap:.4rem;padding:.8rem 1.5rem;border-top:1px solid var(--c-border);background:var(--c-surface);max-height:42vh;overflow-y:auto}
+.cart-upsell-h{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--c-accent-dark);text-align:center;margin:0 0 .1rem}
+.cart-upsell .lm-sug{background:rgba(255,255,255,.7);padding:.5rem;gap:.7rem}
+.cart-upsell .lm-sug img{width:44px;height:44px;border-radius:9px}
+.cart-upsell .lm-sug-n{font-size:.88rem}
+.cart-upsell .lm-sug-p{font-size:.74rem}
+.cart-upsell .lm-sug-add{width:32px;height:32px;font-size:1.15rem}
+.lm-sug-note{font-style:normal;color:var(--c-accent-dark);font-weight:600}
+
+@media (prefers-reduced-motion:reduce){
+  .cart-checkout:hover::after{animation:none}
+  .cart-items.lm-stagger .ci-row,.cart-items.lm-stagger .lm-sug,.cart-items.lm-stagger .lm-empty>*{animation:none}
+  .cart-drawer{transition:none}
+}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}

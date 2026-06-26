@@ -21,28 +21,57 @@
     return 'assets/coffret-closed.webp';
   }
   function isCoffret(name) { return /rituel|coffret/i.test(name); }
+  function isMask(name) { return !isCoffret(name) && /masque|mask/i.test(name); }
+  function isSerum(name) { return !isCoffret(name) && /s[ée]rum/i.test(name); }
+  function isPen(name) { return !isCoffret(name) && /stylo|pen|needl/i.test(name); }
+
+  // Catalogue canonique (pour les suggestions du panier)
+  var CATALOG = {
+    coffret: { name: 'Le Rituel Complet', price: 279.97, img: 'assets/coffret-open.webp?v=12' },
+    mask: { name: 'Masque LED Face + Cou', price: 249.99, img: 'assets/card-mask.webp', note: 'Visage + cou' },
+    serum: { name: 'Sérum PDRN Glass Skin', price: 39.99, img: 'assets/card-serum.webp', note: 'Régénération intense' },
+    pen: { name: 'Stylo Micro-needling', price: 39.99, img: 'assets/card-pen.webp', note: 'Absorption ×4' }
+  };
+
+  // Moteur de cross-sell contextuel : ne jamais reproposer ce qu'on a,
+  // monter vers le coffret depuis un produit seul, proposer une recharge si le coffret est là.
+  function suggestionsFor(c) {
+    if (!c.length) return null;
+    var hasCoffret = c.some(function (i) { return isCoffret(i.name); });
+    var hasMask = c.some(function (i) { return isMask(i.name); });
+    var hasSerum = c.some(function (i) { return isSerum(i.name); });
+    var hasPen = c.some(function (i) { return isPen(i.name); });
+    if (hasCoffret) {
+      // Coffret déjà pris : réappro consommable pour la suite (pas de produits déjà inclus)
+      return { title: 'Pensez à la suite', items: [
+        { name: CATALOG.serum.name, price: CATALOG.serum.price, img: CATALOG.serum.img, note: 'Recharge — pour ne jamais en manquer' }
+      ] };
+    }
+    // Produit(s) à l'unité : on monte vers le coffret (éco) + on complète avec les soins manquants
+    var items = [{ name: CATALOG.coffret.name, price: CATALOG.coffret.price, img: CATALOG.coffret.img, note: 'Les 3 soins réunis · économisez 50 €' }];
+    if (!hasMask) items.push(CATALOG.mask);
+    if (!hasSerum) items.push(CATALOG.serum);
+    if (!hasPen) items.push(CATALOG.pen);
+    return { title: 'Complétez votre rituel', items: items.slice(0, 3) };
+  }
 
   // Cross-sell intelligent : coffret si produits à l'unité (et pas déjà le coffret),
   // recharge sérum si le coffret est là, masqué sinon. Injecté sur toutes les pages.
   function updateUpsell(c) {
-    var hasCoffret = c.some(function (i) { return isCoffret(i.name); });
-    var hasUnit = c.some(function (i) { return !isCoffret(i.name); });
-    var mode = (c.length && hasUnit && !hasCoffret) ? 'coffret' : (c.length && hasCoffret ? 'serum' : null);
+    var sug = suggestionsFor(c);
     document.querySelectorAll('.cart-footer').forEach(function (f) {
       var drawer = f.parentNode;
       var up = drawer.querySelector('.cart-upsell');
-      if (!mode) { if (up) up.style.display = 'none'; return; }
+      if (!sug || !sug.items.length) { if (up) up.style.display = 'none'; return; }
       if (!up) { up = document.createElement('div'); up.className = 'cart-upsell'; drawer.insertBefore(up, f); }
       up.style.display = '';
-      if (mode === 'coffret') {
-        up.innerHTML = '<img src="assets/coffret-closed.webp" alt="Coffret Le Rituel Complet" style="width:54px;height:54px;object-fit:cover;border-radius:10px">'
-          + '<div class="cart-upsell-info"><h4>Passez au Rituel · économisez 50 €</h4><p>Les 3 soins réunis — <strong>279,97 €</strong> <s style="color:var(--c-text-light)">329,97 €</s></p></div>'
-          + '<a href="bundle.html" class="add-upsell">Voir</a>';
-      } else {
-        up.innerHTML = '<img src="assets/card-serum.webp" alt="Sérum PDRN" style="width:54px;height:54px;object-fit:cover;border-radius:10px">'
-          + '<div class="cart-upsell-info"><h4>Complétez votre rituel</h4><p>Sérum PDRN — recharge · <strong>39,99 €</strong></p></div>'
-          + '<button class="add-upsell" onclick="addToCart(\'Sérum PDRN Glass Skin\',39.99,\'assets/card-serum.webp\')">+ Ajouter</button>';
-      }
+      up.innerHTML = '<p class="cart-upsell-h">' + esc(sug.title) + '</p>' + sug.items.map(function (s) {
+        var note = s.note ? '<em class="lm-sug-note">' + esc(s.note) + '</em>' : '';
+        return '<div class="lm-sug"><img src="' + s.img + '" alt="' + esc(s.name) + '">'
+          + '<div class="lm-sug-info"><span class="lm-sug-n">' + esc(s.name) + '</span>'
+          + '<span class="lm-sug-p">' + fmt(s.price) + (note ? ' · ' + note : '') + '</span></div>'
+          + '<button class="lm-sug-add" aria-label="Ajouter ' + esc(s.name) + '" onclick="addToCart(\'' + attr(s.name) + '\',' + s.price + ',\'' + s.img + '\')">+</button></div>';
+      }).join('');
     });
   }
 
@@ -70,7 +99,22 @@
         }).join('');
       } else {
         items.classList.add('is-empty');
-        items.innerHTML = '<div><p style="font-family:var(--font-serif);font-size:1.15rem;color:var(--c-text-muted);margin-bottom:0.4rem;">Votre panier est vide</p><p style="font-size:0.82rem;color:var(--c-text-light);">Découvrez nos rituels signature.</p></div>';
+        var sug = [
+          ['Le Rituel Complet', 279.97, 'assets/coffret-open.webp?v=12'],
+          ['Masque LED Face + Cou', 249.99, 'assets/card-mask.webp'],
+          ['Sérum PDRN Glass Skin', 39.99, 'assets/card-serum.webp'],
+          ['Stylo Micro-needling', 39.99, 'assets/card-pen.webp']
+        ];
+        var rows = sug.map(function (s) {
+          return '<div class="lm-sug"><img src="' + s[2] + '" alt="' + esc(s[0]) + '">'
+            + '<div class="lm-sug-info"><span class="lm-sug-n">' + esc(s[0]) + '</span><span class="lm-sug-p">' + fmt(s[1]) + '</span></div>'
+            + '<button class="lm-sug-add" aria-label="Ajouter ' + esc(s[0]) + '" onclick="addToCart(\'' + attr(s[0]) + '\',' + s[1] + ',\'' + s[2] + '\')">+</button></div>';
+        }).join('');
+        items.innerHTML = '<div class="lm-empty">'
+          + '<div class="lm-empty-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19"/><circle cx="12" cy="12" r="3.2"/></svg></div>'
+          + '<p class="lm-empty-t">Votre panier vous attend</p>'
+          + '<p class="lm-empty-s">Composez votre rituel lumière. Livraison offerte et 30 jours pour l’adopter.</p>'
+          + '<div class="lm-suggest"><p class="lm-suggest-h">Nos rituels signature</p>' + rows + '</div></div>';
       }
     }
     var tot = document.getElementById('cartTotal') || document.querySelector('.cart-total span:last-child');
@@ -81,7 +125,7 @@
     var prog = document.querySelector('.cart-progress p');
     if (prog) prog.innerHTML = 'Livraison offerte incluse ✦';
     var fill = document.querySelector('.progress-bar-fill');
-    if (fill) fill.style.width = Math.min(100, Math.round(t2 / FREE_SHIP * 100)) + '%';
+    if (fill && FREE_SHIP > 0) fill.style.width = Math.min(100, Math.round(t2 / FREE_SHIP * 100)) + '%';
     if (co && c.length) co.textContent = 'Commander en toute sécurité';
     // Réassurance panier (3× sans frais + trust) — injectée une seule fois par footer
     document.querySelectorAll('.cart-footer').forEach(function (f) {
@@ -108,10 +152,14 @@
     var o = document.querySelector('.cart-overlay'), d = document.getElementById('cartDrawer');
     if (o) { o.classList.add('active'); o.style.userSelect = 'none'; o.style.webkitUserSelect = 'none'; }
     if (d) d.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    var items = document.getElementById('cartItems') || document.querySelector('.cart-items');
+    if (items) { items.classList.remove('lm-stagger'); void items.offsetWidth; items.classList.add('lm-stagger'); }
   };
   window.closeCart = function () {
     var o = document.querySelector('.cart-overlay'), d = document.getElementById('cartDrawer');
     if (o) o.classList.remove('active'); if (d) d.classList.remove('active');
+    document.body.style.overflow = '';
   };
   window.addToCart = function (name, price, img) {
     var c = get(), ex = c.find(function (i) { return i.name === name; });

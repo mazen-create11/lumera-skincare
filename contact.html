@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contactez Luméra — questions sur le masque LED, conseils rituel et SAV. Réponse sous 24-48h.">
 <title>Contact | LUMÉRA</title>
     <link rel="canonical" href="https://lumera-skincare.com/contact.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="styles.css?v=25">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
 <style>
   body{margin:0;background:var(--c-bg);color:var(--c-text-main);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;}
   .info-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2.5rem;border-bottom:1px solid var(--c-border);position:sticky;top:0;background:rgba(253,248,246,0.92);backdrop-filter:blur(10px);z-index:10;}
@@ -49,6 +51,7 @@
     <a href="index.html" class="back">← Retour à la boutique</a>
   </nav>
 
+  <main id="contenu">
   <div class="info-wrap">
     <div class="info-eyebrow">Nous écrire</div>
     <h1>Une question ?<br><em>Parlons-en.</em></h1>
@@ -67,22 +70,23 @@
       </div>
       <div class="cmethod">
         <div class="ic">◈</div>
-        <h3>Instagram</h3>
-        <p><a href="#">@lumera.skincare</a><br>Coulisses & conseils</p>
+        <h3>TikTok</h3>
+        <p><a href="https://www.tiktok.com/@maisonlumera01" target="_blank" rel="noopener">@maisonlumera01</a><br>Coulisses & conseils</p>
       </div>
     </div>
 
     <h2 class="info-h2">Envoyez-nous un message</h2>
     <form class="cform" id="contactForm">
       <div class="row">
-        <div><label for="cf-name">Prénom</label><input type="text" id="cf-name" required></div>
-        <div><label for="cf-email">E-mail</label><input type="email" id="cf-email" required></div>
+        <div><label for="cf-name">Prénom</label><input type="text" id="cf-name" required autocomplete="given-name"></div>
+        <div><label for="cf-email">E-mail</label><input type="email" id="cf-email" required autocomplete="email"></div>
       </div>
       <div><label for="cf-subject">Objet</label><input type="text" id="cf-subject"></div>
       <div><label for="cf-msg">Votre message</label><textarea id="cf-msg" required></textarea></div>
       <button type="submit">Envoyer le message</button>
     </form>
   </div>
+  </main>
 
   <footer class="info-foot">
     <div>© 2026 Luméra Skincare · Marque française · Conçu en France</div>
