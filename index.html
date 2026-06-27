@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap" rel="stylesheet">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="preload" as="image" href="assets/coffret-open.webp?v=12" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=28">
+<link rel="stylesheet" href="styles.css?v=31">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -168,7 +168,7 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 .pcard-img{aspect-ratio:1/1;width:100%;object-fit:cover;background:var(--blush);transition:transform .6s var(--ease-out,cubic-bezier(.22,1,.36,1))}
 .pcard:hover .pcard-img{transform:scale(1.045)}
 .pcard-body{padding:1.8rem;display:flex;flex-direction:column;flex:1}
-.pcard h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.4rem}
+.pcard h3, .pcard h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.4rem}
 .pcard p{font-size:.83rem;color:var(--text-mid);line-height:1.6;margin-bottom:1.3rem;min-height:2.6em}
 .pcard-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
 .pcard-price{font-family:var(--serif);font-size:1.4rem;color:var(--text)}
@@ -210,7 +210,7 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 .step-ic{width:48px;height:48px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .step-top svg{width:22px;height:22px;stroke:var(--rose-dark);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .step:hover{transform:translateY(-4px);box-shadow:0 28px 50px -36px rgba(120,60,70,.42);border-color:var(--rose-light)}
-.step h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.6rem}
+.step h3, .step h4{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.6rem}
 .step p{font-size:.86rem;color:var(--text-mid);line-height:1.65}
 .step-time{display:inline-block;margin-top:1.1rem;font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-dark);background:var(--blush);padding:.35rem .9rem;border-radius:100px}
 
@@ -235,7 +235,7 @@ body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-
 .fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .fcard{background:var(--cream);border:1px solid var(--blush-mid);border-radius:20px;padding:2.4rem 2rem}
 .fcard .eyebrow{color:var(--rose-dark)}
-.fcard h4{font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--text);margin:.4rem 0 1rem}
+.fcard h3, .fcard h4{font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--text);margin:.4rem 0 1rem}
 .fcard p{font-size:.88rem;color:var(--text-mid);line-height:1.7}
 
 /* COFFRET DARK CTA */
@@ -269,7 +269,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6)}
 .foot-logo{font-family:var(--serif);font-size:1.7rem;letter-spacing:.18em;color:#fff;display:block;margin-bottom:.6rem}
 .foot-logo b{color:var(--rose-light);font-weight:500}
 .foot-brand p{font-size:.84rem;line-height:1.8;max-width:280px}
-.foot-col h5{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.3rem}
+.foot-col h3, .foot-col h5{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.3rem}
 .foot-col ul{display:flex;flex-direction:column;gap:.8rem}
 .foot-col a{font-size:.86rem;color:rgba(255,255,255,.55);transition:.2s}
 .foot-col a:hover{color:#fff}
@@ -382,12 +382,12 @@ body{line-height:1.6;letter-spacing:.005em;text-rendering:optimizeLegibility;-mo
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--rose-dark);outline-offset:3px;border-radius:4px}
 :focus:not(:focus-visible){outline:none}
 body{font-optical-sizing:auto}
-.hero h1,.h2,.coffret-body h3,.pcard h4,.step h4,.fcard h4,.darkcta h2,.faq-q,.g-title,.foot-logo,.nav-logo,blockquote{font-optical-sizing:auto;font-variation-settings:"opsz" 64;letter-spacing:-.006em}
+.hero h1,.h2,.coffret-body h3,.pcard h3, .pcard h4,.step h3, .step h4,.fcard h3, .fcard h4,.darkcta h2,.faq-q,.g-title,.foot-logo,.nav-logo,blockquote{font-optical-sizing:auto;font-variation-settings:"opsz" 64;letter-spacing:-.006em}
 .hero h1{font-variation-settings:"opsz" 80;letter-spacing:-.012em}
-.pcard h4,.step h4,.fcard h4,.faq-q{font-variation-settings:"opsz" 30;letter-spacing:0}
+.pcard h3, .pcard h4,.step h3, .step h4,.fcard h3, .fcard h4,.faq-q{font-variation-settings:"opsz" 30;letter-spacing:0}
 .hero h1 em,.h2 em,blockquote em,.g-title em,.lbanner-txt h2 em{font-style:normal;font-weight:300;color:var(--c-text-muted)}
 .hero h1 em{color:var(--rose-dark);font-weight:400}
-.eyebrow,.hero-eyebrow,.ticker-item,.foot-col h5{letter-spacing:.26em}
+.eyebrow,.hero-eyebrow,.ticker-item,.foot-col h3, .foot-col h5{letter-spacing:.26em}
 .sec{padding:130px 0}
 .sec-head{margin-bottom:4.8rem}
 .hero-lead{line-height:1.85}
@@ -420,7 +420,7 @@ img{-webkit-user-drag:none}
   .btn{min-height:52px}
   .nav-cart{min-height:44px;display:inline-flex;align-items:center}
   .nav-burger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
-  .pcard h4,.step h4,.fcard h4{font-size:1.4rem}
+  .pcard h3, .pcard h4,.step h3, .step h4,.fcard h3, .fcard h4{font-size:1.4rem}
   .h2{font-size:clamp(2.1rem,8vw,2.9rem)}
 }
 
@@ -472,7 +472,7 @@ img{-webkit-user-drag:none}
 /* Cartes produit : achat rapide */
 .h2,.coffret-body h3{font-weight:400}
 .pcard-foot{align-items:center}
-.pcard h4 a{color:inherit;transition:color .2s}
+.pcard h3 a, .pcard h4 a{color:inherit;transition:color .2s}
 .pcard:hover h4 a{color:var(--rose-dark)}
 .pcard-add{background:var(--ink);color:#fff;border:none;border-radius:100px;padding:.62rem 1.4rem;font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s var(--ease),transform .25s var(--ease);white-space:nowrap}
 .pcard-add:hover{background:var(--rose-dark);transform:translateY(-1px)}
@@ -663,7 +663,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
       <article class="pcard reveal">
         <img loading="lazy" width="2048" height="2048" class="pcard-img" src="assets/card-mask.webp" alt="Masque LED Luméra">
         <div class="pcard-body">
-          <h4><a href="product-mask.html">Le Masque</a></h4>
+          <h3><a href="product-mask.html">Le Masque</a></h3>
           <p>LED visage + cou en silicone médical flexible.</p>
           <div class="pcard-foot">
             <span class="pcard-price lnum">249,99 €</span>
@@ -674,7 +674,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
       <article class="pcard reveal">
         <img loading="lazy" width="2048" height="2048" class="pcard-img" src="assets/card-serum.webp" alt="Sérum PDRN Luméra">
         <div class="pcard-body">
-          <h4><a href="product-serum.html">Le Sérum</a></h4>
+          <h3><a href="product-serum.html">Le Sérum</a></h3>
           <p>PDRN, peptides, niacinamide — la révélation quotidienne.</p>
           <div class="pcard-foot">
             <span class="pcard-price lnum">39,99 €</span>
@@ -685,7 +685,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
       <article class="pcard reveal">
         <img loading="lazy" width="2048" height="2048" class="pcard-img" src="assets/card-pen.webp" alt="Stylo Microneedling Luméra">
         <div class="pcard-body">
-          <h4><a href="product-pen.html">Le Stylo</a></h4>
+          <h3><a href="product-pen.html">Le Stylo</a></h3>
           <p>Microneedling à domicile, 0,25 mm — précis et doux.</p>
           <div class="pcard-foot">
             <span class="pcard-price lnum">39,99 €</span>
@@ -786,7 +786,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
                     <span class="step-num lnum">I</span>
                     <span class="step-ic"><svg viewBox="0 0 24 24"><path d="M15 3l6 6-11 11H4v-6L15 3z"></path><path d="M13 5l6 6"></path></svg></span>
                 </div>
-                <h4>L'Induction (CIT)</h4>
+                <h3>L'Induction (CIT)</h3>
                 <p>Création de micro-canaux à 0,25 mm. Déclenche la libération de facteurs de croissance (PDGF, TGF-β) et augmente la perméabilité cutanée par ×4.7.</p>
                 <span class="step-time lnum">T0 · 5 Min</span>
             </div>
@@ -795,7 +795,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
                     <span class="step-num lnum">II</span>
                     <span class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3C12 3 5 10 5 15a7 7 0 0 0 14 0c0-5-7-12-7-12z"></path></svg></span>
                 </div>
-                <h4>L'Infusion (PDRN)</h4>
+                <h3>L'Infusion (PDRN)</h3>
                 <p>Application immédiate du Sérum à 1% de PDRN dans la fenêtre d'ouverture transdermique (60 min). Activation des récepteurs A2A.</p>
                 <span class="step-time lnum">T+5 · Immédiat</span>
             </div>
@@ -804,7 +804,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
                     <span class="step-num lnum">III</span>
                     <span class="step-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span>
                 </div>
-                <h4>La Photomodulation</h4>
+                <h3>La Photomodulation</h3>
                 <p>Irradiation LED (630 · 840 · 1072 nm) inondant la matrice d'ATP mitochondrial pour alimenter la prolifération cellulaire initiée par le PDRN.</p>
                 <span class="step-time lnum">T+10 · 20 Min</span>
             </div>
@@ -884,7 +884,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
   <div class="lmg-inner">
     <span class="g-eyebrow">La garantie Luméra</span>
     <h2 class="g-title">Essayez 30 jours.<br><em>Le risque est pour nous.</em></h2>
-    <p class="g-text">Adoptez le rituel pendant quatre semaines. Si votre peau n'y trouve pas son compte, écrivez-nous : nous reprenons le coffret et vous remboursons intégralement — sans condition, sans justificatif.</p>
+    <p class="g-text">Adoptez le rituel pendant quatre semaines. Si votre peau n'y trouve pas son compte, écrivez-nous : nous reprenons le coffret et vous remboursons intégralement le prix du coffret — sans avoir à vous justifier.</p>
     <div class="g-points">
       <div class="g-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg><span>Remboursement intégral sous 30 jours</span></div>
       <div class="g-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7.5" cy="18" r="1.6"></circle><circle cx="17.5" cy="18" r="1.6"></circle></svg><span>Livraison offerte · retour simple sous 30 j</span></div>
@@ -976,7 +976,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
       <p>Le rituel haute-performance pour réveiller la lumière de la peau. Marque française · Conçu en France.</p>
     </div>
     <div class="foot-col">
-      <h5>Boutique</h5>
+      <h3>Boutique</h3>
       <ul>
         <li><a href="product-mask.html">Le Masque</a></li>
         <li><a href="product-serum.html">Le Sérum</a></li>
@@ -985,7 +985,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
       </ul>
     </div>
     <div class="foot-col">
-      <h5>Maison</h5>
+      <h3>Maison</h3>
       <ul>
         <li><a href="about.html">Notre Science</a></li>
         <li><a href="livraison.html">Livraison &amp; Retours</a></li>
@@ -994,7 +994,7 @@ document.addEventListener('touchstart',function(){var p=v.play();if(p&&p.catch)p
       </ul>
     </div>
     <div class="foot-news">
-      <h5>Le Cercle Fondateur</h5>
+      <h3>Le Cercle Fondateur</h3>
       <p>Accès prioritaire aux réassorts, les coulisses du rituel et un avantage réservé à votre première commande.</p>
       <form class="foot-form" id="footForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required="" autocomplete="email" placeholder="Votre e-mail" aria-label="Email"><button type="submit">Rejoindre</button></form>
       <p class="foot-ok" id="footOk">Merci ✦ vous êtes dans le Cercle.</p>
@@ -1116,7 +1116,8 @@ document.querySelectorAll('.reveal,.reveal-r').forEach(el=>io.observe(el));
   if(foot)new IntersectionObserver(e=>{footIn=e[0].isIntersecting;upd();},{threshold:0}).observe(foot);
 })();
 </script>
-<script src="analytics.js?v=2"></script>
+<script src="analytics.js?v=3"></script>
+<script src="consent.js?v=1"></script>
 <script src="cart.js?v=7"></script>
 
 

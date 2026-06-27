@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233D1A24'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23E8AEB8' text-anchor='middle'>L</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notre Science | LUMÉRA SKINCARE</title>
     <link rel="canonical" href="https://lumera-skincare.com/about.html">
@@ -16,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=28">
+    <link rel="stylesheet" href="styles.css?v=31">
     <style>
         /* ─── SCIENCE PAGE OVERRIDES ─── */
         .science-hero {
@@ -420,7 +421,7 @@
             padding: 2.5rem;
             border-radius: 2px;
         }
-        .cit-depth-chart h4 {
+        .cit-depth-chart h3, .cit-depth-chart h4 {
             font-family: var(--font-sans);
             font-size: 0.75rem;
             font-weight: 600;
@@ -585,7 +586,7 @@
             border-radius: 100px;
             margin-bottom: 1.2rem;
         }
-        .study-card h4 {
+        .study-card h3, .study-card h4 {
             font-family: var(--font-serif);
             font-size: 1.25rem;
             font-weight: 400;
@@ -722,7 +723,7 @@
             font-size: 1.5rem;
             margin: 0 auto 1.5rem;
         }
-        .quality-card h4 {
+        .quality-card h3, .quality-card h4 {
             font-family: var(--font-serif);
             font-size: 1.15rem;
             font-weight: 400;
@@ -852,6 +853,10 @@
             .cit-signals { grid-template-columns: 1fr; }
             .pdrn-data-row { grid-template-columns: 1fr 1fr; }
         }
+        /* -- Contraste AA : textes sur sections sombres (audit a11y 27/06) -- */
+        .pbm-section .section-eyebrow,
+        .synergy-section .section-eyebrow { color: var(--c-accent); }
+        .synergy-connection h4 { color: var(--c-accent-light); }
     </style>
 </head>
 <body>
@@ -868,7 +873,7 @@
                 <li><a href="about.html" class="active" aria-current="page">Notre Science</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="nav-cart" aria-label="Ouvrir le panier" onclick="window.openCart?openCart():location.href='index.html'">
+                <button class="nav-cart" aria-label="Panier, ouvrir le panier" onclick="window.openCart?openCart():location.href='index.html'">
                     <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>
                     <span class="cart-btn">Panier (<span class="cart-count">0</span>)</span>
                 </button>
@@ -972,7 +977,7 @@
                     </div>
                 </div>
                 <div class="pbm-timeline-col">
-                    <h4 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.5rem;">Validation Scientifique</h4>
+                    <h3 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:1.5rem;">Validation Scientifique</h3>
                     <div class="pbm-timeline">
                         <div class="pbm-era">
                             <span class="pbm-year">✦</span>
@@ -1069,7 +1074,7 @@
                     </div>
                 </div>
                 <div class="pdrn-mechanism reveal-right">
-                    <h4 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--c-text-lighter);margin-bottom:1.5rem;">Cascade Pharmacodynamique</h4>
+                    <h3 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--c-text-lighter);margin-bottom:1.5rem;">Cascade Pharmacodynamique</h3>
                     <div class="mech-step">
                         <div class="mech-step-num">·</div>
                         <div class="mech-step-body">
@@ -1136,7 +1141,7 @@
                 </div>
                 <div class="cit-visual reveal-right">
                     <div class="cit-depth-chart">
-                        <h4>Calibration Pénétrative</h4>
+                        <h3>Calibration Pénétrative</h3>
 
                         <div class="depth-hero">
                             <div class="depth-hero-mm">0,25<span>mm</span></div>
@@ -1165,7 +1170,7 @@
                         </ul>
                     </div>
                     <div class="cit-synergy-callout">
-                        <h4>Fenêtre Thérapeutique : 60 minutes</h4>
+                        <h3>Fenêtre Thérapeutique : 60 minutes</h3>
                         <p>Les micro-canaux épidermiques subissent une fermeture physiologique en 60 à 90 minutes. L'administration topique du complexe PDRN doit impérativement intervenir dans ce délai pour contourner la barrière lipophile épidermique.</p>
                     </div>
                 </div>
@@ -1183,7 +1188,7 @@
             <div class="studies-grid">
                 <div class="study-card">
                     <span class="study-tag">Méta-analyse · PBM 630nm</span>
-                    <h4>Évaluation de l'efficacité sur le vieillissement structurel</h4>
+                    <h3>Évaluation de l'efficacité sur le vieillissement structurel</h3>
                     <p>Revue systématique de 22 études contrôlées randomisées évaluant la LED 630nm. Cohorte globale : 1 847 sujets. Durée de suivi : 8 à 24 semaines.</p>
                     <div class="study-result">
                         <span class="study-result-value">−36%</span>
@@ -1193,7 +1198,7 @@
                 </div>
                 <div class="study-card">
                     <span class="study-tag">Essai Clinique · PBM proche infrarouge</span>
-                    <h4>Amélioration biomécanique de l'élasticité</h4>
+                    <h3>Amélioration biomécanique de l'élasticité</h3>
                     <p>Étude prospective, randomisée en double aveugle. Évaluation de l'impact du proche infrarouge (NIR) sur l'élasticité cutanée mesurée par cutomètre (n=84).</p>
                     <div class="study-result">
                         <span class="study-result-value">+19%</span>
@@ -1203,7 +1208,7 @@
                 </div>
                 <div class="study-card">
                     <span class="study-tag">In Vitro · PDRN 1%</span>
-                    <h4>Activation de la transcription collagénique</h4>
+                    <h3>Activation de la transcription collagénique</h3>
                     <p>Étude sur cultures de fibroblastes primaires humains (HDFs). Mesure de l'expression de l'ARNm du collagène de type I après exposition au PDRN.</p>
                     <div class="study-result">
                         <span class="study-result-value">+47%</span>
@@ -1213,7 +1218,7 @@
                 </div>
                 <div class="study-card">
                     <span class="study-tag">Ex Vivo · Microneedling</span>
-                    <h4>Analyse histologique post-induction</h4>
+                    <h3>Analyse histologique post-induction</h3>
                     <p>Biopsies cutanées après protocole CIT à 0,25 mm. Coloration histochimique (Van Gieson) pour quantifier la néosynthèse de la matrice conjonctive.</p>
                     <div class="study-result">
                         <span class="study-result-value">+206%</span>
@@ -1223,7 +1228,7 @@
                 </div>
                 <div class="study-card">
                     <span class="study-tag">Pharmacocinétique · CIT</span>
-                    <h4>Perméabilité transépidermique</h4>
+                    <h3>Perméabilité transépidermique</h3>
                     <p>Évaluation fluorométrique in vivo de la pénétration de macromolécules topiques appliquées 30 minutes après induction de micro-canaux épidermiques.</p>
                     <div class="study-result">
                         <span class="study-result-value">×4.7</span>
@@ -1279,22 +1284,22 @@
             <div class="quality-grid">
                 <div class="quality-card">
                     <div class="quality-icon" style="border:none; background:transparent; font-size:1.6rem; color:var(--c-text);">✦</div>
-                    <h4>Directives CEE</h4>
+                    <h3>Directives CEE</h3>
                     <p>Conformité intégrale aux directives européennes LVD 2014/35/UE et CEM 2014/30/UE sur la compatibilité électromagnétique.</p>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon" style="border:none; background:transparent; font-size:1.6rem; color:var(--c-text);">✦</div>
-                    <h4>Grade Biomédical</h4>
+                    <h3>Grade Biomédical</h3>
                     <p>Utilisation exclusive d'élastomère de silicone de grade médical, garantissant une innocuité dermatologique totale.</p>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon" style="border:none; background:transparent; font-size:1.6rem; color:var(--c-text);">✦</div>
-                    <h4>Norme ISO 13485</h4>
+                    <h3>Norme ISO 13485</h3>
                     <p>Fabrication certifiée selon le standard international des systèmes de management de la qualité pour dispositifs médicaux.</p>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon" style="border:none; background:transparent; font-size:1.6rem; color:var(--c-text);">✦</div>
-                    <h4>Formulation Haute Tolérance</h4>
+                    <h3>Formulation Haute Tolérance</h3>
                     <p>Sérum formulé sans perturbateurs endocriniens, phtalates, parabènes ni parfums synthétiques. Compatibilité clinique maximale.</p>
                 </div>
             </div>
@@ -1366,7 +1371,7 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h5>Produits</h5>
+                    <h3>Produits</h3>
                     <ul>
                         <li><a href="product-mask.html">Masque LED</a></li>
                         <li><a href="product-serum.html">Sérum PDRN</a></li>
@@ -1375,7 +1380,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Information</h5>
+                    <h3>Information</h3>
                     <ul>
                         <li><a href="about.html">Notre Science</a></li>
                         <li><a href="about.html#histoire">Notre histoire</a></li>
@@ -1384,7 +1389,7 @@
                     </ul>
                 </div>
                 <div class="footer-newsletter">
-                    <h5>Recevoir nos conseils science</h5>
+                    <h3>Recevoir nos conseils science</h3>
                     <p>Protocoles, études et routines pour maximiser vos résultats.</p>
                     <form class="newsletter-form" onsubmit="return false">
                         <input type="email" placeholder="votre@email.com" aria-label="Email" autocomplete="email">
@@ -1406,14 +1411,37 @@
         </div>
     </footer>
 
-    <script src="scripts.js?v=2"></script>
+    <!-- Panier partagé (cart.js) — markup nécessaire à openCart/render -->
+    <div class="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3 class="serif">Votre Panier</h3>
+            <button class="close-cart" onclick="closeCart()" aria-label="Fermer le panier">×</button>
+        </div>
+        <div class="cart-items is-empty" id="cartItems">
+            <p style="font-size:0.9rem;">Votre panier est vide.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span id="cartTotal">0,00 €</span></div>
+            <button class="btn btn-solid" id="checkoutBtn" disabled>Commander en toute sécurité</button>
+            <div class="payment-icons" style="margin-top:1rem;">
+                <span class="pay-chip pay-visa">VISA</span>
+                <span class="pay-chip"><svg viewBox="0 0 36 22" aria-label="Mastercard"><circle cx="14" cy="11" r="8" fill="#EB001B"/><circle cx="22" cy="11" r="8" fill="#F79E1B"/><path d="M18 5.4a7.97 7.97 0 0 1 0 11.2 7.97 7.97 0 0 1 0-11.2z" fill="#FF5F00"/></svg></span>
+                <span class="pay-chip pay-amex">AMEX</span>
+            </div>
+        </div>
+    </div>
+
     <script>
+        /* ─── Menu burger mobile ─── */
+        (function(){var b=document.getElementById('navBurger');if(b)b.addEventListener('click',function(){document.body.classList.toggle('menu-open')});document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open')})});})();
+
         /* ─── Reveal on scroll ─── */
         const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
         const revealObs = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
-                    e.target.classList.add('visible');
+                    e.target.classList.add('active');
                     revealObs.unobserve(e.target);
                 }
             });
@@ -1442,6 +1470,8 @@
     </script>
 <div class="lm-pop-ov" id="lmPop"><div class="lm-pop"><button class="lm-pop-x" id="lmPopX" aria-label="Fermer">✕</button><span class="eyebrow">Le Cercle Fondateur</span><h3>Entrez dans le cercle.</h3><p>Série limitée 2026. Les fondatrices reçoivent l'accès prioritaire aux lancements et un avantage réservé à leur première commande.</p><form class="lm-pop-form" id="lmPopForm" action="https://formspree.io/f/mgobpdlw" method="POST"><input type="email" name="email" required placeholder="Votre e-mail" autocomplete="email"><button type="submit">Rejoindre le Cercle</button></form><p class="lm-pop-ok" id="lmPopOk">Bienvenue dans le Cercle ✦ surveillez votre boîte mail.</p><p class="lm-pop-fine">Pas de spam. Désinscription en un clic.</p></div></div><script>(function(){var p=document.getElementById("lmPop");if(!p)return;var K="lm_pop_seen";function show(){if(localStorage.getItem(K))return;p.classList.add("active")}function dis(){p.classList.remove("active");localStorage.setItem(K,"1")}if(!localStorage.getItem(K)){setTimeout(show,12000);document.addEventListener("mouseout",function(e){if(e.clientY<=0)show()})}document.getElementById("lmPopX").addEventListener("click",dis);p.addEventListener("click",function(e){if(e.target===p)dis()});addEventListener("keydown",function(e){if(e.key==="Escape")dis()});var f=document.getElementById("lmPopForm");if(f)f.addEventListener("submit",function(e){e.preventDefault();function ok(){f.style.display="none";document.getElementById("lmPopOk").style.display="block";localStorage.setItem(K,"1")}fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}}).then(ok).catch(ok)})})();</script>
 
-<script src="analytics.js?v=2"></script>
+<script src="cart.js?v=7"></script>
+<script src="analytics.js?v=3"></script>
+<script src="consent.js?v=1"></script>
 </body>
 </html>
