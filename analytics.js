@@ -16,9 +16,17 @@
   var CONFIG = {
     ga4:    'G-XXXXXXXXXX',          // Google Analytics 4
     meta:   'XXXXXXXXXXXXXXX',       // Meta (Facebook/Instagram) Pixel
-    tiktok: 'D8S207JC77U4HL2FF3VG'   // TikTok Pixel
+    tiktok: 'D8S207JC77U4HL2FF3VG',  // TikTok Pixel
+    // Suivi server-side (TikTok Events API) — colle ici l'URL de ton Worker
+    // Cloudflare (cf. events-api-worker.js). Vide = désactivé, rien ne change.
+    eventsApiUrl: ''
   };
   function isSet(v) { return v && v.indexOf('X') === -1; }
+
+  // Identifiants de clic TikTok (pour rattacher l'event à la pub) + dédup
+  function cookie(n) { var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)'); return m ? m.pop() : undefined; }
+  function ttclid() { try { return new URLSearchParams(location.search).get('ttclid') || cookie('ttclid') || undefined; } catch (e) { return undefined; } }
+  function newEventId() { return 'lm_' + Date.now() + '_' + Math.floor(Math.random() * 1e6).toString(36); }
 
   /* ---- Chargé uniquement sur consentement (cf. consent.js) ---- */
   window.lumeraInitTracking = function () {
@@ -69,19 +77,37 @@
   /* ---- Consentement déjà accordé lors d'une visite précédente ? ---- */
   try { if (localStorage.getItem('lumera_consent') === 'granted') window.lumeraInitTracking(); } catch (e) {}
 
+  // Envoi server-side (TikTok Events API via Worker) — même event_id que le
+  // pixel → TikTok déduplique. Ne part qu'après consentement + URL configurée.
+  function sendServer(ttName, eid, data) {
+    try {
+      fetch(CONFIG.eventsApiUrl, {
+        method: 'POST', keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: ttName, event_id: eid,
+          value: typeof data.value === 'number' ? data.value : undefined,
+          currency: 'EUR', content_name: data.name,
+          url: location.href, ttclid: ttclid(), ttp: cookie('_ttp')
+        })
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
   /* ---- API unifiée : appelée par cart.js (no-op tant que pixels absents) ---- */
   window.lumeraTrack = function (event, data) {
     data = data || {};
+    var eid = newEventId();
     try {
       if (window.gtag) gtag('event', event, { value: data.value, currency: 'EUR', items: data.name ? [{ item_name: data.name }] : undefined });
       if (window.fbq) {
         var m = { add_to_cart: 'AddToCart', begin_checkout: 'InitiateCheckout', view_item: 'ViewContent', purchase: 'Purchase' };
-        if (m[event]) fbq('track', m[event], { value: data.value, currency: 'EUR', content_name: data.name });
+        if (m[event]) fbq('track', m[event], { value: data.value, currency: 'EUR', content_name: data.name }, { eventID: eid });
       }
-      if (window.ttq) {
-        var t = { add_to_cart: 'AddToCart', begin_checkout: 'InitiateCheckout', view_item: 'ViewContent', purchase: 'CompletePayment' };
-        if (t[event]) ttq.track(t[event], { value: data.value, currency: 'EUR', content_name: data.name });
-      }
+      var ttName = ({ add_to_cart: 'AddToCart', begin_checkout: 'InitiateCheckout', view_item: 'ViewContent', purchase: 'CompletePayment' })[event];
+      if (window.ttq && ttName) ttq.track(ttName, { value: data.value, currency: 'EUR', content_name: data.name }, { event_id: eid });
+      // Server-side : uniquement si consentement accordé ET Worker configuré
+      if (ttName && CONFIG.eventsApiUrl && window.__lumeraTracking) sendServer(ttName, eid, data);
     } catch (e) {}
   };
 })();

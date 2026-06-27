@@ -21,7 +21,8 @@
     '#lmConsent.show{transform:translateY(0);}',
     '#lmConsent .lmc-in{max-width:1080px;margin:0 auto;padding:1.1rem 1.4rem;',
     'display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;justify-content:space-between;}',
-    '#lmConsent p{margin:0;font-size:.86rem;line-height:1.55;color:#5C2D3A;flex:1 1 380px;}',
+    '#lmConsent p{margin:0;font-size:.84rem;line-height:1.55;color:#6b4651;flex:1 1 400px;}',
+    '#lmConsent p strong{display:block;font-family:"Fraunces",Georgia,serif;font-size:1.02rem;font-weight:500;color:#3D1A24;margin-bottom:.15rem;letter-spacing:-.01em;}',
     '#lmConsent a{color:#A85968;text-decoration:underline;text-underline-offset:2px;}',
     '#lmConsent .lmc-btns{display:flex;gap:.6rem;flex:0 0 auto;}',
     '#lmConsent button{font-family:inherit;font-size:.82rem;font-weight:600;letter-spacing:.01em;',
@@ -45,8 +46,8 @@
     d.setAttribute('aria-label', 'Gestion des cookies');
     d.innerHTML =
       '<div class="lmc-in">'
-      + '<p>Nous utilisons des cookies de mesure d\'audience pour améliorer votre expérience. '
-      + 'Vous pouvez les accepter ou les refuser. '
+      + '<p><strong>Votre expérience, soignée.</strong>'
+      + 'Luméra dépose des cookies de mesure pour comprendre ce qui vous plaît et fluidifier votre visite — jamais pour vous suivre ailleurs sans votre accord. Vous gardez la main. '
       + '<a href="legal.html#confidentialite">En savoir plus</a></p>'
       + '<div class="lmc-btns">'
       + '<button type="button" class="lmc-refuse" id="lmcRefuse">Refuser</button>'
