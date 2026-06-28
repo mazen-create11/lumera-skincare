@@ -1525,6 +1525,8 @@ body.menu-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotat
 .gallery-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--c-border, #e3cdd2); transition: .25s var(--ease-out); }
 .gallery-dot.active::before { background: var(--c-accent-dark, #A85968); transform: scale(1.35); }
 @media (min-width: 1025px) { .gallery-pagination { display: none; } }
+/* Mobile : dots seuls (+ swipe natif) — on retire la bande de miniatures redondante */
+@media (max-width: 1024px) { .gallery-thumbs { display: none !important; } }
 
 /* ── VERTICAL THUMBS + MAIN IMAGE (DESKTOP) ── */
 @media (min-width: 1025px) {

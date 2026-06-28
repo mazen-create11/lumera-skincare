@@ -137,9 +137,8 @@
       var icLock = ic('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>');
       var icShield = ic('<path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/>');
       var icTruck = ic('<path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/>');
-      d.innerHTML = '<p style="font-size:0.76rem;color:#A85968;font-weight:600;text-align:center;margin:0 0 0.6rem;">ou 3× sans frais dès 100 € — sans intérêts</p>'
-        + '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.45rem 1rem;font-size:0.68rem;color:#8A6A72;font-weight:500;">'
-        + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icLock + 'Paiement sécurisé</span>'
+      d.innerHTML = '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.45rem 1rem;font-size:0.68rem;color:#8A6A72;font-weight:500;">'
+        + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icLock + 'Commande sécurisée</span>'
         + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icShield + '30 j satisfaite ou remboursée</span>'
         + '<span style="display:inline-flex;align-items:center;gap:0.3rem;">' + icTruck + 'Livraison offerte</span></div>';
       var btn = f.querySelector('button, .btn');
@@ -207,6 +206,32 @@
       }, 1800); // 1.8s de délai naturel avant affichage
     }
   });
+
+  // Filet de sécurité reveal — garantit qu'aucun contenu .reveal ne reste invisible
+  // (above-the-fold au chargement, ou si l'IntersectionObserver de la page ne se déclenche pas).
+  // Why : le défaut .reveal{opacity:0} masque tout tant qu'un observer ne pose pas .active ;
+  // ici on active immédiatement le visible, puis on garantit l'affichage total en filet.
+  (function () {
+    function activateInView() {
+      var h = window.innerHeight || document.documentElement.clientHeight;
+      document.querySelectorAll('.reveal:not(.active), .reveal-left:not(.active), .reveal-right:not(.active)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < h + 80) el.classList.add('active');
+      });
+    }
+    function activateAll() {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function (el) { el.classList.add('active'); });
+    }
+    function run() {
+      activateInView();
+      // Re-passe rapide pour l'above-the-fold (après layout/polices), puis filet total.
+      setTimeout(activateInView, 250);
+      setTimeout(activateAll, 2200);
+    }
+    if (document.readyState !== 'loading') run();
+    else document.addEventListener('DOMContentLoaded', run);
+    window.addEventListener('load', activateInView);
+  })();
 
   // UX Feedback : Bouton d'ajout au panier
   document.addEventListener('click', function(e) {
